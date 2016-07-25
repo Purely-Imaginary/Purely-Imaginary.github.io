@@ -12,7 +12,7 @@ echo '<html><head>
 
 echo '
 <script src="jquery-3.1.0.min.js"></script>
-
+<body>
 <div align="center"><table id="table">
         <tr>
             <td rowspan="2" colspan="2" id="dataCell"></td>
@@ -73,6 +73,6 @@ echo '
 
 echo '<br><button onclick="resetButton()">Reset</button>';
 echo '</div>';
-echo '<script src="script.js"></script>';
+echo '<script src="script.js"></script></body>';
 echo '</html>';
 
