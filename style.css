@@ -2,33 +2,47 @@ body{
     font-family: 'Montserrat', sans-serif;
     background-color: rgba(127, 255, 212, 0.39);
 }
-
+div{
+    /*border: solid black;*/
+}
 #wrapper {
     display: flex;                   /* establish flex container */
     flex-direction: row;             /* default value; can be omitted */
     flex-wrap: nowrap;               /* default value; can be omitted */
-    justify-content: center;  /* switched from default (flex-start, see below) */
-
-
+    justify-content: space-between;  /* switched from default (flex-start, see below) */
 }
 #texty {
-    width : 33%;
+    height: 100%;
+    display: flex;                   /* establish flex container */
+    flex-direction: column;
+    flex-shrink: 0;
    /* border: solid red;*/
 }
 #gamey {
-    width : 34%;
+    align-self: center;
     text-align: center;
-   /* border: solid blue;*/
+    flex-grow: 1;
 }
 #emptey{
-    width : 33%;
-   /* border: solid green;*/
+    flex-shrink: 0;
 }
 #title{
     text-align: center;
     font-size: 15pt;
+    flex-shrink:1;
 }
-
+#todo{
+    flex-shrink:1;
+}
+#chooseText{
+    text-align: center;
+}
+img{
+    border: 3px solid transparent;
+}
+img.chosen{
+    border: 3px solid red;
+}
 table, th, td {
     border-collapse: collapse;
     border: 1px solid #838181;
