@@ -2,6 +2,25 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
+#wrapper {
+    display: flex;                   /* establish flex container */
+    flex-direction: row;             /* default value; can be omitted */
+    flex-wrap: nowrap;               /* default value; can be omitted */
+    justify-content: space-between;  /* switched from default (flex-start, see below) */
+}
+#texty {
+    width : 33%;
+    float:left; /* add this */
+}
+#gamey {
+    width : 33%;
+    text-align: center;
+}
+#emptey{
+    width : 33%;
+}
+
+
 table, th, td {
     border-collapse: collapse;
     border: 1px solid #838181;
@@ -15,13 +34,10 @@ td {
     padding: 10px;
 }
 
-td.black:hover,td:hover {
-    background-color: #838181;
-
+td:hover,td.clickable:hover {
+    background-color: rgba(131, 129, 129, 0.5);
 }
 
-td.black {background-color: #0f0f0f
-}
 
 td.yellow {background-color: rgba(255, 246, 4, 0.46)
 }
