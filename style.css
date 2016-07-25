@@ -6,18 +6,22 @@ body{
     display: flex;                   /* establish flex container */
     flex-direction: row;             /* default value; can be omitted */
     flex-wrap: nowrap;               /* default value; can be omitted */
-    justify-content: space-between;  /* switched from default (flex-start, see below) */
+    justify-content: center;  /* switched from default (flex-start, see below) */
+
+
 }
 #texty {
     width : 33%;
-    float:left; /* add this */
+   /* border: solid red;*/
 }
 #gamey {
-    width : 33%;
+    width : 34%;
     text-align: center;
+   /* border: solid blue;*/
 }
 #emptey{
     width : 33%;
+   /* border: solid green;*/
 }
 
 
