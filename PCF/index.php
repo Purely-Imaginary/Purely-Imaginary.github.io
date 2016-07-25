@@ -6,8 +6,10 @@
  * Time: 20:12
  */
 
-echo '<html><head>
+echo '<!DOCTYPE html>
+<html><head>
 <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>';
 
 echo '
