@@ -47,6 +47,7 @@ table, th, td {
     border-collapse: collapse;
     border: 1px solid #838181;
     text-align: center;
+    cellspacing: 5px;
 }
 
 td {
@@ -70,4 +71,9 @@ td.blue {background-color: rgba(0, 18, 255, 0.24)
 td.green {background-color: rgba(13, 255, 0, 0.46)
 }
 td.red {background-color: rgba(255, 2, 2, 0.67)
+}
+
+@keyframes mymove {
+
+    50% {background-color: blue;}
 }
