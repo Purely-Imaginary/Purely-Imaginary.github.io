@@ -9,7 +9,7 @@ var searchEvolutions = function() {
     //var result = $("#result").getJSON(url);
     //document.getElementById("result").innerHTML=httpGet();*/
 
-    $.get("www.mydomain.com/?url=www.google.com", function(response) {
+    $.get("/?url=www.google.com", function(response) {
         alert(response)
     });
     var i = 0;
