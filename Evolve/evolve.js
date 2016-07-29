@@ -18,17 +18,26 @@ var loadFile = function(){
     var data = oFrame.contentWindow.document.body.childNodes[0].innerHTML;
     var split = data.split("<td id=");
     var pokeID = document.getElementById("name").value;
+    if (!isNaN(pokeID))
     extractDataFromSplit(split[pokeID]);
+    else
+    {
+        for(var index=0;index<split.length;index++)
+        {
+            if (split[index].indexOf(pokeID) !== -1)
+            extractDataFromSplit(split[index]);
+        }
+    }
     var i = 0;
 }
 
 var extractDataFromSplit = function(HTMLTable){
 
     var name = HTMLTable.substring(HTMLTable.indexOf("<big><big><big>")+15,HTMLTable.indexOf("</big></big></big>"));
-    var id = HTMLTable
+    name += "<br><br>";
 
-    $('body').append("Name: " + name + "<br><BR>");
-    HTMLTable = HTMLTable.substring(5);
-    document.getElementById("result").innerHTML = HTMLTable;
+
+    HTMLTable = HTMLTable.substring(4);
+    document.getElementById("result").innerHTML = name + HTMLTable;
     //    $('body').append(HTMLTable);
 }
