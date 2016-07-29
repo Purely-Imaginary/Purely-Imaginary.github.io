@@ -3,7 +3,7 @@ body{
     background-color: rgba(127, 255, 212, 0.39);
 }
 div{
-    border: solid black;
+    /*border: solid black;*/
 }
 #wrapper {
     display: flex;                   /* establish flex container */
