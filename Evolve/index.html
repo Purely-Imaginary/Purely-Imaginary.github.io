@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Evolve</title>
-    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="style_imported.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <script src="../jquery-3.1.0.min.js"></script>
+    <script src="http://yui.yahooapis.com/3.8.0/build/yui/yui-min.js"></script>
 </head>
 <body>
 <div>
     Name of Pokemon: <input type="text" name="name" id="name" value="Growlithe">
-    <button type="button" onclick="searchEvolutions()" >Check!</button>
+    <button type="button" onclick="loadFile()" >Check!</button>
 </div>
-<div id="result" width="50%" height="50%">
+<div id="result" width="100%" height="50%">
 
 </div>
+<iframe id="frmFile" src="checkers.html" style="display: none;"></iframe>
 </body>
 <script src="evolve.js"></script>
 </html>
