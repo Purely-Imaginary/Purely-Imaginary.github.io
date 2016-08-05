@@ -5,17 +5,33 @@
     <title>Pasjans-Pająk</title>
     <link href="jquery-ui.css" rel="stylesheet">
     <link href="overrides.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div id="dialog" title="Wybierz poziom">
     <div id="radioset">
-    <input type="radio" id="radio1" name="radio" disabled="true"><label for="radio1">Łatwy (Jeden kolor)</label>
-    <input type="radio" id="radio2" name="radio" checked="checked"><label for="radio2">Średni (Dwa kolory)</label>
-    <input type="radio" id="radio3" name="radio" disabled="true"><label for="radio3">Trudny (Cztery kolory)</label>
+        <input type="radio" id="radio1" name="radio" disabled="true"><label for="radio1">Łatwy (Jeden kolor)</label>
+        <input type="radio" id="radio2" name="radio" checked="checked"><label for="radio2">Średni (Dwa kolory)</label>
+        <input type="radio" id="radio3" name="radio" disabled="true"><label for="radio3">Trudny (Cztery kolory)</label>
         <br><br>
     </div>
-    <div id="dialog-button">
-        Graj!
+</div>
+<div id="wrapper" style="display: none;">
+    <div id="header">
+        <div id="menu">
+            <div class="button" id="newGame" onclick="newGame()">Nowa gra</div>
+        </div>
+            <div id="stats">
+                Poziom trudnosci: <span id="difficulty"></span><br>
+                Czas gry: <span id="gameTime"></span><br>
+                Punkty: <span id="score"></span><br>
+            </div>
+
+    </div>
+    <div id="playground">
+        <canvas>
+
+        </canvas>
     </div>
 </div>
 </body>
