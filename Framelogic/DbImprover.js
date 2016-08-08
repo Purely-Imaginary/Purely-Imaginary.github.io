@@ -78,6 +78,7 @@ javascript:(function () {
     $("td.inputs, td.alarm").each(function () {
         var input = $(this).html();
         var printString = "<span style='color:blue'>  (";
+        var printString = "<span style='color:blue'>  (";
         printString += parseInt(input).toString(2);
 
         var dins = "\<";
