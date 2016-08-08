@@ -1,5 +1,6 @@
 javascript:(function () {
-
+/*TO DO : 99 na GSM
+     TOOLTIPS*/
 
     $("td.satellites").each(function () {
         $(this).css({'color': 'black', 'background-color': 'lightgreen'});
@@ -63,9 +64,10 @@ javascript:(function () {
             'background-color': 'red',
             'font-weight': 'bold'
         });
+        else if ($(this).html() === "99") $(this).css({'color': 'black', 'background-color': 'lightblue'});
         else $(this).css({'color': 'black', 'background-color': 'lightgreen'});
     });
-    console.log("Przeliczanie zasiegu GSM (<16 / ==0)");
+    console.log("Przeliczanie zasiegu GSM (<16 / ==0 / ==99)");
 
     $("td.frame").each(function () {
         if ($(this).html() !== "3 ") $(this).css({'color': 'black', 'background-color': 'yellow'});
@@ -93,7 +95,7 @@ javascript:(function () {
     console.log("Chowanie 'Praw.odczyt','Wysokosc','Kierunek'");
 
     $("th.frame").html("Typ");
-    $("th.memory").html("Pamiêæ");
+    $("th.memory").html("Pamiec");
     $("th.signal").html("GSM");
     $("th.antenna").html("Antena");
 
