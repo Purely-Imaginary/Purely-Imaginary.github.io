@@ -8,19 +8,41 @@
 </head>
 <body>
 <div id="wrapper">
-<div class="insider" >
-    <a href="DbImprover.js">
-        <button>DbImprover<br><img src="DbIm.png"></button>
-    </a>
-    <a href="CompanySearch.js">
-        <button>CompanySearch<br><img src="ComSea.png"></button>
-    </a>
-    <a href="LooseQuickstart.js">
-        <button>LooseQuickstart<br><img src="Loose.png"></button>
-    </a>
-</div>
-<div class="insider">
-    Ale co z tym zrobic?<br>
+    <div class="insider">
+        <div class="table">
+        <table>
+            <tr>
+                <td class="title">DbImprover<br>
+                    <small><em>ver.1.4</em></small></td>
+                <td class="function" onclick="load_website_into_id('/subsites/DbIFunc.html','data')">Funkcje</td>
+                <td class="changelog" onclick="load_website_into_id('/subsites/DbIChange.html','data')">Changelog</td>
+                <td class="code" onclick="load_website_into_id('/subsites/DbICode.html','data')">Kod</td>
+            </tr>
+            <tr class="spacer"><td colspan="4"></td></tr>
+            <tr>
+                <td class="title">CompanySearch<br>
+                    <small><em>ver.1.1</em></small></td>
+                <td class="function" onclick="load_website_into_id('/subsites/CSFunc.html','data')">Funkcje</td>
+                <td class="changelog" onclick="load_website_into_id('/subsites/CSCHange.html','data')">Changelog</td>
+                <td class="code" onclick="load_website_into_id('/subsites/CSCode.html','data')">Kod</td>
+            </tr>
+            <tr class="spacer"><td colspan="4"></td></tr>
+            <tr>
+                <td class="title">LooseToolbar<br>
+                    <small><em>ver.1.1</em></small></td>
+                <td class="function" onclick="load_website_into_id('/subsites/LTFunc.html','data')">Funkcje</td>
+                <td class="changelog" onclick="load_website_into_id('/subsites/LTChange.html','data')">Changelog</td>
+                <td class="code" onclick="load_website_into_id('/subsites/LTCode.html','data')">Kod</td>
+            </tr>
+
+        </table>
+        </div>
+        <div id="data">
+
+        </div>
+    </div>
+    <div class="insider">
+        Ale co z tym zrobic?<br>
     Klikasz w wybrany skrypt po lewej stronie<br>
     Klikasz prawym przyciskiem myszy na puste miejsce na pasku zakladek<br>
     i wybierasz nowa zakladke<br><br><img src="step_1.png"><br>
@@ -29,5 +51,6 @@
     Na odpowiedniej stronie klikasz zakladke i cieszysz sie ulepszeniami :)
 </div>
     </div>
+<script src="index.js"></script>
 </body>
 </html>

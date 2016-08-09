@@ -1,6 +1,5 @@
 javascript:(function () {
-/*TO DO : 99 na GSM
-     TOOLTIPS*/
+/*TO DO : polskie znaki*/
 
 
     $("td.satellites").each(function () {
@@ -8,7 +7,7 @@ javascript:(function () {
         if ($(this).html() < 5) $(this).css({'color': 'black', 'background-color': 'yellow'});
         if ($(this).html() === "0") $(this).css({'color': 'black', 'background-color': 'red', 'font-weight': 'bold'});
     });
-    console.log("Przeliczanie satelit (<5)");
+    $("th.satellites").html("<a title='Jesli mniej niz 5 - oznacza to zbyt slaby zasieg GPS'>Satelity</a>");
 
     $("td.latitude").each(function () {
         if ($(this).html().indexOf("0,0000") !== -1) {
@@ -26,37 +25,40 @@ javascript:(function () {
         }
         else $(this).css({'color': 'black', 'background-color': 'lightgreen'});
     });
-    console.log("Przeliczanie dlugosci i szerokosci (!=0,000)");
 
     $("td.memory").each(function () {
         if ($(this).html() > 300) $(this).css({'color': 'black', 'background-color': 'red', 'font-weight': 'bold'});
         else $(this).css({'color': 'black', 'background-color': 'lightgreen'});
     });
-    console.log("Przeliczanie pamieci (>300)");
+    $("th.memory").html("<a title='Jesli jest wiecej niz 264 oznacza to ze w pamieci " +
+        "rejestratora sa jeszcze ramki czekajace na zrzucenie'>Pamiec</a>");
+
 
     $("td.network").each(function () {
         if ($(this).html() === 0) $(this).css({'color': 'black', 'background-color': 'red', 'font-weight': 'bold'});
         else $(this).css({'color': 'black', 'background-color': 'lightgreen'});
     });
-    console.log("Przeliczanie kodu sieci (!=0)");
+    $("th.network").html("<a title='Czerowny jesli kod sieci jest rowny 0'>Kod sieci</a>");
+
 
     $("td.power").each(function () {
         if ($(this).html() < 10) $(this).css({'color': 'black', 'background-color': 'red', 'font-weight': 'bold'});
         else $(this).css({'color': 'black', 'background-color': 'lightgreen'});
     });
-    console.log("Przeliczanie napiecia akumulatora (<10)");
+    $("th.power").html("<a title='Czerowny jesli napiecie akumulatora jest mniejsze niz 10V'>Nap. aku.</a>");
 
     $("td.battery").each(function () {
         if ($(this).html() < 8) $(this).css({'color': 'black', 'background-color': 'red', 'font-weight': 'bold'});
         else $(this).css({'color': 'black', 'background-color': 'lightgreen'});
     });
-    console.log("Przeliczanie baterii (<8)");
+    $("th.battery").html("<a title='Czerowny jesli napiecie baterii jest mniejsze niz 8V'>Bateria</a>");
 
     $("td.antenna").each(function () {
         if ($(this).html() === "1") $(this).css({'color': 'black', 'background-color': 'lightgreen'});
         else $(this).css({'color': 'black', 'background-color': 'red', 'font-weight': 'bold'});
     });
-    console.log("Przeliczanie antstatu (!=1)");
+    $("th.antenna").html("<a title='1 - Prawidlowy\n2 - Zwarcie\n3 - Zamienione anteny'>Antena</a>");
+
 
     $("td.signal").each(function () {
         if ($(this).html() < 16) $(this).css({'color': 'black', 'background-color': 'yellow'});
@@ -68,13 +70,14 @@ javascript:(function () {
         else if ($(this).html() === "99") $(this).css({'color': 'black', 'background-color': 'lightblue'});
         else $(this).css({'color': 'black', 'background-color': 'lightgreen'});
     });
-    console.log("Przeliczanie zasiegu GSM (<16 / ==0 / ==99)");
+    $("th.signal").html("<a title='Wiecej niz 16 - zielony\nMniej niz 16 - zolty\n0 lub 99 - czerwony'>GSM</a>");
 
     $("td.frame").each(function () {
         if ($(this).html() !== "3 ") $(this).css({'color': 'black', 'background-color': 'yellow'});
         else $(this).css({'color': 'black', 'background-color': 'lightgreen'});
     });
-    console.log("Przeliczanie statusu ramki (!=3)");
+    $("th.frame").html("<a title='3 - Prawidlowy\nInne - Trzeba zwrocic uwage'>Typ</a>");
+
 
     $("td.inputs, td.alarm").each(function () {
         var input = $(this).html();
@@ -89,22 +92,22 @@ javascript:(function () {
         if (dins === "\<") dins += " ";
         $(this).html(input + printString + ")</span> <span style='color:green'>" + dins.slice(0, -1) + "\></span>");
     });
-    console.log("Przeliczanie dinów i alarmu");
+
+    $("th.alarm").html("<a title='0 - oznacza że w zarejestrowanej ramce wystąpił alarm immobilizera (immobilizer jest w" +
+        " tej chwili aktywny, blokowane jest uruchomienie pojazdu)\n1 - oznacza że wystąpił jeden z warunków " +
+        "wystąpienia wirtualnej stacyjki\n2 - flaga ładowania, oznacza że w chwili zrzucenia danych bateria podtrzymująca " +
+        "rejestratora jest ładowana\n3 - oznacza że podczas analizowania czarnej skrzynki urządzenie zarejestrowało " +
+        "błąd\n5 - flaga zajętości digidowna / tachoreadera\n6 - czarna skrzynka nie jest opróżniona\n7 - przed " +
+        "wystąpieniem ramki miał miejsce restart rejestratora\nZrodlo: frametech'>Alarm</a>");
+
+    $("th.inputs").html("<a title='Liczba w systemie dziesietnym (Liczba w systemie binarnym) <Ktore diny sa wlaczone>'>Wej. Cyfrowe</a>");
+
 
     $(".validity, .altitude, .course").each(function () {
         $(this).css('display', 'none');
     });
+    $('.hint--top').tooltip({html: true})
     console.log("Chowanie 'Praw.odczyt','Wysokosc','Kierunek'");
 
-    $("th.frame").html("Typ");
-    $("th.memory").html("Pamiec");
-    $("th.signal").html("GSM");
-    $("th.antenna").html("Antena");
-
-    $("th.alarm").html("<a href='http://frametech.framelogic.pl/index.php/Znaczenie_poszczeg%C3%B3lnych_bit%C3%B3w_pola_-_alarm' target='_blank'>Alarm</a>");
-
-    console.log("Zmiana naglówków Typ,Pamiec,GSM,Antena i Alarm");
-
-
-    console.log("DbImprover v1.3");
+    console.log("DbImprover v1.4");
 })();

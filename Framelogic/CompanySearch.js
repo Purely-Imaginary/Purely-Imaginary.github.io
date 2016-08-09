@@ -1,6 +1,5 @@
 javascript:(function () {
 
-    console.log("CompanySearch v1.1");
     var companies = $("#menu-map > ul").clone();
     console.log(companies.children());
     if (companies.length == 0) {
@@ -33,4 +32,5 @@ javascript:(function () {
         if (filter.length == 0)$('#menu-map > ul').append("<li style='background-color: red'>No companies found</li>");
     });
 
+    console.log("CompanySearch v1.1");
 })();
