@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7da0d979-3764-4b18-8a86-9fc37477d361" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Framelogic/external/jquery/jquery.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Framelogic/CompanySearch.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Framelogic/DbImprover.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Framelogic/LooseQuickstart.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framelogic/index.html" afterPath="$PROJECT_DIR$/Framelogic/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framelogic/styles.css" afterPath="$PROJECT_DIR$/Framelogic/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framelogic/subsites/DbIFunc.html" afterPath="$PROJECT_DIR$/Framelogic/subsites/DbIFunc.html" />
     </list>
     <ignored path="Checkers.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,8 +27,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Framelogic/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
+            <state relative-caret-position="374">
+              <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -428,7 +420,7 @@
       <workItem from="1470256263982" duration="4185000" />
       <workItem from="1470336931182" duration="7712000" />
       <workItem from="1470557649442" duration="4863000" />
-      <workItem from="1470655305214" duration="31890000" />
+      <workItem from="1470655305214" duration="31999000" />
     </task>
     <task id="LOCAL-00001" summary="PhpStorm">
       <created>1469427727014</created>
@@ -448,7 +440,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101592000" />
+    <option name="totallyTimeSpent" value="101701000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="279" y="218" width="1440" height="701" extended-state="0" />
@@ -811,8 +803,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Framelogic/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
+        <state relative-caret-position="374">
+          <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
           <folding />
         </state>
       </provider>
