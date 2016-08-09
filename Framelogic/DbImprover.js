@@ -2,6 +2,7 @@ javascript:(function () {
 /*TO DO : 99 na GSM
      TOOLTIPS*/
 
+
     $("td.satellites").each(function () {
         $(this).css({'color': 'black', 'background-color': 'lightgreen'});
         if ($(this).html() < 5) $(this).css({'color': 'black', 'background-color': 'yellow'});
@@ -105,5 +106,5 @@ javascript:(function () {
     console.log("Zmiana naglówków Typ,Pamiec,GSM,Antena i Alarm");
 
 
-    console.log("Pomocnik odbioru v1.2.2");
+    console.log("DbImprover v1.3");
 })();

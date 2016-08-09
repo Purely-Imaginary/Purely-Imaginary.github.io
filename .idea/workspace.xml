@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7da0d979-3764-4b18-8a86-9fc37477d361" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framelogic/CompanySearch.js" afterPath="$PROJECT_DIR$/Framelogic/CompanySearch.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framelogic/DbImprover.js" afterPath="$PROJECT_DIR$/Framelogic/DbImprover.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framelogic/index.html" afterPath="$PROJECT_DIR$/Framelogic/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framelogic/styles.css" afterPath="$PROJECT_DIR$/Framelogic/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framelogic/LooseQuickstart.js" afterPath="$PROJECT_DIR$/Framelogic/LooseQuickstart.js" />
     </list>
     <ignored path="Checkers.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,12 +51,12 @@
       <file leaf-file-name="DbImprover.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Framelogic/DbImprover.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1734">
-              <caret line="102" column="143" selection-start-line="102" selection-start-column="143" selection-end-line="102" selection-end-column="143" />
+            <state relative-caret-position="321">
+              <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
               <folding>
-                <marker date="1470722020909" expanded="true" signature="3607:3617" ph="..." />
-                <marker date="1470722020909" expanded="true" signature="3665:3675" ph="..." />
-                <marker date="1470722020909" expanded="true" signature="4016:4027" ph="..." />
+                <marker date="1470722824677" expanded="true" signature="3608:3618" ph="..." />
+                <marker date="1470722824677" expanded="true" signature="3666:3676" ph="..." />
+                <marker date="1470722824677" expanded="true" signature="4017:4028" ph="..." />
               </folding>
             </state>
           </provider>
@@ -65,16 +65,16 @@
       <file leaf-file-name="CompanySearch.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Framelogic/CompanySearch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="34">
+              <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
               <folding>
-                <marker date="1470716125149" expanded="true" signature="1133:1154" ph="..." />
+                <marker date="1470722796065" expanded="true" signature="1172:1193" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Framelogic/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="161">
@@ -94,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LooseQuickstart.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LooseQuickstart.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Framelogic/LooseQuickstart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="5" />
+            <state relative-caret-position="289">
+              <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -137,11 +137,11 @@
         <option value="$PROJECT_DIR$/Pasjans-Pajak/overrides.css" />
         <option value="$PROJECT_DIR$/Pasjans-Pajak/spider.js" />
         <option value="$PROJECT_DIR$/framelogic.js" />
-        <option value="$PROJECT_DIR$/Framelogic/CompanySearch.js" />
-        <option value="$PROJECT_DIR$/Framelogic/LooseQuickstart.js" />
-        <option value="$PROJECT_DIR$/Framelogic/DbImprover.js" />
         <option value="$PROJECT_DIR$/Framelogic/styles.css" />
         <option value="$PROJECT_DIR$/Framelogic/index.html" />
+        <option value="$PROJECT_DIR$/Framelogic/CompanySearch.js" />
+        <option value="$PROJECT_DIR$/Framelogic/DbImprover.js" />
+        <option value="$PROJECT_DIR$/Framelogic/LooseQuickstart.js" />
       </list>
     </option>
   </component>
@@ -410,7 +410,7 @@
       <workItem from="1470256263982" duration="4185000" />
       <workItem from="1470336931182" duration="7712000" />
       <workItem from="1470557649442" duration="4863000" />
-      <workItem from="1470655305214" duration="19918000" />
+      <workItem from="1470655305214" duration="20580000" />
     </task>
     <task id="LOCAL-00001" summary="PhpStorm">
       <created>1469427727014</created>
@@ -430,7 +430,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89620000" />
+    <option name="totallyTimeSpent" value="90282000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="18" y="177" width="1360" height="609" extended-state="0" />
@@ -732,14 +732,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Framelogic/LooseQuickstart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PCF/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -772,32 +764,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Framelogic/DbImprover.js">
+    <entry file="file://$PROJECT_DIR$/Framelogic/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1734">
-          <caret line="102" column="143" selection-start-line="102" selection-start-column="143" selection-end-line="102" selection-end-column="143" />
-          <folding>
-            <marker date="1470722020909" expanded="true" signature="3607:3617" ph="..." />
-            <marker date="1470722020909" expanded="true" signature="3665:3675" ph="..." />
-            <marker date="1470722020909" expanded="true" signature="4016:4027" ph="..." />
-          </folding>
+        <state relative-caret-position="161">
+          <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Framelogic/CompanySearch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="34">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
           <folding>
-            <marker date="1470716125149" expanded="true" signature="1133:1154" ph="..." />
+            <marker date="1470722796065" expanded="true" signature="1172:1193" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Framelogic/index.html">
+    <entry file="file://$PROJECT_DIR$/Framelogic/DbImprover.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+        <state relative-caret-position="321">
+          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+          <folding>
+            <marker date="1470722824677" expanded="true" signature="3608:3618" ph="..." />
+            <marker date="1470722824677" expanded="true" signature="3666:3676" ph="..." />
+            <marker date="1470722824677" expanded="true" signature="4017:4028" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Framelogic/LooseQuickstart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
           <folding />
         </state>
       </provider>

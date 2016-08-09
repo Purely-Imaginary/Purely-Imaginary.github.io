@@ -1,5 +1,6 @@
 javascript:(function () {
 
+    console.log("CompanySearch v1.1");
     var companies = $("#menu-map > ul").clone();
     console.log(companies.children());
     if (companies.length == 0) {

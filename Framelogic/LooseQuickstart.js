@@ -15,4 +15,5 @@ javascript:(function () {
             $(this).parent().append('<a href="http://' + flota + '.framelogic.pl/api/fuel/main/calibration/' + id + '" target="_blank"><img src="/api/media/images/newLayout/info.png"></a>')
         })
     }
+    console.log("LooseQuickstart v1.0")
 })();
