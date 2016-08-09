@@ -100,7 +100,7 @@ javascript:(function () {
     $("th.signal").html("GSM");
     $("th.antenna").html("Antena");
 
-    $("th.alarm").html("<a href='http://frametech.framelogic.pl/index.php/Znaczenie_poszczeg%C3%B3lnych_bit%C3%B3w_pola_-_alarm'>Alarm</a>");
+    $("th.alarm").html("<a href='http://frametech.framelogic.pl/index.php/Znaczenie_poszczeg%C3%B3lnych_bit%C3%B3w_pola_-_alarm' target='_blank'>Alarm</a>");
 
     console.log("Zmiana naglówków Typ,Pamiec,GSM,Antena i Alarm");
 
