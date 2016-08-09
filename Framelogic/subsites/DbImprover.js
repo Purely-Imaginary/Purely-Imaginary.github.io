@@ -1,13 +1,12 @@
 javascript:(function () {
-/*TO DO : polskie znaki*/
-
 
     $("td.satellites").each(function () {
         $(this).css({'color': 'black', 'background-color': 'lightgreen'});
         if ($(this).html() < 5) $(this).css({'color': 'black', 'background-color': 'yellow'});
         if ($(this).html() === "0") $(this).css({'color': 'black', 'background-color': 'red', 'font-weight': 'bold'});
     });
-    $("th.satellites").html("<a title='Jesli mniej niz 5 - oznacza to zbyt slaby zasieg GPS'>Satelity</a>");
+    $("th.satellites").html("<a title='Ilość satelit GPS połączonych z rejestratorem. Jeśli ta wartość wynosi mniej niż " +
+        "5 - oznacza to zbyt słaby zasięg GPS'>Satelity</a>");
 
     $("td.latitude").each(function () {
         if ($(this).html().indexOf("0,0000") !== -1) {
@@ -30,34 +29,40 @@ javascript:(function () {
         if ($(this).html() > 300) $(this).css({'color': 'black', 'background-color': 'red', 'font-weight': 'bold'});
         else $(this).css({'color': 'black', 'background-color': 'lightgreen'});
     });
-    $("th.memory").html("<a title='Jesli jest wiecej niz 264 oznacza to ze w pamieci " +
-        "rejestratora sa jeszcze ramki czekajace na zrzucenie'>Pamiec</a>");
+    $("th.memory").html("<a title='Wartość zajętej pamięci rejestratora.\nJeśli jest więcej niż 264 oznacza to że w pamięci " +
+        "rejestratora są jeszcze ramki czekające na zrzucenie'>Pamięć</a>");
 
 
     $("td.network").each(function () {
         if ($(this).html() === 0) $(this).css({'color': 'black', 'background-color': 'red', 'font-weight': 'bold'});
         else $(this).css({'color': 'black', 'background-color': 'lightgreen'});
     });
-    $("th.network").html("<a title='Czerowny jesli kod sieci jest rowny 0'>Kod sieci</a>");
+    $("th.network").html("<a title='Kod sieci z którą rejestrator aktualnie się połączył.\nCzerwony jeśli kod sieci " +
+        "jest równy 0.\nKliknij aby przejść do strony z listą kodów.' " +
+        "href='http://www.numberportabilitylookup.com/networks' target='_blank'>Kod sieci</a>");
 
 
     $("td.power").each(function () {
         if ($(this).html() < 10) $(this).css({'color': 'black', 'background-color': 'red', 'font-weight': 'bold'});
         else $(this).css({'color': 'black', 'background-color': 'lightgreen'});
     });
-    $("th.power").html("<a title='Czerowny jesli napiecie akumulatora jest mniejsze niz 10V'>Nap. aku.</a>");
+    $("th.power").html("<a title='Napięcie akumulatora. Tło jest czerwone " +
+        "jeśli napięcie akumulatora jest mniejsze niż 10V'>Nap. aku.</a>");
 
     $("td.battery").each(function () {
         if ($(this).html() < 8) $(this).css({'color': 'black', 'background-color': 'red', 'font-weight': 'bold'});
         else $(this).css({'color': 'black', 'background-color': 'lightgreen'});
     });
-    $("th.battery").html("<a title='Czerowny jesli napiecie baterii jest mniejsze niz 8V'>Bateria</a>");
+    $("th.battery").html("<a title='Napięcie na wewnętrznej baterii rejestratora. " +
+        "Tło jest czerwone jeśli napięcie baterii jest mniejsze niż 8V'>Bateria</a>");
 
     $("td.antenna").each(function () {
         if ($(this).html() === "1") $(this).css({'color': 'black', 'background-color': 'lightgreen'});
         else $(this).css({'color': 'black', 'background-color': 'red', 'font-weight': 'bold'});
     });
-    $("th.antenna").html("<a title='1 - Prawidlowy\n2 - Zwarcie\n3 - Zamienione anteny'>Antena</a>");
+    $("th.antenna").html("<a title='Status anten. Oznaczenia\n1 - Prawidłowy status\n" +
+        "2 - Zwarcie na co najmniej jednej z anten (zwróć uwagę która nie działa)\n" +
+        "3 - Zamienione anteny GPS i GSM'>Antena</a>");
 
 
     $("td.signal").each(function () {
@@ -70,13 +75,16 @@ javascript:(function () {
         else if ($(this).html() === "99") $(this).css({'color': 'black', 'background-color': 'lightblue'});
         else $(this).css({'color': 'black', 'background-color': 'lightgreen'});
     });
-    $("th.signal").html("<a title='Wiecej niz 16 - zielony\nMniej niz 16 - zolty\n0 lub 99 - czerwony'>GSM</a>");
+    $("th.signal").html("<a title='Zasięg GPS rejestratora. Jeśli jest więcej niż 16, ramka przybierze zielony kolor\n" +
+        "Jeśli mniej niż 16 - tło stanie się żółte\nJeśli wartość wyniesie 0 lub 99, kolor będzie czerwony." +
+        "(99 oznacza brak możliwości połączenia się z dostawcą usługi)'>GSM</a>");
 
     $("td.frame").each(function () {
         if ($(this).html() !== "3 ") $(this).css({'color': 'black', 'background-color': 'yellow'});
         else $(this).css({'color': 'black', 'background-color': 'lightgreen'});
     });
-    $("th.frame").html("<a title='3 - Prawidlowy\nInne - Trzeba zwrocic uwage'>Typ</a>");
+    $("th.frame").html("<a title='Typ ramki.\n" +
+        "1 - ramka aktualna\n2 - ramka archiwalna, z tzw. przeplotu\n3 - ramka aktualna i archiwalna, poprawny status'>Typ</a>");
 
 
     $("td.inputs, td.alarm").each(function () {
@@ -100,14 +108,14 @@ javascript:(function () {
         "błąd\n5 - flaga zajętości digidowna / tachoreadera\n6 - czarna skrzynka nie jest opróżniona\n7 - przed " +
         "wystąpieniem ramki miał miejsce restart rejestratora\nZrodlo: frametech'>Alarm</a>");
 
-    $("th.inputs").html("<a title='Liczba w systemie dziesietnym (Liczba w systemie binarnym) <Ktore diny sa wlaczone>'>Wej. Cyfrowe</a>");
+    $("th.inputs").html("<a title='Liczba w systemie dziesiętnym (Liczba w systemie binarnym) <Które diny sa włączone>'>Wej. Cyfrowe</a>");
 
 
     $(".validity, .altitude, .course").each(function () {
         $(this).css('display', 'none');
     });
-    $('.hint--top').tooltip({html: true})
+
     console.log("Chowanie 'Praw.odczyt','Wysokosc','Kierunek'");
 
-    console.log("DbImprover v1.4");
+    console.log("DbImprover v1.4.1");
 })();

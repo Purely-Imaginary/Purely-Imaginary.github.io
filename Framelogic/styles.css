@@ -20,13 +20,23 @@ table{
 }
 td{
     margin: auto;
-    padding: 15px;
+    padding: 10px;
 }
+td.clickable{
+    padding: 20px;
+}
+td.clickable:hover{
+    background-color: #2c4359;
+    color:white;
+    cursor: pointer;
+}
+
 tr{
     background-color: rgba(147, 195, 205, 0.48);
 }
+
 tr.spacer{
-    height: 20px;
+    height: 10px;
     background-color: rgba(205, 250, 255, 1);
 }
 button{

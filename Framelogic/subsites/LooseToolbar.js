@@ -18,5 +18,5 @@ javascript:(function () {
 
         })
     }
-    console.log("LooseQuickstart v1.1")
+    console.log("LooseToolbar v1.1")
 })();
