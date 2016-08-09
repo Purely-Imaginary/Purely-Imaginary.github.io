@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7da0d979-3764-4b18-8a86-9fc37477d361" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framelogic/index.html" afterPath="$PROJECT_DIR$/Framelogic/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framelogic/subsites/DbIFunc.html" afterPath="$PROJECT_DIR$/Framelogic/subsites/DbIFunc.html" />
-    </list>
+    <list default="true" id="7da0d979-3764-4b18-8a86-9fc37477d361" name="Default" comment="" />
     <ignored path="Checkers.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -28,8 +25,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Framelogic/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="25" column="104" selection-start-line="25" selection-start-column="104" selection-end-line="25" selection-end-column="104" />
+            <state relative-caret-position="255">
+              <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -433,7 +430,7 @@
       <workItem from="1470256263982" duration="4185000" />
       <workItem from="1470336931182" duration="7712000" />
       <workItem from="1470557649442" duration="4863000" />
-      <workItem from="1470655305214" duration="33051000" />
+      <workItem from="1470655305214" duration="33309000" />
     </task>
     <task id="LOCAL-00001" summary="PhpStorm">
       <created>1469427727014</created>
@@ -453,7 +450,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102753000" />
+    <option name="totallyTimeSpent" value="103011000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="318" y="314" width="1440" height="701" extended-state="0" />
@@ -816,8 +813,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Framelogic/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="25" column="104" selection-start-line="25" selection-start-column="104" selection-end-line="25" selection-end-column="104" />
+        <state relative-caret-position="255">
+          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
           <folding />
         </state>
       </provider>
