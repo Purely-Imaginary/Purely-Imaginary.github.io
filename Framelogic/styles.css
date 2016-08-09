@@ -2,7 +2,7 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 #wrapper{
-
+    height: 100%;
 }
 #data{
     width: 100%;
@@ -12,6 +12,7 @@ div.insider{
     float:left;
     text-align: center;
     width: 50%;
+    height: 100%;
 }
 table{
     margin: auto;
