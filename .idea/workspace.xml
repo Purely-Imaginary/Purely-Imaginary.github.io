@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7da0d979-3764-4b18-8a86-9fc37477d361" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framelogic/index.js" afterPath="$PROJECT_DIR$/Framelogic/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framelogic/index.html" afterPath="$PROJECT_DIR$/Framelogic/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framelogic/subsites/DbIFunc.html" afterPath="$PROJECT_DIR$/Framelogic/subsites/DbIFunc.html" />
     </list>
     <ignored path="Checkers.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Framelogic/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="374">
+              <caret line="25" column="104" selection-start-line="25" selection-start-column="104" selection-end-line="25" selection-end-column="104" />
               <folding />
             </state>
           </provider>
@@ -44,7 +45,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Framelogic/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
@@ -76,8 +77,8 @@
       <file leaf-file-name="DbIFunc.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Framelogic/subsites/DbIFunc.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+            <state relative-caret-position="51">
+              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -140,10 +141,10 @@
         <option value="$PROJECT_DIR$/Framelogic/CompanySearch.js" />
         <option value="$PROJECT_DIR$/Framelogic/DbImprover.js" />
         <option value="$PROJECT_DIR$/Framelogic/LooseQuickstart.js" />
-        <option value="$PROJECT_DIR$/Framelogic/subsites/DbIFunc.html" />
-        <option value="$PROJECT_DIR$/Framelogic/index.html" />
         <option value="$PROJECT_DIR$/Framelogic/styles.css" />
         <option value="$PROJECT_DIR$/Framelogic/index.js" />
+        <option value="$PROJECT_DIR$/Framelogic/subsites/DbIFunc.html" />
+        <option value="$PROJECT_DIR$/Framelogic/index.html" />
       </list>
     </option>
   </component>
@@ -432,7 +433,7 @@
       <workItem from="1470256263982" duration="4185000" />
       <workItem from="1470336931182" duration="7712000" />
       <workItem from="1470557649442" duration="4863000" />
-      <workItem from="1470655305214" duration="32777000" />
+      <workItem from="1470655305214" duration="33051000" />
     </task>
     <task id="LOCAL-00001" summary="PhpStorm">
       <created>1469427727014</created>
@@ -452,7 +453,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102479000" />
+    <option name="totallyTimeSpent" value="102753000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="318" y="314" width="1440" height="701" extended-state="0" />
@@ -787,22 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Framelogic/subsites/DbIFunc.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Framelogic/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Framelogic/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -818,6 +803,22 @@
           <folding>
             <element signature="n#!!doc;n#load_website_into_id#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Framelogic/subsites/DbIFunc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Framelogic/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="25" column="104" selection-start-line="25" selection-start-column="104" selection-end-line="25" selection-end-column="104" />
+          <folding />
         </state>
       </provider>
     </entry>
