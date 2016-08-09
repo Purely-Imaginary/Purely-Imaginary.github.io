@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7da0d979-3764-4b18-8a86-9fc37477d361" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framelogic/styles.css" afterPath="$PROJECT_DIR$/Framelogic/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framelogic/index.js" afterPath="$PROJECT_DIR$/Framelogic/index.js" />
     </list>
     <ignored path="Checkers.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,12 +34,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Framelogic/styles.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
               <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Framelogic/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="4" column="118" selection-start-line="4" selection-start-column="118" selection-end-line="4" selection-end-column="118" />
+              <folding>
+                <element signature="n#!!doc;n#load_website_into_id#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,13 +137,13 @@
         <option value="$PROJECT_DIR$/Pasjans-Pajak/spider.js" />
         <option value="$PROJECT_DIR$/framelogic.js" />
         <option value="$PROJECT_DIR$/Framelogic/subsites/DbImproverFunctions.html" />
-        <option value="$PROJECT_DIR$/Framelogic/index.js" />
         <option value="$PROJECT_DIR$/Framelogic/CompanySearch.js" />
         <option value="$PROJECT_DIR$/Framelogic/DbImprover.js" />
         <option value="$PROJECT_DIR$/Framelogic/LooseQuickstart.js" />
         <option value="$PROJECT_DIR$/Framelogic/subsites/DbIFunc.html" />
         <option value="$PROJECT_DIR$/Framelogic/index.html" />
         <option value="$PROJECT_DIR$/Framelogic/styles.css" />
+        <option value="$PROJECT_DIR$/Framelogic/index.js" />
       </list>
     </option>
   </component>
@@ -146,8 +158,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="613" />
-    <option name="y" value="155" />
+    <option name="x" value="466" />
+    <option name="y" value="438" />
     <option name="width" value="1440" />
     <option name="height" value="701" />
   </component>
@@ -420,7 +432,7 @@
       <workItem from="1470256263982" duration="4185000" />
       <workItem from="1470336931182" duration="7712000" />
       <workItem from="1470557649442" duration="4863000" />
-      <workItem from="1470655305214" duration="32216000" />
+      <workItem from="1470655305214" duration="32452000" />
     </task>
     <task id="LOCAL-00001" summary="PhpStorm">
       <created>1469427727014</created>
@@ -440,10 +452,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101918000" />
+    <option name="totallyTimeSpent" value="102154000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="613" y="155" width="1440" height="701" extended-state="0" />
+    <frame x="466" y="438" width="1440" height="701" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17485955" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -783,16 +795,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Framelogic/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="4" column="84" selection-start-line="4" selection-start-column="84" selection-end-line="4" selection-end-column="84" />
-          <folding>
-            <element signature="n#!!doc;n#load_website_into_id#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Framelogic/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -806,6 +808,16 @@
         <state relative-caret-position="238">
           <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Framelogic/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="4" column="118" selection-start-line="4" selection-start-column="118" selection-end-line="4" selection-end-column="118" />
+          <folding>
+            <element signature="n#!!doc;n#load_website_into_id#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
