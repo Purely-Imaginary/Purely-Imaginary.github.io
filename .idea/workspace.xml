@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7da0d979-3764-4b18-8a86-9fc37477d361" name="Default" comment="" />
+    <list default="true" id="7da0d979-3764-4b18-8a86-9fc37477d361" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Framelogic/subsites/CSCode.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Framelogic/subsites/DbICode.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Framelogic/subsites/LTCode.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framelogic/index.html" afterPath="$PROJECT_DIR$/Framelogic/index.html" />
+    </list>
     <ignored path="Checkers.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -25,8 +30,18 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Framelogic/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+            <state relative-caret-position="187">
+              <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CSChange.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Framelogic/subsites/CSChange.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -430,7 +445,7 @@
       <workItem from="1470256263982" duration="4185000" />
       <workItem from="1470336931182" duration="7712000" />
       <workItem from="1470557649442" duration="4863000" />
-      <workItem from="1470655305214" duration="33309000" />
+      <workItem from="1470655305214" duration="33950000" />
     </task>
     <task id="LOCAL-00001" summary="PhpStorm">
       <created>1469427727014</created>
@@ -450,7 +465,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103011000" />
+    <option name="totallyTimeSpent" value="103652000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="318" y="314" width="1440" height="701" extended-state="0" />
@@ -502,13 +517,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Evolve/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="79" selection-start-line="8" selection-start-column="79" selection-end-line="8" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CardGame/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -811,10 +819,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Framelogic/subsites/CSChange.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Framelogic/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+        <state relative-caret-position="187">
+          <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
           <folding />
         </state>
       </provider>
