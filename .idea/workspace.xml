@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7da0d979-3764-4b18-8a86-9fc37477d361" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Framelogic/subsites/CSCode.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Framelogic/subsites/DbICode.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Framelogic/subsites/LTCode.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framelogic/index.html" afterPath="$PROJECT_DIR$/Framelogic/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framelogic/styles.css" afterPath="$PROJECT_DIR$/Framelogic/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framelogic/subsites/CSChange.html" afterPath="$PROJECT_DIR$/Framelogic/subsites/CSChange.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framelogic/subsites/CSFunc.html" afterPath="$PROJECT_DIR$/Framelogic/subsites/CSFunc.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framelogic/subsites/DbIChange.html" afterPath="$PROJECT_DIR$/Framelogic/subsites/DbIChange.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framelogic/subsites/LTChange.html" afterPath="$PROJECT_DIR$/Framelogic/subsites/LTChange.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Framelogic/subsites/LTFunc.html" afterPath="$PROJECT_DIR$/Framelogic/subsites/LTFunc.html" />
     </list>
     <ignored path="Checkers.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,11 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Framelogic/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+            <state relative-caret-position="238">
+              <caret line="26" column="94" selection-start-line="26" selection-start-column="94" selection-end-line="26" selection-end-column="94" />
               <folding />
             </state>
           </provider>
@@ -40,8 +43,18 @@
       <file leaf-file-name="CSChange.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Framelogic/subsites/CSChange.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="119">
+              <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LTFunc.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Framelogic/subsites/LTFunc.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="93" selection-start-line="11" selection-start-column="93" selection-end-line="11" selection-end-column="93" />
               <folding />
             </state>
           </provider>
@@ -50,8 +63,38 @@
       <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Framelogic/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+            <state relative-caret-position="102">
+              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DbIChange.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Framelogic/subsites/DbIChange.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="7" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LTChange.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Framelogic/subsites/LTChange.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="80" selection-start-line="9" selection-start-column="80" selection-end-line="9" selection-end-column="80" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CSFunc.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Framelogic/subsites/CSFunc.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -66,13 +109,6 @@
                 <element signature="n#!!doc;n#load_website_into_id#0" expanded="false" />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Loose.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Framelogic/Loose.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
@@ -91,26 +127,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
               <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="overrides.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pasjans-Pajak/overrides.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="template.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pasjans-Pajak/template.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="48" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -153,10 +169,15 @@
         <option value="$PROJECT_DIR$/Framelogic/CompanySearch.js" />
         <option value="$PROJECT_DIR$/Framelogic/DbImprover.js" />
         <option value="$PROJECT_DIR$/Framelogic/LooseQuickstart.js" />
-        <option value="$PROJECT_DIR$/Framelogic/styles.css" />
         <option value="$PROJECT_DIR$/Framelogic/index.js" />
         <option value="$PROJECT_DIR$/Framelogic/subsites/DbIFunc.html" />
         <option value="$PROJECT_DIR$/Framelogic/index.html" />
+        <option value="$PROJECT_DIR$/Framelogic/styles.css" />
+        <option value="$PROJECT_DIR$/Framelogic/subsites/DbIChange.html" />
+        <option value="$PROJECT_DIR$/Framelogic/subsites/CSFunc.html" />
+        <option value="$PROJECT_DIR$/Framelogic/subsites/CSChange.html" />
+        <option value="$PROJECT_DIR$/Framelogic/subsites/LTFunc.html" />
+        <option value="$PROJECT_DIR$/Framelogic/subsites/LTChange.html" />
       </list>
     </option>
   </component>
@@ -171,8 +192,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="318" />
-    <option name="y" value="314" />
+    <option name="x" value="218" />
+    <option name="y" value="167" />
     <option name="width" value="1440" />
     <option name="height" value="701" />
   </component>
@@ -215,6 +236,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -324,7 +346,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -445,7 +466,8 @@
       <workItem from="1470256263982" duration="4185000" />
       <workItem from="1470336931182" duration="7712000" />
       <workItem from="1470557649442" duration="4863000" />
-      <workItem from="1470655305214" duration="33950000" />
+      <workItem from="1470655305214" duration="34007000" />
+      <workItem from="1470806893793" duration="774000" />
     </task>
     <task id="LOCAL-00001" summary="PhpStorm">
       <created>1469427727014</created>
@@ -465,31 +487,31 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103652000" />
+    <option name="totallyTimeSpent" value="104483000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="318" y="314" width="1440" height="701" extended-state="0" />
+    <frame x="218" y="167" width="1440" height="701" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17485955" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869565" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -517,40 +539,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CardGame/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="50" selection-start-line="5" selection-start-column="4" selection-end-line="7" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
           <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CardGame/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CardGame/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -558,7 +550,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -648,9 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -658,7 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="4" column="6173" selection-start-line="4" selection-start-column="6173" selection-end-line="4" selection-end-column="6173" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -666,7 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -688,7 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11509">
           <caret line="677" column="287" selection-start-line="677" selection-start-column="286" selection-end-line="677" selection-end-column="287" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -696,9 +681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="102" column="33" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -706,7 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -714,7 +695,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="63" selection-start-line="3" selection-start-column="63" selection-end-line="4" selection-end-column="101" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -722,7 +702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -730,7 +709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -738,7 +716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="38" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -746,9 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
-          <folding>
-            <marker date="1470754437373" expanded="true" signature="1133:1154" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -756,11 +730,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
-          <folding>
-            <marker date="1470771644299" expanded="true" signature="4833:4843" ph="..." />
-            <marker date="1470771644299" expanded="true" signature="4891:4901" ph="..." />
-            <marker date="1470771644299" expanded="true" signature="5242:5253" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -793,14 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Framelogic/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Framelogic/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -819,18 +780,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Framelogic/subsites/CSChange.html">
+    <entry file="file://$PROJECT_DIR$/Framelogic/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="238">
+          <caret line="26" column="94" selection-start-line="26" selection-start-column="94" selection-end-line="26" selection-end-column="94" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Framelogic/index.html">
+    <entry file="file://$PROJECT_DIR$/Framelogic/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Framelogic/subsites/CSFunc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Framelogic/subsites/CSChange.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Framelogic/subsites/LTFunc.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+          <caret line="11" column="93" selection-start-line="11" selection-start-column="93" selection-end-line="11" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Framelogic/subsites/DbIChange.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="7" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Framelogic/subsites/LTChange.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="80" selection-start-line="9" selection-start-column="80" selection-end-line="9" selection-end-column="80" />
           <folding />
         </state>
       </provider>
