@@ -6,6 +6,14 @@
     <link href="styles.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <script src="/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript">
+        window.smartlook||(function(d) {
+            var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+            var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+            c.charset='utf-8';c.src='//rec.getsmartlook.com/recorder.js';h.appendChild(c);
+        })(document);
+        smartlook('init', '0966eb7186d0791d87a69fb62f6a24a8c64c737c');
+    </script>
 </head>
 <body>
 <div id="wrapper">
@@ -14,7 +22,7 @@
         <table>
             <tr class="animate">
                 <td class="title">DbImprover<br>
-                    <small><em>ver.1.4.1</em></small></td>
+                    <small><em>ver.1.4.2</em></small></td>
                 <td class="function clickable" onclick="load_website_into_id('/Framelogic/subsites/DbIFunc.html','data')">Funkcje</td>
                 <td class="changelog clickable" onclick="load_website_into_id('/Framelogic/subsites/DbIChange.html','data')">Changelog</td>
                 <td class="code clickable" onclick="load_website_into_id('/Framelogic/subsites/DbImprover.js','data')">Kod</td>

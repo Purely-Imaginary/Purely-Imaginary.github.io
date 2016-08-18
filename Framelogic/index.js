@@ -9,9 +9,9 @@ function load_website_into_id(website,id){
 
 $(document).ready(function(){
     $("tr.animate").mouseover(function(){
-        $(this).find("td #headie").animate({'background-color':'red'},'fast')
+        $(this).animate({'background-color':'red'},'fast')
     });
     $("tr.animate").mouseout(function(){
-        $(this).find("td #headie").animate({marginLeft:'0px'},0)
+        $(this).animate({marginLeft:'0px'},0)
     });
 });

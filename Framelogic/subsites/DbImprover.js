@@ -76,7 +76,7 @@ javascript:(function () {
         else $(this).css({'color': 'black', 'background-color': 'lightgreen'});
     });
     $("th.signal").html("<a title='Zasięg GPS rejestratora. Jeśli jest więcej niż 16, ramka przybierze zielony kolor\n" +
-        "Jeśli mniej niż 16 - tło stanie się żółte\nJeśli wartość wyniesie 0 lub 99, kolor będzie czerwony." +
+        "Jeśli mniej niż 16 - tło stanie się żółte\nJeśli wartość wyniesie 0, kolor będzie czerwony a dla 99 - niebieski.\n" +
         "(99 oznacza brak możliwości połączenia się z dostawcą usługi)'>GSM</a>");
 
     $("td.frame").each(function () {
@@ -117,5 +117,5 @@ javascript:(function () {
 
     console.log("Chowanie 'Praw.odczyt','Wysokosc','Kierunek'");
 
-    console.log("DbImprover v1.4.1");
+    console.log("DbImprover v1.4.2");
 })();
