@@ -9,14 +9,19 @@
     <script src="evolve.js"></script>
 </head>
 <body>
+<div id="header">
 Paste data:<br>
 <textarea rows="5" cols="80" id="dataInput">
 </textarea><br>
-<button onclick="calculate()">GO</button>
-<input type="checkbox" id="evolvableOnly" value="evolvableOnly">Show only evolvables
-<input type="checkbox" id="transferAfter" value="transferAfter">Transfer after evolve<br>
+<input type="checkbox" id="evolvableOnly" value="evolvableOnly">Show only evolvables<br>
+<input type="checkbox" id="transferAfter" value="transferAfter">Transfer after evolve<br><br>
+    <button onclick="calculate()" id="go">GO</button>
+
+</div>
 <br>
+<div id="leftOne"></div>
 <div id="return"></div>
+<div id="rightOne"></div>
 <br>
 <div id="divsReturn"></div>
 </body>

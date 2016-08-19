@@ -23,6 +23,7 @@ function PokemonWithCount(id,name,candies,candiesToEvolve,count)
 
 
 function calculate() {
+    $("#return").css('display','none');
     var pokeArray = [];
     var pokeEvos = [];
 
@@ -67,25 +68,55 @@ function calculate() {
         }
     }
 
-    /*
+    //$("#return").fadeOut();
     $("#return").html("");
-    $("#return").append("<table id='pokeData'><tr><td></td><td>ID</td><td>Name</td><td>Candies</td><td>Requirement</td><td>Pokemon count</td></tr>")
+    $("#return").append("<table id='pokeData'><tr>" +
+        "<td></td><td>ID</td><td>Name</td><td>Candies</td><td>Requirement</td><td>Pokemon<br>Count</td><td>Evolutions<br>possible</td>" +
+        "</tr>")
     for (var j in pokeEvos) {
+        if (pokeEvos[j].id === "") continue;
         var textId = pokeEvos[j].id;
         if (textId < 100) textId = "0" + textId;
         if (textId < 10) textId = "0" + textId;
 
-        var output = '<tr><td class="image"><img src="http://www.serebii.net/pokemongo/pokemon/' + textId + '.png" border="0" width="80"></td>' +
+        var evolvable = "";
+
+        if (parseInt(pokeEvos[j].candiesToEvolve) < parseInt(pokeEvos[j].candies)+1)
+            evolvable = " evolvable";
+
+        var checkboxForEvolvables = $('#evolvableOnly').prop('checked');
+        if (checkboxForEvolvables & evolvable === "") continue;
+
+        var oddTr = (j%2 === 0);
+
+        var trClass = 'class="';
+        if (oddTr)
+            trClass += "odd";
+        else
+            trClass += "even";
+
+        if (evolvable !== "") trClass += " evolvable";
+
+        var correction = 1;
+        if ($('#transferAfter').prop('checked')) correction++;
+
+        var evolutions =  Math.floor(pokeEvos[j].candies / (parseInt(pokeEvos[j].candiesToEvolve)-correction));
+
+        var output = '<tr ' + trClass + '">' +
+            '<td class="image"><img src="http://www.serebii.net/pokemongo/pokemon/' + textId + '.png" border="0" width="50"></td>' +
             '<td class="id">' + pokeEvos[j].id + "</td>" +
             '<td class="name">' + pokeEvos[j].name + "</td>" +
             '<td class="candies">' + pokeEvos[j].candies + "</td>" +
             '<td class="req">' + pokeEvos[j].candiesToEvolve + "</td>" +
-            '<td class="count">' + pokeEvos[j].count + "</td></tr>";
+            '<td class="count">' + pokeEvos[j].count + "</td>" +
+            '<td class="evos">' + evolutions + '</td>'
+            "</tr>";
         $("#pokeData").append(output);
     }
     $("#return").append("</table>");
-*/
+    $("#return").slideDown(1500);
 
+/*
     $("#divsReturn").html("");
     for (var j in pokeEvos) {
         if (pokeEvos[j].id === "") continue;
@@ -106,15 +137,16 @@ function calculate() {
 
         var evolutions =  Math.floor(pokeEvos[j].candies / (parseInt(pokeEvos[j].candiesToEvolve)-correction));
         var output = '<div class="singlePoke' + evolvable + '">' +
-            '<div class="image"><img src="http://www.serebii.net/pokemongo/pokemon/' + textId + '.png" border="0" width="80"></div>' +
-            '<div class="id">ID:' + pokeEvos[j].id + '</div>' +
+            '<div class="image"><img src="http://www.serebii.net/pokemongo/pokemon/' + textId + '.png" border="0" width="50"></div>' +
+            '<div class="id">' + pokeEvos[j].id + '</div>' +
             '<div class="name">' + pokeEvos[j].name + '</div>' +
-            '<div class="candies">Candies:' + pokeEvos[j].candies + '</div>' +
-            '<div class="req">Cnds req:' + pokeEvos[j].candiesToEvolve + '</div>' +
-            '<div class="count">Amount:' + pokeEvos[j].count + '</div>' +
-            '<div class="evolutions">Evolutions:' + evolutions + '</div>' +
+            '<div class="candies">' + pokeEvos[j].candies + '</div>' +
+            '<div class="req">' + pokeEvos[j].candiesToEvolve + '</div>' +
+            '<div class="count">' + pokeEvos[j].count + '</div>' +
+            '<div class="evolutions">' + evolutions + '</div>' +
             '</div>';
 
         $("#divsReturn").append(output);
     }
+    */
 }
