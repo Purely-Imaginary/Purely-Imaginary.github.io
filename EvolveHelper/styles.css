@@ -39,7 +39,9 @@ td{
     text-align: center;
     width: 100%;
 }
-
+#rightOne{
+    text-align: right;
+}
 #divsReturn{
     width: 100%;
     display: flex;

@@ -25,6 +25,7 @@ function PokemonWithCount(id,name,candies,candiesToEvolve,count)
 function calculate() {
     $("#return").css('display','none');
     $("#leftOne").css('opacity',0);
+    $("#rightOne").css('opacity',0);
     var pokeArray = [];
     var pokeEvos = [];
 
@@ -132,10 +133,14 @@ function calculate() {
         $("#pokeData").append(output);
     }
     $("#return").append("</table>");
-    $("#return").slideDown(1500, function(){
-
+    $("#return").slideDown(1500, function()
+    {
         $("#leftOne").html(generateStatistics(totalEvos));
-        $("#leftOne").fadeTo(800,1);
+        $("#leftOne").fadeTo(800,1,function()
+        {
+            $("#rightOne").html(generateFunFacts(pokeEvos));
+            $("#rightOne").fadeTo(800,1);
+        });
     });
 
 /*
@@ -205,13 +210,13 @@ function generateStatistics(totalEvolutions)
 {
     var result = "You have " +
         wrapSpan(totalEvolutions,"totalEvos bold",0) +
-        " possible evolutions which takes " +
+        " possible evolutions.<br>They will take about " +
         wrapSpan(totalEvolutions/2,"evosTime bold",0) +
-        "m and yield " +
+        " minutes<br>and yield " +
         wrapSpan(totalEvolutions*500,"evoXP bold",0) +
-        " XP (" +
+        " XP<br>or " +
         wrapSpan(totalEvolutions*1000,"evoXP bold",0) +
-        " XP with Lucky Egg)";
+        " XP with Lucky Egg.";
     return result;
 
 }
@@ -240,6 +245,21 @@ function evolveSim(actualCandies,candiesReq,transferAfterEvolve,pokeQuantity)
         evolutions++;
         actual = 0;
     }
-
+    actual = quant;
     return [evolutions,actual,transferred];
+}
+
+function generateFunFacts(pokeList){
+    //TODO BEST CP, BEST IV, MOST POKE, NUMBER OF DIFFERENT ONES,
+    var bestCP = pokeList[0];
+    var bestIV = pokeList[0];
+
+    var IDs = [];
+    for(var i=0;i<pokeList.length;i++)
+    {
+
+    }
+
+
+    return "FUN FACTS:<br>Best CP:<br>Best IV:<br>Kinds of evolvable pokemons:" + pokeList.length;
 }
