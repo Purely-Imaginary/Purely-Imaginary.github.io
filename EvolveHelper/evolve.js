@@ -24,6 +24,7 @@ function PokemonWithCount(id,name,candies,candiesToEvolve,count)
 
 function calculate() {
     $("#return").css('display','none');
+    $("#leftOne").css('opacity',0);
     var pokeArray = [];
     var pokeEvos = [];
 
@@ -71,8 +72,19 @@ function calculate() {
     //$("#return").fadeOut();
     $("#return").html("");
     $("#return").append("<table id='pokeData'><tr>" +
-        "<td></td><td>ID</td><td>Name</td><td>Candies</td><td>Requirement</td><td>Pokemon<br>Count</td><td>Evolutions<br>possible</td>" +
+        "<td></td>" +
+        "<td>ID</td>" +
+        "<td>Name</td>" +
+        "<td>Candies</td>" +
+        "<td>Requirement</td>" +
+        "<td>Pokemon<br>Count</td>" +
+        "<td>Transfers<br>needed</td>" +
+        "<td>Evolutions<br>possible</td>" +
+        "<td>Candies to<br>next evo</td>" +
         "</tr>")
+
+    var totalEvos = 0;
+    pokeEvos.sort()
     for (var j in pokeEvos) {
         if (pokeEvos[j].id === "") continue;
         var textId = pokeEvos[j].id;
@@ -97,10 +109,14 @@ function calculate() {
 
         if (evolvable !== "") trClass += " evolvable";
 
-        var correction = 1;
-        if ($('#transferAfter').prop('checked')) correction++;
 
-        var evolutions =  Math.floor(pokeEvos[j].candies / (parseInt(pokeEvos[j].candiesToEvolve)-correction));
+        var evolutions = evolveSim(pokeEvos[j].candies,pokeEvos[j].candiesToEvolve,$('#transferAfter').prop('checked'),pokeEvos[j].count);
+        totalEvos += evolutions[0];
+
+        var candiesToNext = pokeEvos[j].candiesToEvolve - evolutions[1];
+
+        var flashyClass = "";
+        if (candiesToNext < 5 && evolutions[0]<pokeEvos[j].count) flashyClass += " flashy";
 
         var output = '<tr ' + trClass + '">' +
             '<td class="image"><img src="http://www.serebii.net/pokemongo/pokemon/' + textId + '.png" border="0" width="50"></td>' +
@@ -109,12 +125,18 @@ function calculate() {
             '<td class="candies">' + pokeEvos[j].candies + "</td>" +
             '<td class="req">' + pokeEvos[j].candiesToEvolve + "</td>" +
             '<td class="count">' + pokeEvos[j].count + "</td>" +
-            '<td class="evos">' + evolutions + '</td>'
+            '<td class="transfers">' + evolutions[2] + "</td>" +
+            '<td class="evos">' + evolutions[0] + '</td>' +
+            '<td class="candiesToNext' + flashyClass + '">' + candiesToNext + '</td>' +
             "</tr>";
         $("#pokeData").append(output);
     }
     $("#return").append("</table>");
-    $("#return").slideDown(1500);
+    $("#return").slideDown(1500, function(){
+
+        $("#leftOne").html(generateStatistics(totalEvos));
+        $("#leftOne").fadeTo(800,1);
+    });
 
 /*
     $("#divsReturn").html("");
@@ -168,4 +190,54 @@ function insertSample(){
     }
     rawFile.send(null);
 
+}
+
+function wrapSpan(string,spanClass,em)
+{
+    var result = "";
+    if (em) result += "<em>";
+    result += "<span class='" + spanClass + "'>" + string + "</span>";
+    if (em) result += "</em>";
+    return result;
+}
+
+function generateStatistics(totalEvolutions)
+{
+    var result = "You have " +
+        wrapSpan(totalEvolutions,"totalEvos bold",0) +
+        " possible evolutions which takes " +
+        wrapSpan(totalEvolutions/2,"evosTime bold",0) +
+        "m and yield " +
+        wrapSpan(totalEvolutions*500,"evoXP bold",0) +
+        " XP (" +
+        wrapSpan(totalEvolutions*1000,"evoXP bold",0) +
+        " XP with Lucky Egg)";
+    return result;
+
+}
+
+function evolveSim(actualCandies,candiesReq,transferAfterEvolve,pokeQuantity)
+{
+    var actual = parseInt(actualCandies);
+    var req = parseInt(candiesReq);
+    var transfer = transferAfterEvolve;
+    var quant = pokeQuantity;
+    var evolutions = 0;
+    while (actual>=req)
+    {
+        evolutions++;
+        actual -= req;
+        actual++;
+        if (transfer) actual++;
+        quant--;
+    }
+    var transferred = 0;
+    while (quant+actual>req)
+    {
+        transferred += req-actual;
+        quant -= req-actual;
+        evolutions++;
+    }
+
+    return [evolutions,actual,transferred];
 }

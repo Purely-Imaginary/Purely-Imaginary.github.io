@@ -6,7 +6,15 @@
 body {
     font-family: 'Graviola', sans-serif;
 }
+div{
+    //border: solid black 1px;
+    width: 100%;
+}
 
+#data{
+    display:flex;
+    justify-content: space-between;
+}
 #pokeData{
     border: solid black 1px;
 }
@@ -27,9 +35,9 @@ table{
 td{
 
 }
-
 #header{
     text-align: center;
+    width: 100%;
 }
 
 #divsReturn{
@@ -37,6 +45,7 @@ td{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin: auto;
 }
 
 div.singlePoke{
@@ -46,5 +55,30 @@ div.singlePoke{
 
 .evolvable
 {
-    background-color: #cdff9e;
+    background-color: LightGreen;
+}
+
+span.bold{
+    font-size: x-large;
+    font-weight: 900;
+}
+
+
+@-webkit-keyframes flashy {
+    0% {
+        background-color: LightGreen;
+    }
+    50% {
+        background-color: #00ff00;
+    }
+    100% {
+        background-color: LightGreen;
+    }
+}
+
+.flashy {
+    -webkit-animation-name: flashy;
+    -webkit-animation-duration: 900ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
 }

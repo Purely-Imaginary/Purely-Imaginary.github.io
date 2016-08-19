@@ -4,6 +4,8 @@
     <list default="true" id="7da0d979-3764-4b18-8a86-9fc37477d361" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EvolveHelper/evolve.js" afterPath="$PROJECT_DIR$/EvolveHelper/evolve.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EvolveHelper/index.html" afterPath="$PROJECT_DIR$/EvolveHelper/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EvolveHelper/sampleData.txt" afterPath="$PROJECT_DIR$/EvolveHelper/sampleData.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EvolveHelper/styles.css" afterPath="$PROJECT_DIR$/EvolveHelper/styles.css" />
     </list>
     <ignored path="Checkers.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,8 +30,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EvolveHelper/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="80" selection-start-line="17" selection-start-column="80" selection-end-line="17" selection-end-column="80" />
+            <state relative-caret-position="272">
+              <caret line="16" column="63" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -38,8 +40,8 @@
       <file leaf-file-name="evolve.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EvolveHelper/evolve.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="163" column="57" selection-start-line="163" selection-start-column="57" selection-end-line="163" selection-end-column="57" />
+            <state relative-caret-position="527">
+              <caret line="213" column="30" selection-start-line="213" selection-start-column="30" selection-end-line="213" selection-end-column="30" />
               <folding>
                 <element signature="n#!!doc;n#Pokemon#0" expanded="false" />
               </folding>
@@ -50,8 +52,8 @@
       <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EvolveHelper/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+            <state relative-caret-position="563">
+              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -104,8 +106,8 @@
         <option value="$PROJECT_DIR$/Framelogic/subsites/DbIChange.html" />
         <option value="$PROJECT_DIR$/Framelogic/index.html" />
         <option value="$PROJECT_DIR$/Framelogic/styles.css" />
-        <option value="$PROJECT_DIR$/EvolveHelper/styles.css" />
         <option value="$PROJECT_DIR$/EvolveHelper/index.html" />
+        <option value="$PROJECT_DIR$/EvolveHelper/styles.css" />
         <option value="$PROJECT_DIR$/EvolveHelper/evolve.js" />
       </list>
     </option>
@@ -121,10 +123,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="318" />
-    <option name="y" value="255" />
-    <option name="width" value="1378" />
-    <option name="height" value="669" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -358,7 +360,7 @@
       <workItem from="1470806893793" duration="6278000" />
       <workItem from="1471503037741" duration="646000" />
       <workItem from="1471545270051" duration="9259000" />
-      <workItem from="1471591697855" duration="3148000" />
+      <workItem from="1471591697855" duration="13302000" />
     </task>
     <task id="LOCAL-00001" summary="PhpStorm">
       <created>1469427727014</created>
@@ -379,7 +381,7 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="123040000" />
+    <option name="totallyTimeSpent" value="133194000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -391,10 +393,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="318" y="255" width="1378" height="669" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19195752" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13486141" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869565" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -713,26 +715,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EvolveHelper/styles.css">
+    <entry file="file://$PROJECT_DIR$/EvolveHelper/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+        <state relative-caret-position="272">
+          <caret line="16" column="63" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EvolveHelper/index.html">
+    <entry file="file://$PROJECT_DIR$/EvolveHelper/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="80" selection-start-line="17" selection-start-column="80" selection-end-line="17" selection-end-column="80" />
+        <state relative-caret-position="563">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EvolveHelper/evolve.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="163" column="57" selection-start-line="163" selection-start-column="57" selection-end-line="163" selection-end-column="57" />
+        <state relative-caret-position="527">
+          <caret line="213" column="30" selection-start-line="213" selection-start-column="30" selection-end-line="213" selection-end-column="30" />
           <folding>
             <element signature="n#!!doc;n#Pokemon#0" expanded="false" />
           </folding>
