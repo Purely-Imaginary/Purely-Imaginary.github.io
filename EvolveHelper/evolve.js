@@ -231,12 +231,14 @@ function evolveSim(actualCandies,candiesReq,transferAfterEvolve,pokeQuantity)
         if (transfer) actual++;
         quant--;
     }
+
     var transferred = 0;
     while (quant+actual>req)
     {
         transferred += req-actual;
         quant -= req-actual;
         evolutions++;
+        actual = 0;
     }
 
     return [evolutions,actual,transferred];
