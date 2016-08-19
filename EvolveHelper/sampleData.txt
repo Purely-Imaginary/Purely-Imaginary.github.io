@@ -1,0 +1,89 @@
+4		Charmander	66.67	1.0	10	10	10	Fire		Scratch (12,00dps)	Flamethrower (20,22dps)	12	10	439	884	1237	2493	3	25	200	Unknown	2016-07-08T14:04:14.770	True
+7		Squirtle	15.56	9.0	0	5	2	Water		Bubble (13,59dps)	Water Pulse (11,51dps)	205	35	402	810	1106	2229	13	25	1000	Poke Ball	2016-07-18T20:40:09.634	
+10		Caterpie	84.44	15.0	14	13	11	Bug		Bug Bite (13,89dps)	Struggle (6,83dps)	181	52	212	427	707	1425	21	12	1600	Poke Ball	2016-08-11T21:47:36.283	
+11		Metapod	24.44	9.0	0	9	2	Bug		Tackle (10,91dps)	Struggle (6,83dps)	88	40	172	346	614	1237	21	50	1000	Poke Ball	2016-07-16T13:14:43.712	
+13		Weedle	53.33	13.0	2	8	14	Bug	Poison	Poison Sting (13,04dps)	Struggle (6,83dps)	133	45	179	362	642	1294	22	12	1300	Poke Ball	2016-08-03T19:56:11.362	
+13		Weedle	44.44	15.0	3	3	14	Bug	Poison	Bug Bite (13,89dps)	Struggle (6,83dps)	150	48	175	354	635	1279	22	12	1600	Poke Ball	2016-08-03T20:27:56.699	
+16		Pidgey	26.67	13.0	4	0	8	Normal	Flying	Tackle (13,64dps)	Twister (7,81dps)	202	42	272	548	923	1860	65	12	1300	Poke Ball	2016-08-11T20:27:09.289	
+16		Pidgey	55.56	16.0	9	14	2	Normal	Flying	Tackle (13,64dps)	Twister (7,81dps)	271	43	297	598	972	1958	65	12	1900	Great Ball	2016-08-18T12:20:11.868	
+16		Pidgey	68.89	7.0	1	15	15	Normal	Flying	Quick Attack (9,40dps)	Twister (7,81dps)	115	33	296	596	966	1946	65	12	600	Poke Ball	2016-08-18T21:09:40.284	
+16		Pidgey	31.11	13.0	4	8	2	Normal	Flying	Tackle (13,64dps)	Air Cutter (9,87dps)	203	39	274	552	929	1871	65	12	1300	Poke Ball	2016-07-20T11:16:50.075	
+16		Pidgey	51.11	1.0	1	9	13	Normal	Flying	Tackle (13,64dps)	Aerial Ace (11,03dps)	10	10	284	573	945	1903	65	12	200	Poke Ball	2016-08-18T21:13:24.899	
+16		Pidgey	40.0	4.0	8	7	3	Normal	Flying	Tackle (13,64dps)	Air Cutter (9,87dps)	59	21	285	575	950	1914	65	12	400	Poke Ball	2016-08-18T22:48:02.536	
+16		Pidgey	13.33	13.0	4	2	0	Normal	Flying	Quick Attack (9,40dps)	Air Cutter (9,87dps)	195	38	262	528	907	1827	65	12	1300	Poke Ball	2016-08-04T06:45:05.691	
+16		Pidgey	40.0	8.0	4	13	1	Normal	Flying	Tackle (13,64dps)	Air Cutter (9,87dps)	126	30	279	563	939	1892	65	12	800	Poke Ball	2016-08-18T21:16:39.546	
+16		Pidgey	33.33	13.0	13	2	0	Normal	Flying	Tackle (13,64dps)	Twister (7,81dps)	212	38	286	577	954	1922	65	12	1300	Poke Ball	2016-07-20T13:21:21.286	
+16		Pidgey	31.11	11.0	5	8	1	Normal	Flying	Quick Attack (9,40dps)	Air Cutter (9,87dps)	173	35	275	554	931	1876	65	12	1000	Great Ball	2016-08-18T12:21:00.534	
+16		Pidgey	82.22	13.0	10	14	13	Normal	Flying	Tackle (13,64dps)	Air Cutter (9,87dps)	237	44	319	643	1009	2032	65	12	1300	Poke Ball	2016-07-19T18:49:04.217	
+18		Pidgeot	15.56	14.0	0	1	6	Normal	Flying	Wing Attack (15,00dps)	Air Cutter (9,87dps)	719	85	899	1812	899	1812	65	-	1600	Great Ball	2016-08-16T21:31:02.559	
+18		Pidgeot	35.56	11.0	4	7	5	Normal	Flying	Wing Attack (15,00dps)	Aerial Ace (11,03dps)	587	75	934	1882	934	1882	65	-	1000	Poke Ball	2016-07-14T13:50:24.859	
+19		Rattata	66.67	13.0	9	13	8	Normal		Tackle (13,64dps)	Dig (11,11dps)	192	32	258	521	671	1352	97	25	1300	Poke Ball	2016-08-11T19:57:32.773	
+19		Rattata	33.33	3.0	6	6	3	Normal		Quick Attack (9,40dps)	Hyper Fang (16,83dps)	34	13	232	469	630	1269	97	25	200	Poke Ball	2016-08-18T21:13:56.760	
+19		Rattata	60.0	14.0	11	6	10	Normal		Quick Attack (9,40dps)	Body Slam (24,27dps)	206	34	258	519	670	1351	97	25	1600	Poke Ball	2016-08-03T20:15:23.090	
+19		Rattata	42.22	12.0	6	3	10	Normal		Tackle (13,64dps)	Hyper Fang (16,83dps)	165	32	241	486	643	1295	97	25	1300	Poke Ball	2016-08-11T21:00:06.434	
+19		Rattata	80.0	14.0	15	11	10	Normal		Tackle (13,64dps)	Body Slam (24,27dps)	220	34	275	554	698	1407	97	25	1600	Poke Ball	2016-08-17T22:14:08.524	
+19		Rattata	64.44	14.0	9	8	12	Normal		Tackle (13,64dps)	Hyper Fang (16,83dps)	207	35	259	522	672	1353	97	25	1600	Poke Ball	2016-08-11T19:58:32.076	
+20		Raticate	53.33	14.0	4	11	9	Normal		Quick Attack (9,40dps)	Hyper Beam (27,27dps)	518	59	648	1306	648	1306	97	-	1600	Poke Ball	2016-07-20T12:40:51.450	
+21		Spearow	42.22	5.0	7	0	12	Normal	Flying	Quick Attack (9,40dps)	Drill Peck (15,63dps)	77	26	288	580	786	1585	89	50	600	Great Ball	2016-08-17T22:16:55.989	
+21		Spearow	80.0	14.0	13	14	9	Normal	Flying	Peck (10,87dps)	Drill Peck (15,63dps)	260	44	324	654	842	1697	89	50	1600	Poke Ball	2016-08-12T13:15:21.131	
+21		Spearow	57.78	14.0	9	5	12	Normal	Flying	Peck (10,87dps)	Drill Peck (15,63dps)	242	45	302	610	809	1630	89	50	1600	Poke Ball	2016-07-21T12:17:23.693	
+22		Fearow	68.89	8.0	12	6	13	Normal	Flying	Peck (10,87dps)	Twister (7,81dps)	373	53	828	1669	828	1669	89	-	800	Great Ball	2016-07-21T12:16:21.527	
+22		Fearow	64.44	9.0	8	9	12	Normal	Flying	Steel Wing (11,28dps)	Twister (7,81dps)	416	56	815	1642	815	1642	89	-	1000	Poke Ball	2016-07-18T10:18:44.571	
+25	Pika Pika ❤	Pikachu	86.67	05.maj	12	15	12	Electric		Thunder Shock (10,42dps)	Discharge (14,58dps)	127	25	426	859	988	1991	13	50	600	Poke Ball	2016-07-18T22:11:00.011	True
+27		Sandshrew	95.56	7.0	15	15	13	Ground		Scratch (12,00dps)	Dig (13,89dps)	154	39	395	797	899	1812	27	50	600	Poke Ball	2016-07-21T18:05:07.074	
+29		Nidoran♀	82.22	15.0	10	15	12	Poison		Poison Sting (13,04dps)	Sludge Bomb (22,18dps)	354	63	413	833	1201	2421	44	25	1600	Poke Ball	2016-08-16T22:16:50.124	
+30		Nidorina	82.22	5.0	12	10	15	Poison		Bite (12,00dps)	Sludge Bomb (22,18dps)	182	44	676	1362	1208	2434	44	100	600	Poke Ball	2016-07-13T22:12:08.339	
+33		Nidorino	68.89	10.0	11	7	13	Poison		Poison Sting (13,04dps)	Dig (11,11dps)	368	57	645	1299	1181	2380	11	100	1000	Poke Ball	2016-07-20T21:56:36.554	
+39		Jigglypuff	77.78	14.0	9	12	14	Normal	Fairy	Pound (16,20dps)	Play Rough (20,22dps)	339	121	424	854	1038	2091	15	50	1600	Great Ball	2016-08-15T21:31:16.507	
+41		Zubat	55.56	14.0	2	10	13	Poison	Flying	Quick Attack (7,52dps)	Sludge Bomb (22,18dps)	216	46	271	545	873	1758	36	50	1600	Great Ball	2016-08-16T22:06:56.004	
+41		Zubat	42.22	12.0	2	14	3	Poison	Flying	Bite (12,00dps)	Air Cutter (9,87dps)	179	38	261	525	855	1723	36	50	1300	Poke Ball	2016-08-16T22:10:26.251	
+42		Golbat	46.67	9.0	2	13	6	Poison	Flying	Bite (12,00dps)	Ominous Wind (8,33dps)	440	62	861	1735	861	1735	36	-	1000	Poke Ball	2016-07-19T16:49:11.359	
+43		Oddish	77.78	15.0	10	15	10	Grass	Poison	Razor Leaf (12,93dps)	Sludge Bomb (22,18dps)	464	51	541	1090	1199	2415	14	25	1600	Poke Ball	2016-08-18T21:48:13.185	
+46		Paras	82.22	14.0	11	14	12	Bug	Grass	Scratch (12,00dps)	X Scissor (16,83dps)	348	40	435	876	841	1695	31	50	1600	Poke Ball	2016-08-11T20:15:20.952	
+48		Venonat	55.56	9.0	12	11	2	Bug	Poison	Bug Bite (13,89dps)	Psybeam (8,14dps)	240	48	470	946	879	1771	15	50	1000	Poke Ball	2016-08-03T20:04:16.447	
+50		Diglett	82.22	8.0	14	12	11	Ground		Scratch (12,00dps)	Rock Tomb (6,41dps)	94	11	209	422	561	1130	13	50	800	Poke Ball	2016-07-19T18:45:01.388	
+52		Meowth	17.78	4.0	1	5	2	Normal		Scratch (15,00dps)	Dark Pulse (11,25dps)	61	20	295	595	692	1394	3	50	400	Poke Ball	2016-07-15T14:11:26.678	
+54		Psyduck	82.22	14.0	12	14	11	Water		Water Gun (15,00dps)	Aqua Tail (19,74dps)	425	55	531	1071	1159	2335	32	50	1600	Poke Ball	2016-08-13T16:26:01.754	
+55		Golduck	33.33	1.0	2	9	4	Water		Water Gun (15,00dps)	Hydro Pump (26,16dps)	30	15	1066	2147	1066	2147	32	-	200	Great Ball	2016-08-11T20:34:59.740	
+60		Poliwag	77.78	14.0	13	10	12	Water		Bubble (13,59dps)	Bubble Beam (11,03dps)	301	45	376	758	1216	2449	36	25	1600	Poke Ball	2016-08-11T20:15:20.952	
+69		Bellsprout	31.11	11.0	4	6	4	Grass	Poison	Acid (11,90dps)	Power Whip (26,52dps)	297	46	472	952	1136	2288	11	25	1000	Poke Ball	2016-07-21T20:24:41.310	
+72		Tentacool	84.44	08.maj	13	11	14	Water	Poison	Bubble (13,59dps)	Wrap (3,33dps)	210	36	436	879	1084	2184	16	50	1000	Poke Ball	2016-07-18T11:11:43.393	
+74		Geodude	15.56	15.0	4	0	3	Rock	Ground	Tackle (10,91dps)	Rock Slide (13,51dps)	291	42	339	684	1009	2034	14	25	1600	Poke Ball	2016-08-12T18:39:45.963	
+74		Geodude	62.22	3.0	4	12	12	Rock	Ground	Rock Throw (11,03dps)	Rock Tomb (8,01dps)	55	19	375	756	1068	2151	14	25	200	Poke Ball	2016-07-15T13:14:34.311	
+79		Slowpoke	40.0	15.0	3	11	4	Water	Psychic	Water Gun (15,00dps)	Psyshock (15,63dps)	451	95	526	1060	1175	2368	76	50	1600	Great Ball	2016-08-17T10:03:06.313	
+79		Slowpoke	62.22	14.0	0	14	14	Water	Psychic	Water Gun (15,00dps)	Psychic (20,83dps)	426	96	532	1073	1194	2406	76	50	1600	Poke Ball	2016-08-18T21:48:25.025	
+79		Slowpoke	cze.67	6.0	0	2	1	Water	Psychic	Water Gun (15,00dps)	Water Pulse (11,51dps)	161	58	489	985	1123	2262	76	50	600	Poke Ball	2016-08-18T22:49:00.977	
+79		Slowpoke	cze.67	13.0	1	1	1	Water	Psychic	Confusion (12,42dps)	Psyshock (15,63dps)	365	87	491	989	1126	2268	76	50	1300	Great Ball	2016-08-18T12:19:22.191	
+79		Slowpoke	40.0	15.0	3	12	3	Water	Psychic	Water Gun (15,00dps)	Psyshock (15,63dps)	451	94	527	1062	1175	2368	76	50	1600	Great Ball	2016-08-12T10:08:58.169	
+79		Slowpoke	48.89	15.0	0	11	11	Water	Psychic	Water Gun (15,00dps)	Water Pulse (11,51dps)	447	98	522	1051	1177	2372	76	50	1600	Great Ball	2016-08-11T19:50:43.696	
+79		Slowpoke	46.67	8.0	1	11	9	Water	Psychic	Confusion (12,42dps)	Psyshock (15,63dps)	236	70	524	1055	1178	2373	76	50	800	Poke Ball	2016-08-18T21:37:12.775	
+79		Slowpoke	64.44	14.0	1	14	14	Water	Psychic	Water Gun (15,00dps)	Psychic (20,83dps)	430	96	537	1082	1201	2420	76	50	1600	Great Ball	2016-08-12T08:56:42.149	
+81		Magnemite	33.33	15.0	8	3	4	Electric	Steel	Spark (12,50dps)	Discharge (14,58dps)	317	27	370	746	835	1683	15	50	1600	Great Ball	2016-08-16T21:47:59.841	
+86		Seel	28.89	9.0	3	3	7	Water		Ice Shard (10,71dps)	Icy Wind (5,81dps)	237	54	464	935	948	1909	7	50	1000	Poke Ball	2016-07-27T09:18:58.236	
+87		Dewgong	33.33	13.maj	3	8	4	Water	Ice	Ice Shard (13,39dps)	Icy Wind (7,27dps)	734	90	952	1918	952	1918	7	-	1600	Poke Ball	2016-07-19T09:50:59.692	
+87		Dewgong	37.78	11.0	3	9	5	Water	Ice	Frost Breath (13,89dps)	Aqua Jet (10,96dps)	602	81	957	1928	957	1928	7	-	1000	Poke Ball	2016-07-19T14:09:48.312	
+90		Shellder	46.67	14.0	4	13	4	Water		Tackle (10,91dps)	Water Pulse (11,51dps)	277	31	346	697	920	1854	27	50	1600	Poke Ball	2016-07-27T09:04:21.946	
+92		Gastly	44.44	16.0	5	2	13	Ghost	Poison	Sucker Punch (10,00dps)	Sludge Bomb (22,18dps)	315	39	344	694	946	1905	33	25	1900	Great Ball	2016-08-16T22:03:28.996	
+92		Gastly	64.44	14.0	5	12	12	Ghost	Poison	Lick (12,50dps)	Sludge Bomb (22,18dps)	289	35	362	729	971	1957	33	25	1600	Poke Ball	2016-08-18T21:12:52.909	
+93		Haunter	57.78	1.0	6	11	9	Ghost	Poison	Lick (12,50dps)	Shadow Ball (15,71dps)	17	10	628	1265	962	1938	33	100	200	Great Ball	2016-08-18T13:38:51.375	
+96		Drowzee	48.89	8.0	7	13	2	Psychic		Confusion (12,42dps)	Psybeam (10,17dps)	213	45	473	953	1000	2015	100	50	800	Poke Ball	2016-08-18T21:07:57.195	
+96		Drowzee	66.67	12.0	10	13	7	Psychic		Pound (12,96dps)	Psyshock (15,63dps)	340	58	496	999	1033	2080	100	50	1300	Poke Ball	2016-07-19T17:19:01.567	
+96		Drowzee	66.67	15.0	12	4	14	Psychic		Confusion (12,42dps)	Psyshock (15,63dps)	431	69	503	1013	1042	2099	100	50	1600	Poke Ball	2016-08-11T22:15:04.451	
+96		Drowzee	60.0	1.0	12	7	8	Psychic		Confusion (12,42dps)	Psybeam (10,17dps)	14	12	496	1000	1032	2080	100	50	200	Poke Ball	2016-08-17T20:29:12.691	
+97		Hypno	35.56	16.0	11	5	0	Psychic		Confusion (12,42dps)	Psyshock (15,63dps)	913	90	998	2011	998	2011	100	-	1900	Poke Ball	2016-07-19T12:50:53.809	
+98		Krabby	84.44	13.0	13	15	10	Water		Mud Shot (10,91dps)	Water Pulse (11,51dps)	279	33	376	759	883	1780	63	50	1300	Poke Ball	2016-07-27T09:16:26.769	
+98		Krabby	55.56	3.0	8	2	15	Water		Bubble (13,59dps)	Vice Grip (5,77dps)	52	16	354	714	846	1705	63	50	200	Great Ball	2016-08-17T22:16:11.990	
+98		Krabby	64.44	12.0	13	11	5	Water		Mud Shot (10,91dps)	Water Pulse (11,51dps)	245	30	357	719	855	1723	63	50	1300	Poke Ball	2016-08-18T21:22:28.342	
+100		Voltorb	62.22	1.0	15	4	9	Electric		Spark (12,50dps)	Signal Beam (9,72dps)	11	10	389	785	780	1572	3	50	200	Poke Ball	2016-07-27T08:39:25.794	
+102		Exeggcute	95.56	14.0	15	13	15	Grass	Psychic	Confusion (12,42dps)	Psychic (20,83dps)	436	67	546	1100	1469	2959	37	50	1600	Poke Ball	2016-08-03T20:50:35.682	
+109		Koffing	68.89	1.0	14	4	13	Poison		Tackle (10,91dps)	Sludge (10,08dps)	15	10	545	1099	1082	2180	3	50	200	Poke Ball	2016-07-20T11:11:28.549	
+116		Horsea	68.89	5.0	15	11	5	Water		Bubble (13,59dps)	Flash Cannon (13,64dps)	98	18	363	732	811	1634	15	50	600	Poke Ball	2016-07-19T10:12:47.748	
+118		Goldeen	51.11	14.0	6	13	4	Water		Peck (8,70dps)	Aqua Tail (19,74dps)	337	46	421	848	936	1885	19	50	1600	Poke Ball	2016-08-11T20:35:33.037	
+120		Staryu	57.78	14.0	8	6	12	Water		Water Gun (15,00dps)	Bubble Beam (11,03dps)	338	35	423	852	1019	2054	37	50	1600	Poke Ball	2016-08-18T21:21:03.532	
+120		Staryu	55.56	7.0	2	9	14	Water		Water Gun (15,00dps)	Swift (7,14dps)	162	25	415	836	1004	2023	37	50	600	Poke Ball	2016-07-14T16:29:39.435	
+120		Staryu	64.44	16.0	9	6	14	Water		Quick Attack (7,52dps)	Swift (7,14dps)	395	39	432	870	1032	2079	37	50	1900	Great Ball	2016-08-18T21:27:19.263	
+124		Jynx	71.11	13.0	15	14	3	Ice	Psychic	Frost Breath (13,89dps)	Draining Kiss (7,58dps)	608	64	819	1650	819	1650	11	-	1300	Great Ball	2016-07-27T09:00:00.915	
+129		Magikarp	66.67	15.0	11	15	4	Water		Splash (10,16dps)	Struggle (6,83dps)	93	22	109	220	1282	2583	54	400	1600	Poke Ball	2016-08-16T21:54:26.359	
+129		Magikarp	91.11	7.0	15	13	13	Water		Splash (10,16dps)	Struggle (6,83dps)	49	18	127	257	1331	2682	54	400	600	Poke Ball	2016-07-19T13:14:15.034	
+133		Eevee	82.22	7.0	15	10	12	Normal		Quick Attack (9,40dps)	Swift (8,93dps)	204	42	522	1052	1381	2782	15	25	600	Poke Ball	2016-08-03T19:50:17.757	
+137		Porygon	73.33	3.0	10	10	13	Normal		Tackle (13,64dps)	Discharge (11,67dps)	119	30	803	1618	803	1618	21	-	200	Poke Ball	2016-07-19T16:43:44.367	

@@ -150,3 +150,22 @@ function calculate() {
     }
     */
 }
+
+function insertSample(){
+
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", 'sampleData.txt', false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                $("#dataInput").val(rawFile.responseText);
+
+            }
+        }
+    }
+    rawFile.send(null);
+
+}
