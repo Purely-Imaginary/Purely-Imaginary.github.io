@@ -61,8 +61,8 @@ javascript:(function () {
         else $(this).css({'color': 'black', 'background-color': 'red', 'font-weight': 'bold'});
     });
     $("th.antenna").html("<a title='Status anten. Oznaczenia\n1 - Prawidłowy status\n" +
-        "2 - Zwarcie na co najmniej jednej z anten (zwróć uwagę która nie działa)\n" +
-        "3 - Zamienione anteny GPS i GSM'>Antena</a>");
+        "2 - Zwarcie\n" +
+        "3 - Zamieniona lub odpięta antena GPS'>Antena</a>");
 
 
     $("td.signal").each(function () {
@@ -117,5 +117,5 @@ javascript:(function () {
 
     console.log("Chowanie 'Praw.odczyt','Wysokosc','Kierunek'");
 
-    console.log("DbImprover v1.4.2");
+    console.log("DbImprover v1.4.3");
 })();
