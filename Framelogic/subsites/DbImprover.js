@@ -118,5 +118,5 @@ javascript:(function () {
 
     console.log("Chowanie 'Praw.odczyt','Wysokosc','Kierunek'");
 
-    console.log("DbImprover v1.4.3");
+    console.log("DbImprover v1.4.4");
 })();
