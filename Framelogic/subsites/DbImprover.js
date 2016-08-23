@@ -66,12 +66,13 @@ javascript:(function () {
 
 
     $("td.signal").each(function () {
-        if ($(this).html() < 16) $(this).css({'color': 'black', 'background-color': 'yellow'});
-        else if ($(this).html() === "0") $(this).css({
+
+        if ($(this).html() === "0") $(this).css({
             'color': 'black',
             'background-color': 'red',
             'font-weight': 'bold'
         });
+        else if ($(this).html() < 16) $(this).css({'color': 'black', 'background-color': 'yellow'});
         else if ($(this).html() === "99") $(this).css({'color': 'black', 'background-color': 'lightblue'});
         else $(this).css({'color': 'black', 'background-color': 'lightgreen'});
     });
