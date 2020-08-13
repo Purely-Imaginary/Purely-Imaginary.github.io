@@ -36,7 +36,7 @@ export const PlayersTable = () => {
         fetchData();
       }, []);
     return (
-        <Table striped hover className="playersTable">
+        <Table striped hover className="playersTable" variant="dark">
             <thead>
                 <tr>
                 <th>ID</th>

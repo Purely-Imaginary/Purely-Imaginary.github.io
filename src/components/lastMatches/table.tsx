@@ -61,7 +61,7 @@ export const LastMatchesTable = () => {
         fetchData();
       }, []);
     return (
-        <Table striped hover className="lastMatchTable">
+        <Table striped hover className="lastMatchTable" variant="dark">
             <thead>
                 <tr>
                 <th>ID</th>
