@@ -1,0 +1,1 @@
+export const BackendURL: string = "http://b4ddea5338f5.ngrok.io"

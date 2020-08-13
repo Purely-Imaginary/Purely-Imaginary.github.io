@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  display: flex;
 }
 
 .App-logo {
@@ -35,4 +36,33 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.menu {
+  width: 10%;
+  min-width: 200px;
+  height: 100vh;
+  background-color: #020432;
+}
+
+.mainContainer {
+  width: 100%;
+  height: 100vh;
+  background-color: #082466;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.mainLogo {
+  padding: 20px;
+  width: 70px;
+  height: 70px;
+}
+
+.menuLink {
+  padding:5px;
+}
+
+.menuLink a {
+  text-decoration: none;  
 }
