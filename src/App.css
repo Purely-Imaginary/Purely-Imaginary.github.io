@@ -66,3 +66,7 @@
 .menuLink a {
   text-decoration: none;  
 }
+
+body {
+  color: white !important;
+}
