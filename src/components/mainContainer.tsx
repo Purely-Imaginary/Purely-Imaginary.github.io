@@ -25,6 +25,6 @@ export default class Counter extends React.Component {
           <button onClick={this.increment}>Increment</button>
           <button onClick={this.decrement}>Decrement</button>
         </div>
-      );
+      )
     }
   }
