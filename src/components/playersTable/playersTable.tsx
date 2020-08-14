@@ -44,22 +44,32 @@ export const PlayersTable = () => {
                 <th>Name</th>
                 <th>Wins</th>
                 <th>Losses</th>
-                <th>Goals Scored</th>
-                <th>Goals Lost</th>
+                <th>W/L Ratio</th>
+                <th className="goalsColumn">Goals Scored</th>
+                <th className="goalsColumn">Goals Lost</th>
+                <th className="goalsColumn">Avg per game</th>
                 <th>Rating</th>
                 </tr>
             </thead>
             <tbody>
         
             {data.map(player => {
+
+                let avgGoalsScoredPerGame = Math.round(player.GoalsScored / (player.Wins + player.Losses) * 10)/10
+                let avgGoalsLostPerGame = Math.round(player.GoalsLost / (player.Wins + player.Losses) * 10)/10
+                let avgGoalsPerGame = avgGoalsScoredPerGame + " : " + avgGoalsLostPerGame
+
+                let WLRatio = Math.round(player.Wins / (player.Wins + player.Losses) * 10000) /100 + "%"
                 return (player.Wins + player.Losses > 10) && ++counter &&
                 <tr className="playerRow" key={player.ID}>
                     <td>{counter}</td>
                     <td>{player.Name}</td>
                     <td>{player.Wins}</td>
                     <td>{player.Losses}</td>
-                    <td>{player.GoalsScored}</td>
-                    <td>{player.GoalsLost}</td>
+                    <td>{WLRatio}</td>
+                    <td className="goalsColumn">{player.GoalsScored}</td>
+                    <td className="goalsColumn">{player.GoalsLost}</td>
+                    <td className="goalsColumn">{avgGoalsPerGame}</td>
                     <td>{player.Rating}</td>
                 </tr>
             })}

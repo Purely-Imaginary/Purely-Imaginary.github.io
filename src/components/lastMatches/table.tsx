@@ -52,56 +52,56 @@ export const LastMatchesTable = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-          const result = await axios(
-            BackendURL + "/getLastMatches",
-          );
+            const result = await axios(
+                BackendURL + "/getLastMatches",
+            );
             console.log(result.data);
-          setData(result.data);
+            setData(result.data);
         };
-     
+
         fetchData();
-      }, []);
+    }, []);
     return (
         <Table striped hover className="lastMatchTable">
             <thead>
                 <tr>
-                <th>ID</th>
-                <th>Date</th>
-                <th>Red Team Players</th>
-                <th>Avg Red Rating</th>
-                <th>Red Team Score</th>
-                <th>Blue Team Score</th>
-                <th>Avg Blue Rating</th>
-                <th>Blue Team Players</th>
-                <th>Red Team Rating Change</th>
+                    <th>Date</th>
+                    <th>Red Team Players</th>
+                    <th className="avgRedRating">Avg Red Rating</th>
+                    <th className="scoreColumn" colSpan={3}>Score</th>
+                    <th className="avgBlueRating">Avg Blue Rating</th>
+                    <th>Blue Team Players</th>
+                    <th>Red Team Rating Change</th>
                 </tr>
             </thead>
             <tbody>
-            {data.map(match => 
-                <tr key={match.ID}>
-                    <td>{match.ID}</td>
-                    <td>{moment(match.Time).format('DD-MM-YYYY')}</td>
-                    <td className="redTeamMatches">
-                        {match.RedTeam.Players.map(player => 
-                        <div key={player.PlayerID}>
-                        {player.PlayerName} - {player.Rating}
-                        </div>
+                {data.map(match =>
+                    <tr key={match.ID}>
+                        <td>{moment(match.Time).format('DD-MM-YYYY')}</td>
+                        <td className="redTeamMatches">
+                            {match.RedTeam.Players.map(player =>
+                                <div key={player.PlayerID}>
+                                    <span className="playerName">{player.PlayerName}</span>
+                                    <span className="playerRating"> - {Math.round(player.Rating)}</span>
+                                </div>
                             )}
-                    </td>
-                    <td className="redTeamMatches">{match.RedTeam.AvgTeamRating}</td>
-                    <td className="redTeamMatches">{match.RedTeam.Score}</td>
-                    <td className="blueTeamMatches">{match.BlueTeam.Score}</td>
-                    <td className="blueTeamMatches">{match.BlueTeam.AvgTeamRating}</td>
-                    <td className="blueTeamMatches">
-                        {match.BlueTeam.Players.map(player => 
-                        <div key={player.PlayerID}>
-                        {player.PlayerName} - {player.Rating}
-                        </div>
+                        </td>
+                        <td className="redTeamMatches avgRedRating">{Math.round(match.RedTeam.AvgTeamRating * 10) / 10}</td>
+                        <td className="redTeamMatches scoreColumn">{match.RedTeam.Score}</td>
+                        <td className="scoreColumn"> : </td>
+                        <td className="blueTeamMatches scoreColumn">{match.BlueTeam.Score}</td>
+                        <td className="blueTeamMatches avgBlueRating">{Math.round(match.BlueTeam.AvgTeamRating * 10) / 10}</td>
+                        <td className="blueTeamMatches">
+                            {match.BlueTeam.Players.map(player =>
+                                <div key={player.PlayerID}>
+                                    <span className="playerName">{player.PlayerName}</span>
+                                    <span className="playerRating"> - {Math.round(player.Rating)}</span>
+                                </div>
                             )}
-                    </td>
-                    <td>{match.RedTeam.RatingChange}</td>
-                </tr>
-            )}
+                        </td>
+                        <td>{Math.round(match.RedTeam.RatingChange * 10) / 10}</td>
+                    </tr>
+                )}
             </tbody>
         </Table>
     )
