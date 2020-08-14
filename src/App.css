@@ -50,7 +50,7 @@
   height: 100vh;
   background-color: #082466;
   overflow: scroll;
-  overflow-x: hidden;
+  overflow-x: auto;
 }
 
 .mainLogo {
