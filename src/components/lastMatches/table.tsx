@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BackendURL } from '../../constants'
 import Table from 'react-bootstrap/Table';
+import moment from 'moment';
 
 interface PlayerSnapshot {
     PlayerID: number,
@@ -61,37 +62,37 @@ export const LastMatchesTable = () => {
         fetchData();
       }, []);
     return (
-        <Table striped hover className="lastMatchTable" variant="dark">
+        <Table striped hover className="lastMatchTable">
             <thead>
                 <tr>
                 <th>ID</th>
-                <th>Time</th>
-                <th>PlayersRed</th>
-                <th>AvgRed</th>
-                <th>ScoreRed</th>
-                <th>ScoreBlue</th>
-                <th>AvgBlue</th>
-                <th>PlayersBlue</th>
-                <th>RedRatingChange</th>
+                <th>Date</th>
+                <th>Red Team Players</th>
+                <th>Avg Red Rating</th>
+                <th>Red Team Score</th>
+                <th>Blue Team Score</th>
+                <th>Avg Blue Rating</th>
+                <th>Blue Team Players</th>
+                <th>Red Team Rating Change</th>
                 </tr>
             </thead>
             <tbody>
             {data.map(match => 
                 <tr>
                     <td>{match.ID}</td>
-                    <td>{match.Time}</td>
-                    <td>
+                    <td>{moment(match.Time).format('DD-MM-YYYY')}</td>
+                    <td className="redTeamMatches">
                         {match.RedTeam.Players.map(player => 
                         <div>
                         {player.PlayerName} - {player.Rating}
                         </div>
                             )}
                     </td>
-                    <td>{match.RedTeam.AvgTeamRating}</td>
-                    <td>{match.RedTeam.Score}</td>
-                    <td>{match.BlueTeam.Score}</td>
-                    <td>{match.BlueTeam.AvgTeamRating}</td>
-                    <td>
+                    <td className="redTeamMatches">{match.RedTeam.AvgTeamRating}</td>
+                    <td className="redTeamMatches">{match.RedTeam.Score}</td>
+                    <td className="blueTeamMatches">{match.BlueTeam.Score}</td>
+                    <td className="blueTeamMatches">{match.BlueTeam.AvgTeamRating}</td>
+                    <td className="blueTeamMatches">
                         {match.BlueTeam.Players.map(player => 
                         <div>
                         {player.PlayerName} - {player.Rating}
