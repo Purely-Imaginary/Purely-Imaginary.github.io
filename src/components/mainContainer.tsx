@@ -2,6 +2,13 @@ import * as React from 'react';
 import LastMatchesTable from './lastMatches/table';
 import PlayersTable from './playersTable/playersTable'
 
+import {
+  HashRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 
 export default class Menu extends React.Component {
     state = {
@@ -22,12 +29,26 @@ export default class Menu extends React.Component {
   
     render () {
       return (
-        <div className="mainContainer">
-          <h1>Last Matches</h1>
-          <LastMatchesTable />
-          <h1>Players Table</h1>
-          <PlayersTable />
-        </div>
+        <Router>
+          <div className="mainContainer">
+            <Switch>
+              <Route path="/future">
+                <ul>
+                  <li>1</li>
+                  <li>1</li>
+                  <li>1</li>
+                  <li>1</li>
+                </ul>
+              </Route>
+              <Route path="/">
+                <h1>Last Matches</h1>
+                <LastMatchesTable />
+                <h1>Players Table</h1>
+                <PlayersTable />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
       )
     }
   }

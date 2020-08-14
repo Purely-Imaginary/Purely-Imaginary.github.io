@@ -35,6 +35,7 @@ export const PlayersTable = () => {
      
         fetchData();
       }, []);
+      let counter = 0;
     return (
         <Table striped hover className="playersTable">
             <thead>
@@ -43,16 +44,17 @@ export const PlayersTable = () => {
                 <th>Name</th>
                 <th>Wins</th>
                 <th>Losses</th>
-                <th>GoalsScored</th>
-                <th>GoalsLost</th>
+                <th>Goals Scored</th>
+                <th>Goals Lost</th>
                 <th>Rating</th>
                 </tr>
             </thead>
             <tbody>
+        
             {data.map(match => {
-                return (match.Wins + match.Losses > 10) && 
+                return (match.Wins + match.Losses > 10) && ++counter &&
                 <tr className="lastMatch">
-                    <td>{match.ID}</td>
+                    <td>{counter}</td>
                     <td>{match.Name}</td>
                     <td>{match.Wins}</td>
                     <td>{match.Losses}</td>

@@ -16,12 +16,13 @@
   background-color: rgb(6, 29, 82);
   overflow: scroll;
   overflow-x: auto;
+  padding: 20px;
 }
 
 .mainLogo {
   width: 10%;
   min-width: 200px;
-  padding: 20px 50px;
+  padding: 20px 30px;
 }
 
 .menuLink {
@@ -67,7 +68,7 @@ td, th {
 }
 
 .spacer {
-  height: 68%;
+  height: 65%; 
 }
 
 .menuLink > a {
@@ -89,9 +90,7 @@ td, th {
 
   .mainLogo {
     padding: 0;
-    margin: 5px 0;
-    width: 40px;
-    height: 40px;
+    margin-top: 20px;
     min-width: 40px;
   }
 }
