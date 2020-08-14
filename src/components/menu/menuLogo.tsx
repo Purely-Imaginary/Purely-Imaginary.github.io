@@ -7,7 +7,7 @@ interface Props {
 
 export const MenuLogo: React.FC<Props> = ({url, name}) => {
     return (
-        <img src={url} className={name}/>
+        <img src={url} className={name} alt={name}/>
     )
 }
 

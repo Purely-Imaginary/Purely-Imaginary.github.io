@@ -78,12 +78,12 @@ export const LastMatchesTable = () => {
             </thead>
             <tbody>
             {data.map(match => 
-                <tr>
+                <tr key={match.ID}>
                     <td>{match.ID}</td>
                     <td>{moment(match.Time).format('DD-MM-YYYY')}</td>
                     <td className="redTeamMatches">
                         {match.RedTeam.Players.map(player => 
-                        <div>
+                        <div key={player.PlayerID}>
                         {player.PlayerName} - {player.Rating}
                         </div>
                             )}
@@ -94,7 +94,7 @@ export const LastMatchesTable = () => {
                     <td className="blueTeamMatches">{match.BlueTeam.AvgTeamRating}</td>
                     <td className="blueTeamMatches">
                         {match.BlueTeam.Players.map(player => 
-                        <div>
+                        <div key={player.PlayerID}>
                         {player.PlayerName} - {player.Rating}
                         </div>
                             )}
