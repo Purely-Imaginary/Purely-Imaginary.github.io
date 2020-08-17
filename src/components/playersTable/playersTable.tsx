@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BackendURL } from '../../constants'
 import Table from 'react-bootstrap/Table';
+import moment from 'moment';
 
 interface Player {
     ID: number,
@@ -10,6 +11,7 @@ interface Player {
     Losses: number,
     GoalsScored: number,
     GoalsLost: number,
+    LastMatch: string,
     Rating: number,
 }
 
@@ -21,6 +23,7 @@ export const PlayersTable = () => {
         Losses: 0,
         GoalsScored: 0,
         GoalsLost: 0,
+        LastMatch: "",
         Rating: 0
     }]);
 
@@ -35,7 +38,14 @@ export const PlayersTable = () => {
      
         fetchData();
       }, []);
-      let counter = 0;
+    let counter = 0;
+    let maxRating = 0;
+    let minRating = 2000;
+    data.map(player => {
+        maxRating = Math.max(maxRating, player.Rating);
+        minRating = Math.min(minRating, player.Rating);
+    })
+
     return (
         <Table striped hover className="playersTable">
             <thead>
@@ -49,6 +59,8 @@ export const PlayersTable = () => {
                 <th className="goalsColumn">Goals Lost</th>
                 <th className="goalsColumn">Avg per game</th>
                 <th>Rating</th>
+                <th className="ratingPercent">Rating %</th>
+                <th className="lastMatch">Last played</th>
                 </tr>
             </thead>
             <tbody>
@@ -58,6 +70,7 @@ export const PlayersTable = () => {
                 let avgGoalsScoredPerGame = Math.round(player.GoalsScored / (player.Wins + player.Losses) * 10)/10
                 let avgGoalsLostPerGame = Math.round(player.GoalsLost / (player.Wins + player.Losses) * 10)/10
                 let avgGoalsPerGame = avgGoalsScoredPerGame + " : " + avgGoalsLostPerGame
+                let playerRatingPercent = Math.round((1-((player.Rating - minRating) / (maxRating - minRating)))*100) + "%"
 
                 let WLRatio = Math.round(player.Wins / (player.Wins + player.Losses) * 10000) /100 + "%"
                 return (player.Wins + player.Losses > 10) && ++counter &&
@@ -71,6 +84,8 @@ export const PlayersTable = () => {
                     <td className="goalsColumn">{player.GoalsLost}</td>
                     <td className="goalsColumn">{avgGoalsPerGame}</td>
                     <td>{player.Rating}</td>
+                    <td className="ratingPercent">{playerRatingPercent}</td>
+            <td className="lastMatch">{moment(player.LastMatch).fromNow()}</td>
                 </tr>
             })}
             </tbody>
