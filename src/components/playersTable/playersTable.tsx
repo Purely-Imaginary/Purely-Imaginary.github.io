@@ -44,6 +44,7 @@ export const PlayersTable = () => {
     data.map(player => {
         maxRating = Math.max(maxRating, player.Rating);
         minRating = Math.min(minRating, player.Rating);
+        return null
     })
 
     return (

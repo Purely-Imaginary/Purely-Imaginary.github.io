@@ -11,7 +11,7 @@ export const Menu: React.FC = () => {
             <MenuLogo url="logo512blue.png" name="mainLogo" />
             <MenuLink text="Last matches" url="/#/" icon="🕑"/>
             <MenuLink text="Players table" url="/#/" icon="⚔" />
-            <MenuLink text="Leagues" url="/#/future" icon="🏆" />
+            <MenuLink text="Charts" url="/#/charts" icon="📊" />
             <MenuLink text="Future features" url="/#/future" icon="💡" />
             <div className="backendURL"><span>{BackendURL}/p?u=</span></div>
         </div>
