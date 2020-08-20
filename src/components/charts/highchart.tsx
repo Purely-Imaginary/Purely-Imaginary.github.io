@@ -63,8 +63,7 @@ const options: Highcharts.Options = {
             }
         },
         min: 1597840460000
-    },
-    series: seriesOptions
+    }
 }
 
 export const Highchart = (props: HighchartsReact.Props) => {
