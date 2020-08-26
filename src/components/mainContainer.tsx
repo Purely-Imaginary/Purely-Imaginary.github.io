@@ -39,11 +39,17 @@ export default class Menu extends React.Component {
               <Route path="/charts">
                 <Highchart />
               </Route>
+              <Route path="/matches">
+                <h1>Last Matches</h1>
+                <LastMatchesTable />
+              </Route>
+              <Route path="/players">
+                <h1>Players Table</h1>
+                <PlayersTable />
+              </Route>
               <Route path="/">
                 <h1>Last Matches</h1>
                 <LastMatchesTable />
-                <h1>Players Table</h1>
-                <PlayersTable />
               </Route>
             </Switch>
           </div>

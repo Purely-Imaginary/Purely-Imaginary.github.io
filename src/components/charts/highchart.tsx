@@ -13,18 +13,8 @@ interface PlayerSnapshot {
     PlayerName: string,
     Rating: number
 }
-const [seriesOptions, setSeriesOptions] = useState([{
-    type: 'line', name: "d", data: [[
-        [1597850460000, 823.821],
-        [1597864520000, 828.457]
-    ]]
-}, {
-    type: 'line', name: "y", data: [
-        [1597850460000, 825.821],
-        [1597884520000, 829.457]
-    ]
-},
-]);
+
+
 const processData = (snapshots: PlayerSnapshot[]) => {
     let processedData: any = {}
     snapshots.forEach((value) => {
@@ -49,60 +39,61 @@ const processData = (snapshots: PlayerSnapshot[]) => {
     return returnData;
 }
 
-const options: Highcharts.Options = {
-    title: {
-        text: 'Rating over time'
-    },
-    chart: {
-        zoomType: 'x'
-    },
-    xAxis: {
-        labels: {
-            formatter: function() {
-                return moment(this.value).toString();
-            }
-        },
-        min: 1597840460000
-    }
-}
-
 export const Highchart = (props: HighchartsReact.Props) => {
-    const [isLoaded, setIsLoaded] = useState(false);
-    
-
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios(
                 BackendURL + "/getPlayersSnapshots",
             );
-            let processedData = processData(result.data)
-            setSeriesOptions(processedData)
-            console.log(processedData);
-            console.log(seriesOptions);
-            setIsLoaded(true);
+            let chartData = processData(result.data)
+            Highcharts.chart('highchart-container', {
+                title: {
+                    text: 'Rating over time',
+                    style: {
+                        color: '#FFF',
+                        font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
+                    }
+                },
+                legend: {
+                    itemStyle: {
+                        font: '9pt Trebuchet MS, Verdana, sans-serif',
+                        color: 'white'
+                    },
+                    itemHoverStyle:{
+                        color: 'white'
+                    }   
+                },
+                chart: {
+                    zoomType: 'x',
+                    backgroundColor: 'rgb(6, 29, 82)',
+                },
+                xAxis: {
+                    type: 'datetime',
+                    labels: {
+                        formatter: function() {
+                            return moment(this.value).format('DD-MM-YYYY');
+                        }
+                    },
+                    min: 1586268480000,
+                    tickInterval: 7*24*60*60*1000
+                },
+                yAxis: {
+                    gridLineColor: 'black'
+                },
+                series: chartData
+            })
+            console.log(chartData);
+
 
         };
 
         fetchData();
     }, []);
-    if (isLoaded) {
         return (
-            <div>
-                <HighchartsReact
-                    highcharts={Highcharts}
-                    options={options}
-                    chartData={seriesOptions}
-                    {...props}
-                />
+            <div id='highchart-container'>
+                <h1>Loading charts...</h1>
             </div>
         )
-    } else {
-        return (
-        <div>
-            
-        </div>
-        )
-    }
 }
 
 export default Highchart;

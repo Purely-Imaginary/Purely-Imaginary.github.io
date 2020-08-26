@@ -27,7 +27,7 @@ interface Match {
 export const LastMatchesTable = () => {
     const [data, setData] = useState<Match[]>([{
         ID: 0,
-        Time: "",
+        Time: "2012-12-25 10:00",
         BlueTeam: {
             AvgTeamRating: 0,
             RatingChange: 0,
@@ -77,7 +77,7 @@ export const LastMatchesTable = () => {
             <tbody>
                 {data.map(match =>
                     <tr key={match.ID}>
-                        <td>{moment(match.Time).format('DD-MM-YYYY')}</td>
+                        <td>{moment(match.Time).subtract(2, 'hours').format('DD-MM-YYYY HH:mm')}</td>
                         <td className="redTeamMatches">
                             {match.RedTeam.Players.map(player =>
                                 <div key={player.PlayerID}>
