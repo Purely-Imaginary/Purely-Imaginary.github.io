@@ -2,7 +2,8 @@ import * as React from 'react';
 import LastMatchesTable from './lastMatches/table';
 import PlayersTable from './playersTable/playersTable'
 import FutureList from './future/future';
-import Highchart from './charts/highchart'
+import Highchart from './charts/highchart';
+import PlayerPage from './playerPage/playerPage';
 
 import {
   HashRouter as Router,
@@ -42,6 +43,9 @@ export default class Menu extends React.Component {
               <Route path="/matches">
                 <h1>Last Matches</h1>
                 <LastMatchesTable />
+              </Route>
+              <Route path="/showPlayer/:playerID">
+                <PlayerPage />
               </Route>
               <Route path="/players">
                 <h1>Players Table</h1>

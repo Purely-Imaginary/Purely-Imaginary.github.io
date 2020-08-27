@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { BackendURL } from '../../constants'
 import Table from 'react-bootstrap/Table';
@@ -32,7 +33,6 @@ export const PlayersTable = () => {
           const result = await axios(
             BackendURL + "/getPlayersTable",
           );
-            console.log(result.data);
           setData(result.data);
         };
      
@@ -46,6 +46,11 @@ export const PlayersTable = () => {
         minRating = Math.min(minRating, player.Rating);
         return null
     })
+
+    const history = useHistory();
+    function handleClick(playerID: number) {
+        history.push("/showPlayer/" + playerID);
+    }
 
     return (
         <Table striped hover className="playersTable">
@@ -75,7 +80,7 @@ export const PlayersTable = () => {
 
                 let WLRatio = Math.round(player.Wins / (player.Wins + player.Losses) * 10000) /100 + "%"
                 return (player.Wins + player.Losses > 10) && ++counter &&
-                <tr className="playerRow" key={player.ID}>
+                <tr className="playerRow" key={player.ID} onClick={() => handleClick(player.ID)}>
                     <td>{counter}</td>
                     <td>{player.Name}</td>
                     <td>{player.Wins}</td>

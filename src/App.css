@@ -2,6 +2,8 @@
 @import "./components/lastMatches/table.css";
 @import "./components/playersTable/playersTable.css";
 @import "./components/charts/highchart.css";
+@import "./components/playerLabel/playerLabel.css";
+@import "./components/playerPage/playerPage.css";
 .App {
     text-align: center;
     display: flex;

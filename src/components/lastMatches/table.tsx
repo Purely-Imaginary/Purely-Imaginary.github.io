@@ -3,6 +3,7 @@ import axios from 'axios';
 import { BackendURL } from '../../constants'
 import Table from 'react-bootstrap/Table';
 import moment from 'moment';
+import PlayerLabel from '../playerLabel/playerLabel';
 
 interface PlayerSnapshot {
     PlayerID: number,
@@ -55,7 +56,6 @@ export const LastMatchesTable = () => {
             const result = await axios(
                 BackendURL + "/getLastMatches",
             );
-            console.log(result.data);
             setData(result.data);
         };
 
@@ -80,9 +80,8 @@ export const LastMatchesTable = () => {
                         <td>{moment(match.Time).subtract(2, 'hours').format('DD-MM-YYYY HH:mm')}</td>
                         <td className="redTeamMatches">
                             {match.RedTeam.Players.map(player =>
-                                <div key={player.PlayerID}>
-                                    <span className="playerName">{player.PlayerName}</span>
-                                    <span className="playerRating"> - {Math.round(player.Rating)}</span>
+                                <div key={player.PlayerID} className='redTeam'>
+                                    <PlayerLabel {...player}/>
                                 </div>
                             )}
                         </td>
@@ -93,9 +92,8 @@ export const LastMatchesTable = () => {
                         <td className="blueTeamMatches avgBlueRating">{Math.round(match.BlueTeam.AvgTeamRating * 10) / 10}</td>
                         <td className="blueTeamMatches">
                             {match.BlueTeam.Players.map(player =>
-                                <div key={player.PlayerID}>
-                                    <span className="playerName">{player.PlayerName}</span>
-                                    <span className="playerRating"> - {Math.round(player.Rating)}</span>
+                                <div key={player.PlayerID} className='blueTeam'>
+                                    <PlayerLabel {...player}/>
                                 </div>
                             )}
                         </td>

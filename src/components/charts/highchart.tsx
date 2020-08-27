@@ -82,7 +82,6 @@ export const Highchart = (props: HighchartsReact.Props) => {
                 },
                 series: chartData
             })
-            console.log(chartData);
 
 
         };
