@@ -4,6 +4,7 @@
 @import "./components/charts/highchart.css";
 @import "./components/playerLabel/playerLabel.css";
 @import "./components/playerPage/playerPage.css";
+@import "./components/future/future.css";
 .App {
     text-align: center;
     display: flex;
