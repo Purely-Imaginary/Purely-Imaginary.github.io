@@ -8,6 +8,7 @@ import PlayerLabel from '../playerLabel/playerLabel';
 interface PlayerSnapshot {
     PlayerID: number,
     PlayerName: string,
+    GoalsNumber: number,
     Rating: number
 }
 
@@ -21,6 +22,7 @@ interface Team {
 interface Match {
     ID: number,
     Time: string,
+    Goals: any[],
     BlueTeam: Team,
     RedTeam: Team
 }
@@ -29,6 +31,7 @@ export const LastMatchesTable = () => {
     const [data, setData] = useState<Match[]>([{
         ID: 0,
         Time: "2012-12-25 10:00",
+        Goals: [],
         BlueTeam: {
             AvgTeamRating: 0,
             RatingChange: 0,
@@ -36,6 +39,7 @@ export const LastMatchesTable = () => {
             Players: [{
                 PlayerID: 0,
                 PlayerName: "",
+                GoalsNumber: 0,
                 Rating: 0
             }]
         },
@@ -46,6 +50,7 @@ export const LastMatchesTable = () => {
             Players: [{
                 PlayerID: 0,
                 PlayerName: "",
+                GoalsNumber: 0,
                 Rating: 0
             }]
         }
@@ -60,7 +65,36 @@ export const LastMatchesTable = () => {
         };
 
         fetchData();
+
+
+        setData(data);
     }, []);
+
+            
+    data.map(match => {
+        match.RedTeam.Players.map (player => {
+            player.GoalsNumber = 0
+            match.Goals.map(goal => {
+                if (player.PlayerID === goal.PlayerID){
+                    player.GoalsNumber++
+                } 
+            })
+            return player
+        })
+        match.BlueTeam.Players.map (player => {
+            player.GoalsNumber = 0
+            match.Goals.map(goal => {
+                debugger;
+                if (player.PlayerID === goal.PlayerID){
+                    player.GoalsNumber++
+                } 
+            })
+            return player
+        })
+        return match
+    }, data)
+    console.log(data)
+
     return (
         <Table striped hover className="lastMatchTable">
             <thead>
@@ -77,7 +111,7 @@ export const LastMatchesTable = () => {
             <tbody>
                 {data.map(match =>
                     <tr key={match.ID}>
-                        <td>{moment(match.Time).subtract(2, 'hours').format('DD-MM-YYYY HH:mm')}</td>
+                        <td>{moment(match.Time).format('DD-MM-YYYY HH:mm')}</td>
                         <td className="redTeamMatches">
                             {match.RedTeam.Players.map(player =>
                                 <div key={player.PlayerID} className='redTeam'>

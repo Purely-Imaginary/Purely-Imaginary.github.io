@@ -1,1 +1,2 @@
-export const BackendURL: string = "https://b6b1cc2d0c39.ngrok.io"
+// export const BackendURL: string = "https://919a6de8aec7.ngrok.io"
+export const BackendURL: string = "http://localhost:7777"

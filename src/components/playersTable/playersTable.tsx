@@ -10,9 +10,10 @@ interface Player {
     Name: string,
     Wins: number,
     Losses: number,
+    GoalsShot: number,
     GoalsScored: number,
     GoalsLost: number,
-    LastMatch: string,
+    Matches: any[],
     Rating: number,
 }
 
@@ -22,9 +23,10 @@ export const PlayersTable = () => {
         Name: "",
         Wins: 0,
         Losses: 0,
+        GoalsShot: 0,
         GoalsScored: 0,
         GoalsLost: 0,
-        LastMatch: "",
+        Matches: [],
         Rating: 0
     }]);
 
@@ -38,6 +40,7 @@ export const PlayersTable = () => {
      
         fetchData();
       }, []);
+
     let counter = 0;
     let maxRating = 0;
     let minRating = 2000;
@@ -61,7 +64,8 @@ export const PlayersTable = () => {
                 <th>Wins</th>
                 <th>Losses</th>
                 <th>W/L Ratio</th>
-                <th className="goalsColumn">Goals Scored</th>
+                <th className="goalsColumn">Goals Shot</th>
+                <th className="goalsColumn">Goals Won</th>
                 <th className="goalsColumn">Goals Lost</th>
                 <th className="goalsColumn">Avg per game</th>
                 <th>Rating</th>
@@ -86,12 +90,16 @@ export const PlayersTable = () => {
                     <td>{player.Wins}</td>
                     <td>{player.Losses}</td>
                     <td>{WLRatio}</td>
+                    <td className="goalsColumn">{player.GoalsShot}</td>
                     <td className="goalsColumn">{player.GoalsScored}</td>
                     <td className="goalsColumn">{player.GoalsLost}</td>
                     <td className="goalsColumn">{avgGoalsPerGame}</td>
                     <td>{player.Rating}</td>
                     <td className="ratingPercent">{playerRatingPercent}</td>
-            <td className="lastMatch">{moment(player.LastMatch).fromNow()}</td>
+                    {
+                        player.Matches[0] !== undefined && 
+                        <td className="lastMatch">{moment(player.Matches[player.Matches.length-1].Time).fromNow()}</td>
+                    }
                 </tr>
             })}
             </tbody>
