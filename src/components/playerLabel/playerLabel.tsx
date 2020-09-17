@@ -9,22 +9,21 @@ interface PlayerSnapshot {
 
 export const PlayerLabel = (player : PlayerSnapshot) => {
     const playerLink = "#/showPlayer/" + player.PlayerID
-    let firstGoals = ""
-    for (let i = 0; i < Math.floor(player.GoalsNumber / 2); i++) {
-        firstGoals += "⚽"
-    }
-    let lastGoals = firstGoals
-    if (player.GoalsNumber % 2) {
-        lastGoals += "⚽"
+    let playerGoals = ""
+    for (let i = 0; i < player.GoalsNumber; i++) {
+        playerGoals += "⚽"
     }
     return (
         <div className="playerLabel">
-            <span className="firstGoals">{firstGoals}</span>
-            <a href={playerLink}>
-                <span className="playerName">{player.PlayerName}</span>
-                <span className="playerRating"> - {Math.round(player.Rating)}</span>
-            </a>
-            <span className="lastGoals">{lastGoals}</span>
+            <div>
+                <a href={playerLink}>
+                    <span className="playerName">{player.PlayerName}</span>
+                    <span className="playerRating"> - {Math.round(player.Rating)}</span>
+                </a>
+            </div>
+            <div className="playerGoals">
+                <span>{playerGoals}</span>
+            </div>
         </div>
     )
 }
