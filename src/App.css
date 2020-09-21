@@ -6,6 +6,7 @@
 @import "./components/playerPage/playerPage.css";
 @import "./components/future/future.css";
 @import "./components/matchPage/matchPage.css";
+@import "./components/playerGoalsLabel/playerGoalsLabel.css";
 .App {
     text-align: center;
     display: flex;

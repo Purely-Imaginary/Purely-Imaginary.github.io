@@ -5,6 +5,7 @@ import Table from 'react-bootstrap/Table';
 import moment from 'moment';
 import PlayerLabel from '../playerLabel/playerLabel';
 import PlayerGoalsLabel from '../playerGoalsLabel/playerGoalsLabel';
+import { useHistory } from 'react-router-dom';
 
 interface PlayerSnapshot {
     PlayerID: number,
@@ -95,6 +96,11 @@ export const LastMatchesTable = () => {
     }, data)
     console.log(data)
 
+    const history = useHistory();
+    function handleClick(playerID: number) {
+        history.push("/showMatch/" + playerID);
+    }
+
     return (
         <Table striped hover className="lastMatchTable">
             <thead>
@@ -110,7 +116,7 @@ export const LastMatchesTable = () => {
             </thead>
             <tbody>
                 {data.map(match =>
-                    <tr key={match.ID}>
+                    <tr key={match.ID} onClick={() => handleClick(match.ID)}>
                         <td>{moment(match.Time).format('DD-MM-YYYY HH:mm')}</td>
                         <td className="redTeamMatches">
                             {match.RedTeam.Players.map(player =>

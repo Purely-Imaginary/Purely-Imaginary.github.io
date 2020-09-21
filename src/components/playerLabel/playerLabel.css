@@ -31,7 +31,3 @@
 .blueTeam>.playerLabel>div>a:hover {
     background-color: #0000d7;
 }
-
-.playerLabel>.playerGoals {
-    font-size: small;
-}

@@ -8,12 +8,12 @@
 
 .redTeamMatches>div,
 .blueTeamMatches>div {
-    margin-bottom:5px;
+    margin-bottom: 5px;
 }
 
 .redTeamMatches>div:last-child,
 .blueTeamMatches>div:last-child {
-    margin-bottom:0;
+    margin-bottom: 0;
 }
 
 td,
@@ -55,6 +55,8 @@ th {
         padding: 0 1px;
     }
 }
-    .lastMatchTable tbody tr td {
-        font-size: larger;
-    }
+
+.lastMatchTable tbody tr td {
+    font-size: larger;
+    cursor: pointer;
+}
