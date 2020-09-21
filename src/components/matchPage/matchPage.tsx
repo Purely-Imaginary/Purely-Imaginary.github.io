@@ -35,7 +35,7 @@ interface Match {
 }
 
 function secondsToTime(seconds: number){
-    seconds = Math.ceil(seconds)
+    seconds = Math.floor(seconds)
     let minutes = Math.floor(seconds / 60)
     let secString = (seconds - minutes * 60).toString()
     if (seconds - minutes * 60 < 10) {

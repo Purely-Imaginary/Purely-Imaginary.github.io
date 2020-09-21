@@ -80,7 +80,9 @@ export const PlayersTable = () => {
                 let playerRatingPercent = Math.round((1-((player.Rating - minRating) / (maxRating - minRating)))*100) + "%"
 
                 let WLRatio = Math.round(player.Wins / (player.Wins + player.Losses) * 10000) /100 + "%"
-                return (player.Wins + player.Losses > 10) && ++counter &&
+                return (player.Wins + player.Losses > 10) &&
+                Date.now() - moment(player.Matches[player.Matches.length-1].Time).unix() * 1000 < 2592000000 && // 30 days
+                ++counter &&
                 <tr className="playerRow" key={player.ID} onClick={() => handleClick(player.ID)}>
                     <td>{counter}</td>
                     <td>{player.Name}</td>
