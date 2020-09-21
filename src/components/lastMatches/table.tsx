@@ -122,6 +122,7 @@ export const LastMatchesTable = () => {
                             {match.RedTeam.Players.map(player =>
                                 <div key={player.PlayerID} className='redTeam'>
                                     <PlayerLabel {...player}/>
+                                    <PlayerGoalsLabel {...player}/>
                                 </div>
                             )}
                         </td>
