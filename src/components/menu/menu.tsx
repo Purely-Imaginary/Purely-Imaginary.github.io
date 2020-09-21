@@ -3,7 +3,6 @@ import MenuLink from './menuLink';
 import MenuLogo from './menuLogo';
 import { BackendURL } from '../../constants';
 import {HashRouter as Router} from "react-router-dom";
-import { Button } from 'react-bootstrap';
 
 export const Menu: React.FC = () => {
     return (

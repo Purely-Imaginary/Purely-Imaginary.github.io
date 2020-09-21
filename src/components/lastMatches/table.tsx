@@ -4,6 +4,7 @@ import { BackendURL } from '../../constants'
 import Table from 'react-bootstrap/Table';
 import moment from 'moment';
 import PlayerLabel from '../playerLabel/playerLabel';
+import PlayerGoalsLabel from '../playerGoalsLabel/playerGoalsLabel';
 
 interface PlayerSnapshot {
     PlayerID: number,
@@ -84,7 +85,6 @@ export const LastMatchesTable = () => {
         match.BlueTeam.Players.map (player => {
             player.GoalsNumber = 0
             match.Goals.map(goal => {
-                debugger;
                 if (player.PlayerID === goal.PlayerID){
                     player.GoalsNumber++
                 } 
@@ -128,6 +128,7 @@ export const LastMatchesTable = () => {
                             {match.BlueTeam.Players.map(player =>
                                 <div key={player.PlayerID} className='blueTeam'>
                                     <PlayerLabel {...player}/>
+                                    <PlayerGoalsLabel {...player}/>
                                 </div>
                             )}
                         </td>

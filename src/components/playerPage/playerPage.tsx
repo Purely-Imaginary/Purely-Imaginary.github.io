@@ -62,7 +62,9 @@ export const PlayerPage = () => {
     }, []);
 
     return (
+        <div>
         <h1>TEST FOR PLAYER ID {playerID}</h1>
+        </div>
     )
 }
 
