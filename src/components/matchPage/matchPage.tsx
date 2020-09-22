@@ -3,6 +3,7 @@ import { useParams} from "react-router";
 import axios from 'axios';
 import { BackendURL } from '../../constants'
 import PlayerLabel from '../playerLabel/playerLabel';
+import PlayerGoalsLabel from '../playerGoalsLabel/playerGoalsLabel';
 
 interface PlayerSnapshot {
     PlayerID: number,
@@ -29,6 +30,8 @@ interface Goal {
 interface Match {
     ID: number,
     Time: string,
+    StartTime: number,
+    EndTime: number,
     BlueTeam: Team,
     RedTeam: Team,
     Goals: Goal[]
@@ -49,6 +52,8 @@ export const MatchPage = () => {
     const [data, setData] = useState<Match>({
         ID: 0,
         Time: "2012-12-25 10:00",
+        StartTime: 0,
+        EndTime: 600,
         BlueTeam: {
             AvgTeamRating: 0,
             RatingChange: 0,
@@ -135,6 +140,13 @@ export const MatchPage = () => {
                         <div className="goal matchStart">
                             <div className="redTeam"></div>
                             <div className="chart">
+                                <div className="matchStartTime">{secondsToTime(data.StartTime)}</div>
+                            </div>
+                            <div className="blueTeam"></div>
+                        </div>
+                        <div className="goal matchStart">
+                            <div className="redTeam"></div>
+                            <div className="chart">
                                 <div className="goalElement matchStart">ￜ</div>
                             </div>
                             <div className="blueTeam"></div>
@@ -170,7 +182,14 @@ export const MatchPage = () => {
                         <div className="goal">
                             <div className="redTeam"></div>
                             <div className="chart matchEnd">
-                                <div className="goalElement matchStart">ￜ</div>
+                                <div className="goalElement matchEnd">ￜ</div>
+                            </div>
+                            <div className="blueTeam"></div>
+                        </div>
+                        <div className="goal">
+                            <div className="redTeam"></div>
+                            <div className="chart matchEnd">
+                                <div className="matchEndTime">{secondsToTime(data.EndTime)}</div>
                             </div>
                             <div className="blueTeam"></div>
                         </div>

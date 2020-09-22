@@ -80,3 +80,8 @@
 .chart {
     margin: -9px 0;
 }
+
+.matchStartTime,
+.matchEndTime {
+    padding: 10px
+}
