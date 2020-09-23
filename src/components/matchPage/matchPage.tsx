@@ -23,6 +23,7 @@ interface Goal {
     PlayerID: number,
     PlayerName: string,
     ShotTime: number,
+    Speed: number,
     Time: number,
     TravelTime: number
 }
@@ -80,6 +81,7 @@ export const MatchPage = () => {
             PlayerID: 0,
             PlayerName: "",
             ShotTime: 0,
+            Speed: 0,
             Time: 0,
             TravelTime: 0
         }]
@@ -156,7 +158,7 @@ export const MatchPage = () => {
                                     <div className="redTeam">
                                     {goal.IsRed && 
                                         <div>
-                                             {goal.PlayerName} - {secondsToTime(goal.Time)}
+                                             ({Math.round(goal.Speed * 100)/10} km/h) {goal.PlayerName} - {secondsToTime(goal.Time)}
                                         </div>
                                     }
                                     </div>
@@ -172,7 +174,7 @@ export const MatchPage = () => {
                                     <div className="blueTeam">
                                     {!goal.IsRed && 
                                         <div>
-                                            {secondsToTime(goal.Time)} - {goal.PlayerName}
+                                            {secondsToTime(goal.Time)} - {goal.PlayerName} ({Math.round(goal.Speed * 100)/10} km/h)
                                         </div>
                                     }
                                     </div>
