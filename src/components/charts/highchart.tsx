@@ -20,6 +20,10 @@ const processData = (snapshots: PlayerSnapshot[]) => {
     snapshots.forEach((value) => {
         if (!(value.PlayerName in processedData)) {
             processedData[value.PlayerName] = []
+            processedData[value.PlayerName].push([
+                moment(value.MatchRef.Time).valueOf()-3600000,
+                1000,
+            ])
         }
         processedData[value.PlayerName].push([
             moment(value.MatchRef.Time).valueOf(),
@@ -74,7 +78,7 @@ export const Highchart = (props: HighchartsReact.Props) => {
                             return moment(this.value).format('DD-MM-YYYY');
                         }
                     },
-                    min: 1586268480000,
+                    min: 1586250000000,
                     tickInterval: 7*24*60*60*1000
                 },
                 yAxis: {

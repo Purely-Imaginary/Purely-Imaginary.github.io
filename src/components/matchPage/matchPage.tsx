@@ -189,7 +189,7 @@ export const MatchPage = () => {
                         <div className="goal">
                             <div className="redTeam"></div>
                             <div className="chart matchEnd">
-                                <div className="matchEndTime">{secondsToTime(data.EndTime)}</div>
+                                <div className="matchEndTime">{secondsToTime(data.EndTime)}</div> 
                             </div>
                             <div className="blueTeam"></div>
                         </div>

@@ -10,7 +10,7 @@ export const FutureList = () => {
                 <li>Player card</li>
                 <li>Full match analysis
                 <ul>
-                    <li>Goals</li>
+                    <li><span className='finished'>Goals</span> 22.09.2020</li>
                     <li>Ball position</li>
                     <li>Ball posession
                         <ul>
@@ -18,6 +18,7 @@ export const FutureList = () => {
                             <li>Touch based</li>
                         </ul>
                     </li>
+                    <li>Previous encounters</li>
                     <li>Player position heatmap</li>
                 </ul>
                 </li>
