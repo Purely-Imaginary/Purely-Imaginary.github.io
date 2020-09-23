@@ -198,7 +198,7 @@ export const MatchPage = () => {
                     </div>
                 </div>
                 <div className="rightPanel">
-                    right
+                    <a href={"https://www.haxball.com/replay?v=3#" + BackendURL + "/getFile?id=" + data.ID} target="_blank">LINK TO REPLAY</a>
                 </div>
             </div>
         </div>
