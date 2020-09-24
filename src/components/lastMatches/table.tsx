@@ -4,7 +4,6 @@ import { BackendURL } from '../../constants'
 import Table from 'react-bootstrap/Table';
 import moment from 'moment';
 import PlayerLabel from '../playerLabel/playerLabel';
-import PlayerGoalsLabel from '../playerGoalsLabel/playerGoalsLabel';
 import { useHistory } from 'react-router-dom';
 
 interface PlayerSnapshot {
@@ -122,7 +121,6 @@ export const LastMatchesTable = () => {
                             {match.RedTeam.Players.map(player =>
                                 <div key={player.PlayerID} className='redTeam'>
                                     <PlayerLabel {...player}/>
-                                    <PlayerGoalsLabel {...player}/>
                                 </div>
                             )}
                         </td>
@@ -135,7 +133,6 @@ export const LastMatchesTable = () => {
                             {match.BlueTeam.Players.map(player =>
                                 <div key={player.PlayerID} className='blueTeam'>
                                     <PlayerLabel {...player}/>
-                                    <PlayerGoalsLabel {...player}/>
                                 </div>
                             )}
                         </td>

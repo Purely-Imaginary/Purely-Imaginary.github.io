@@ -8,6 +8,7 @@ import PlayerGoalsLabel from '../playerGoalsLabel/playerGoalsLabel';
 interface PlayerSnapshot {
     PlayerID: number,
     PlayerName: string,
+    GoalsNumber: number,
     Rating: number
 }
 
@@ -62,7 +63,8 @@ export const MatchPage = () => {
             Players: [{
                 PlayerID: 0,
                 PlayerName: "",
-                Rating: 0
+                Rating: 0,
+                GoalsNumber: 0
             }]
         },
         RedTeam: {
@@ -72,7 +74,8 @@ export const MatchPage = () => {
             Players: [{
                 PlayerID: 0,
                 PlayerName: "",
-                Rating: 0
+                Rating: 0,
+                GoalsNumber: 0
             }]
         },
         Goals:
@@ -102,6 +105,25 @@ export const MatchPage = () => {
     if (data.RedTeam.RatingChange > 0) {
         arrow = "<=="
     } 
+            
+    data.RedTeam.Players.map (player => {
+            player.GoalsNumber = 0
+            data.Goals.map(goal => {
+                if (player.PlayerID === goal.PlayerID){
+                    player.GoalsNumber++
+                } 
+            })
+            return player
+        })
+        data.BlueTeam.Players.map (player => {
+            player.GoalsNumber = 0
+            data.Goals.map(goal => {
+                if (player.PlayerID === goal.PlayerID){
+                    player.GoalsNumber++
+                } 
+            })
+            return player
+        })
 
     return (
         <div>
@@ -113,6 +135,7 @@ export const MatchPage = () => {
                             {data.RedTeam.Players.map(player => (
                                 <div key={player.PlayerID} className='redTeam'>
                                     <PlayerLabel {...player}/>
+                                    <PlayerGoalsLabel {...player}/>
                                 </div>
                             ))}
                         </div>
@@ -133,6 +156,7 @@ export const MatchPage = () => {
                         {data.BlueTeam.Players.map(player => (
                                 <div key={player.PlayerID} className='blueTeam'>
                                     <PlayerLabel {...player}/>
+                                    <PlayerGoalsLabel {...player}/>
                                 </div>
                             ))}
                         </div>
