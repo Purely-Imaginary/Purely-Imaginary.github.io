@@ -17,6 +17,7 @@ export const FutureList = () => {
                         <li>Average goals shot per match</li>
                         <li>Aggression rating (goals shot / goals won)</li>
                         <li>Last 5 matches trend</li>
+                        <li>Latest streak (matches / days)</li>
                         <li>Matches history</li>
                         <li>Top ally (quantitative)</li>
                         <li>Top enemy (quantitative)</li>
