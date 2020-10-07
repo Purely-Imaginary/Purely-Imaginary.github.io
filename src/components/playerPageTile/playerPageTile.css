@@ -1,0 +1,9 @@
+.playerPageTile>.title {
+    font-size: larger;
+}
+
+.playerPageTile>.value {}
+
+.playerPageTile>.subscript {
+    font-size: smaller;
+}
