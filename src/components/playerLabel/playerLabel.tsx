@@ -6,14 +6,16 @@ interface PlayerSnapshot {
     Rating: number
 }
 
-export const PlayerLabel = (player : PlayerSnapshot) => {
+export const PlayerLabel = (player: PlayerSnapshot) => {
     const playerLink = "#/showPlayer/" + player.PlayerID
     return (
         <div className="playerLabel">
             <div>
                 <a href={playerLink}>
                     <span className="playerName">{player.PlayerName}</span>
-                    <span className="playerRating"> - {Math.round(player.Rating)}</span>
+                    {player.Rating != 0 &&
+                        <span className="playerRating"> - {Math.round(player.Rating)}</span>
+                    }
                 </a>
             </div>
         </div>

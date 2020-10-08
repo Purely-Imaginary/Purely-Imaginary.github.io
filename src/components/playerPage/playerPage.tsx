@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router";
 import axios from 'axios';
 import { BackendURL } from '../../constants';
-import PlayerPageTile from '../playerPageTile/playerPageTile';
+import GenericPlayerPageTile from '../playerPageTiles/generic';
 import moment from 'moment';
 import PlayerLabel from '../playerLabel/playerLabel';
 import { useHistory } from 'react-router-dom';
@@ -137,7 +137,7 @@ export const PlayerPage = () => {
     let streakStart = "";
     let streakValue = 0;
 
-    let prevRating = 1000
+    let prevMatch = data.Snapshots[0];
 
     for (let index = 0; index < data.Snapshots.length; index++) {
         const element = data.Snapshots[index];
@@ -164,7 +164,7 @@ export const PlayerPage = () => {
         }
 
         if (index === 0) continue;
-        let change = element.Rating - prevRating;
+        let change = element.Rating - prevMatch.Rating;
 
         if (change < biggestDrop) {
             biggestDrop = Math.round(change * 10) / 10
@@ -185,19 +185,19 @@ export const PlayerPage = () => {
                 }
             } else {
                 latestStreak = 1
-                streakStart = element.MatchRef.Time
-                streakValue = Math.round((data.Player.Rating - prevRating) * 10) / 10
+                streakStart = prevMatch.MatchRef.Time
+                streakValue = Math.round((data.Player.Rating - prevMatch.Rating) * 10) / 10
             }
         } else {
             if (latestStreak < 0) {
                 latestStreak--
             } else {
                 latestStreak = -1
-                streakStart = element.MatchRef.Time
-                streakValue = Math.round((data.Player.Rating - prevRating) * 10) / 10
+                streakStart = prevMatch.MatchRef.Time
+                streakValue = Math.round((data.Player.Rating - prevMatch.Rating) * 10) / 10
             }
         }
-        prevRating = element.Rating
+        prevMatch = element
     }
     let element = data.Snapshots[data.Snapshots.length - 1]
 
@@ -210,7 +210,7 @@ export const PlayerPage = () => {
         } else {
             latestStreak = 1
             streakStart = element.MatchRef.Time
-            streakValue = Math.round((data.Player.Rating - prevRating) * 10) / 10
+            streakValue = Math.round((data.Player.Rating - prevMatch.Rating) * 10) / 10
         }
     } else {
         if (latestStreak < 0) {
@@ -218,7 +218,7 @@ export const PlayerPage = () => {
         } else {
             latestStreak = -1
             streakStart = element.MatchRef.Time
-            streakValue = Math.round((data.Player.Rating - prevRating) * 10) / 10
+            streakValue = Math.round((data.Player.Rating - prevMatch.Rating) * 10) / 10
         }
     }
 
@@ -274,11 +274,12 @@ export const PlayerPage = () => {
     for (let index = 0; index < data.Player.Matches.length; index++) {
         const match = data.Player.Matches[index];
         let isPlayerRed = true;
-        let didRedWon = match.RedTeam.Score > match.BlueTeam.Score
+        let didRedWon = match.RedTeam.Score > match.BlueTeam.Score;
+        let playerRatingChange = 0;
         for (let j = 0; j < match.BlueTeam.Players.length; j++) {
             const bluePlayer = match.BlueTeam.Players[j];
             if (bluePlayer.PlayerName === data.Player.Name) {
-                isPlayerRed = false
+                isPlayerRed = false;
                 break;
             }
         }
@@ -288,7 +289,14 @@ export const PlayerPage = () => {
                 if (redPlayer.PlayerName === data.Player.Name) continue;
 
                 if (!(redPlayer.PlayerName in alliesQuantitative)) {
-                    alliesQuantitative[redPlayer.PlayerName] = { count: 0, matchBalance: 0, wonAgainst: 0, lostAgainst: 0, currentStreak: 0 }
+                    alliesQuantitative[redPlayer.PlayerName] = { 
+                        count: 0, 
+                        matchBalance: 0, 
+                        wonAgainst: 0, 
+                        lostAgainst: 0, 
+                        currentStreak: 0, 
+                        id: redPlayer.PlayerID 
+                    }
                 }
                 alliesQuantitative[redPlayer.PlayerName].count++;
 
@@ -296,7 +304,14 @@ export const PlayerPage = () => {
             for (let j = 0; j < match.BlueTeam.Players.length; j++) {
                 const bluePlayer = match.BlueTeam.Players[j];
                 if (!(bluePlayer.PlayerName in enemiesQuantitative)) {
-                    enemiesQuantitative[bluePlayer.PlayerName] = { count: 0, matchBalance: 0, wonAgainst: 0, lostAgainst: 0, currentStreak: 0 }
+                    enemiesQuantitative[bluePlayer.PlayerName] = { 
+                        count: 0, 
+                        matchBalance: 0, 
+                        wonAgainst: 0, 
+                        lostAgainst: 0, 
+                        currentStreak: 0, 
+                        id: bluePlayer.PlayerID 
+                    }
                 }
                 enemiesQuantitative[bluePlayer.PlayerName].count++
                 enemiesQuantitative[bluePlayer.PlayerName].matchBalance += didRedWon ? 1 : -1
@@ -310,12 +325,20 @@ export const PlayerPage = () => {
                     enemiesQuantitative[bluePlayer.PlayerName].currentStreak = streakAmount < 0 ? streakAmount - 1 : -1
                 }
 
+                playerRatingChange = match.RedTeam.RatingChange
             }
         } else {
             for (let j = 0; j < match.RedTeam.Players.length; j++) {
                 const redPlayer = match.RedTeam.Players[j];
                 if (!(redPlayer.PlayerName in enemiesQuantitative)) {
-                    enemiesQuantitative[redPlayer.PlayerName] = { count: 0, matchBalance: 0, wonAgainst: 0, lostAgainst: 0, currentStreak: 0 }
+                    enemiesQuantitative[redPlayer.PlayerName] = { 
+                        count: 0, 
+                        matchBalance: 0, 
+                        wonAgainst: 0, 
+                        lostAgainst: 0, 
+                        currentStreak: 0, 
+                        id: redPlayer.PlayerID 
+                    }
                 }
                 enemiesQuantitative[redPlayer.PlayerName].count++
                 enemiesQuantitative[redPlayer.PlayerName].matchBalance += didRedWon ? -1 : 1
@@ -334,12 +357,21 @@ export const PlayerPage = () => {
                 const bluePlayer = match.BlueTeam.Players[j];
                 if (bluePlayer.PlayerName === data.Player.Name) continue;
                 if (!(bluePlayer.PlayerName in alliesQuantitative)) {
-                    alliesQuantitative[bluePlayer.PlayerName] = { count: 0, matchBalance: 0, wonAgainst: 0, lostAgainst: 0, currentStreak: 0 }
+                    alliesQuantitative[bluePlayer.PlayerName] = { 
+                        count: 0, 
+                        matchBalance: 0, 
+                        wonAgainst: 0, 
+                        lostAgainst: 0, 
+                        currentStreak: 0, 
+                        id: bluePlayer.PlayerID
+                    }
                 }
                 alliesQuantitative[bluePlayer.PlayerName].count++
 
             }
+            playerRatingChange = match.BlueTeam.RatingChange
         }
+        additionalMatchData[match.ID] = {playerRatingChange: playerRatingChange}
     }
     var enemiesQuantitativeSorted = [];
     for (var enemy in enemiesQuantitative) {
@@ -357,7 +389,8 @@ export const PlayerPage = () => {
             enemiesQuantitative[enemy].matchBalance,
             enemiesQuantitative[enemy].wonAgainst,
             enemiesQuantitative[enemy].lostAgainst,
-            enemiesQuantitative[enemy].currentStreak]);
+            enemiesQuantitative[enemy].currentStreak,
+            enemiesQuantitative[enemy].id]);
     }
 
     enemiesBalanceSorted.sort(function (a, b) {
@@ -379,112 +412,124 @@ export const PlayerPage = () => {
             <div className="data">
                 <div className="leftPanel">
                     <div className="dataRow">
-                        <PlayerPageTile {...{
+                        <GenericPlayerPageTile {...{
                             title: "Player since",
                             value: data.Snapshots[0].MatchRef.Time,
                             subscript: moment(data.Snapshots[0].MatchRef.Time, "YYYY-MM-DD hh:mm").fromNow()
                         }} />
-                        <PlayerPageTile {...{
-                            title: "Current rating",
-                            value: data.Player.Rating.toString(),
-                            subscript: ""
-                        }} />
-                        <PlayerPageTile {...{
-                            title: "Rating place",
-                            value: ratingPosition.toString(),
-                            subscript: ""
-                        }} />
-                        <PlayerPageTile {...{
-                            title: "Upper neighbor",
-                            value: upperNeighbor.Name + " (" + Math.round(upperNeighbor.Rating * 10) / 10 + ")",
-                            subscript: (Math.round((upperNeighbor.Rating - data.Player.Rating) * 10) / 10).toString() + "pts above"
-                        }} />
-                        <PlayerPageTile {...{
-                            title: "Lower neighbor",
-                            value: lowerNeighbor.Name + " (" + Math.round(lowerNeighbor.Rating * 10) / 10 + ")",
-                            subscript: (Math.round((data.Player.Rating - lowerNeighbor.Rating) * 10) / 10).toString() + "pts below"
-                        }} />
-                        <PlayerPageTile {...{
+                        <GenericPlayerPageTile {...{
                             title: "Matches balance",
                             value: (data.Player.Wins + " : " + data.Player.Losses),
                             subscript: (data.Player.Wins - data.Player.Losses).toString()
                         }} />
-                        <PlayerPageTile {...{
+                        <GenericPlayerPageTile {...{
                             title: "Total matches",
                             value: (data.Player.Wins + data.Player.Losses).toString(),
                             subscript: "~" + matchesPerDay.toString() + " per day"
                         }} />
-                        <PlayerPageTile {...{
+                    </div>
+                    <div className="dataRow">
+                        <GenericPlayerPageTile {...{
+                            title: "Current rating",
+                            value: data.Player.Rating.toString(),
+                            subscript: ""
+                        }} />
+                        <GenericPlayerPageTile {...{
+                            title: "Rating place",
+                            value: ratingPosition.toString(),
+                            subscript: ""
+                        }} />
+                        <GenericPlayerPageTile {...{
+                            title: "Upper neighbor",
+                            value: upperNeighbor.Name + " (" + Math.round(upperNeighbor.Rating * 10) / 10 + ")",
+                            subscript: (Math.round((upperNeighbor.Rating - data.Player.Rating) * 10) / 10).toString() + "pts above you"
+                        }} />
+                        <GenericPlayerPageTile {...{
+                            title: "Lower neighbor",
+                            value: lowerNeighbor.Name + " (" + Math.round(lowerNeighbor.Rating * 10) / 10 + ")",
+                            subscript: (Math.round((data.Player.Rating - lowerNeighbor.Rating) * 10) / 10).toString() + "pts below you"
+                        }} />
+                    </div>
+                    <div className="dataRow">
+                        <GenericPlayerPageTile {...{
                             title: "Goals",
                             value: (data.Player.GoalsScored + " : " + data.Player.GoalsLost),
                             subscript: goalsPerMatch + " avg"
                         }} />
-                        <PlayerPageTile {...{
+                        <GenericPlayerPageTile {...{
                             title: "Goals Shot",
                             value: data.Player.GoalsShot.toString(),
                             subscript: ("~" + goalsShotPerMatch.toString() + " per match")
                         }} />
-                        <PlayerPageTile {...{
+                        <GenericPlayerPageTile {...{
                             title: "Shot %",
                             value: (Math.round((data.Player.GoalsShot / data.Player.GoalsScored) * 1000) / 10).toString() + "%",
                             subscript: ""
                         }} />
-                        <PlayerPageTile {...{
+                    </div>
+                    <div className="dataRow">
+                        <GenericPlayerPageTile {...{
                             title: "Best Rating",
                             value: bestRating.toString(),
                             subscript: bestRatingDate
                         }} />
-                        <PlayerPageTile {...{
+                        <GenericPlayerPageTile {...{
                             title: "Worst Rating",
                             value: worstRating.toString(),
                             subscript: worstRatingDate
                         }} />
-                        <PlayerPageTile {...{
+                        <GenericPlayerPageTile {...{
                             title: "Biggest gain",
-                            value: biggestGain.toString(),
+                            value: biggestGain.toString() + "pts",
                             subscript: biggestGainDate
                         }} />
-                        <PlayerPageTile {...{
+                        <GenericPlayerPageTile {...{
                             title: "Biggest drop",
-                            value: biggestDrop.toString(),
+                            value: biggestDrop.toString() + "pts",
                             subscript: biggestDropDate
                         }} />
-                        <PlayerPageTile {...{
+                    </div>
+                    <div className="dataRow">
+                        <GenericPlayerPageTile {...{
                             title: "Today's change",
-                            value: todayChange.toString(),
+                            value: todayChange.toString() + "pts",
                             subscript: "Since " + moment().format('YYYY-MM-DD')
                         }} />
-                        <PlayerPageTile {...{
+                        <GenericPlayerPageTile {...{
                             title: "Week's change",
-                            value: weeksChange.toString(),
+                            value: weeksChange.toString() + "pts",
                             subscript: "Since " + moment().subtract(1, 'week').format('YYYY-MM-DD')
                         }} />
-                        <PlayerPageTile {...{
+                        <GenericPlayerPageTile {...{
                             title: "Month's change",
-                            value: monthChange.toString(),
+                            value: monthChange.toString() + "pts",
                             subscript: "Since " + moment().subtract(1, 'month').format('YYYY-MM-DD')
                         }} />
-                        <PlayerPageTile {...{
+                    </div>
+                    <div className="dataRow">
+                        <GenericPlayerPageTile {...{
                             title: "Match streak",
                             value: latestStreak.toString() + " (" + streakValue + "pts)",
                             subscript: "Since " + streakStart
                         }} />
-                        <PlayerPageTile {...{
+                        <GenericPlayerPageTile {...{
                             title: "Biggest winning streak",
                             value: biggestWinningStreak.toString(),
                             subscript: "Started at " + biggestWinningStreakDate
                         }} />
-                        <PlayerPageTile {...{
+                        <GenericPlayerPageTile {...{
                             title: "Last matches trend",
                             value: lastMatchesTrend,
                             subscript: ""
                         }} />
-                        <PlayerPageTile {...{
+                    </div>
+                    <div className="dataRow">
+                        <GenericPlayerPageTile {...{
                             title: "Top ally",
                             value: alliesQuantitativeSorted[0][0],
                             subscript: alliesQuantitativeSorted[0][1] + " matches"
                         }} />
-                        <PlayerPageTile {...{
+                        <GenericPlayerPageTile {...{
                             title: "Top enemy",
                             value: enemiesQuantitativeSorted[0][0],
                             subscript: enemiesQuantitativeSorted[0][1] + " matches"
@@ -493,37 +538,45 @@ export const PlayerPage = () => {
                 </div>
                 <div className="rightPanel">
                     <div className="enemiesBalance">
-                        <div className="title">Enemies balance (won - lost against specific opponent)</div>
+                        <div className="title"><h3>Enemies stats (won - lost against specific opponent)</h3></div>
                         <table>
                             <thead>
-                                <th>Enemy</th><th>Score</th><th>Streak</th>
+                                <th>Enemy</th><th>Score</th><th>Win ratio</th><th>Streak</th>
                             </thead>
                             <tbody>
                                 {enemiesBalanceSorted.map(enemy =>
-                                    <tr><td>{enemy[0]}</td><td>{enemy[1]} ({enemy[2]} : {enemy[3]})</td><td>{enemy[4]}</td></tr>
+                                    <tr>
+                                        <td><PlayerLabel {...{PlayerID: enemy[5], PlayerName: enemy[0], Rating: 0}}/>
+                                        </td>
+                                        <td>{enemy[1]} ({enemy[2]} : {enemy[3]})</td>
+                                        <td>{Math.round((enemy[2] / (enemy[2] + enemy[3]))*1000)/10}%</td>
+                                        <td>{enemy[4]}</td>
+                                        </tr>
                                 )}
                             </tbody>
                         </table>
                     </div>
                     <div className="matchHistory">
-                        Matches History
-                        <table>
+                        <h3>Matches History</h3>
+                        <table className="matchHistoryTable table">
                             <thead>
                                 <tr>
                                     <th>Date</th>
-                                    <th>Red Team Players</th>
-                                    <th className="avgRedRating">Avg Red Rating</th>
+                                    <th>Red<br />Players</th>
+                                    <th className="avgRedRating">Avg Red<br />Rating</th>
                                     <th className="scoreColumn" colSpan={3}>Score</th>
-                                    <th className="avgBlueRating">Avg Blue Rating</th>
-                                    <th>Blue Team Players</th>
-                                    <th>Red Team Rating Change</th>
+                                    <th className="avgBlueRating">Avg Blue<br />Rating</th>
+                                    <th>Blue<br />Players</th>
+                                    <th>Player Rating<br />Change</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {data.Player.Matches.reverse().map(match =>
-
+                                {data.Player.Matches.map(match =>
                                     <tr key={match.ID} onClick={() => handleClick(match.ID)}>
-                                        <td>{moment(match.Time).format('DD-MM-YYYY HH:mm')}</td>
+                                        <td>
+                                            {moment(match.Time).format('DD-MM-YYYY')}<br />
+                                            {moment(match.Time).format('HH:mm')}
+                                        </td>
                                         <td className="redTeamMatches">
                                             {match.RedTeam.Players.map(player =>
                                                 <div key={player.PlayerID} className='redTeam'>
@@ -543,7 +596,7 @@ export const PlayerPage = () => {
                                                 </div>
                                             )}
                                         </td>
-                                        <td>{Math.round(match.RedTeam.RatingChange * 10) / 10}</td>
+                                        <td>{Math.round(additionalMatchData[match.ID].playerRatingChange * 10) / 10}</td>
                                     </tr>).reverse()}
                             </tbody>
                         </table>

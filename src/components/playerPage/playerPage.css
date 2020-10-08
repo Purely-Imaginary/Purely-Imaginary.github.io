@@ -13,10 +13,32 @@
 
 .data>div {
     width: 50%;
+    padding: 10px;
 }
 
 .enemiesBalance {
     text-align: center;
     display: flex;
     flex-direction: column;
+}
+
+.matchHistoryTable {
+    width: 100%;
+}
+
+.matchHistoryTable>tbody>td {
+    padding: 10px 0;
+}
+
+.leftPanel>:nth-child(2n+0) {
+    background: rgb(0, 0, 104);
+}
+
+.dataRow {
+    display: flex;
+    justify-content: space-around;
+}
+
+.matchHistory {
+    margin-top: 25px;
 }
