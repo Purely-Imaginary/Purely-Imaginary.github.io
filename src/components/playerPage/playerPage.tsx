@@ -113,8 +113,8 @@ export const PlayerPage = () => {
     }, []);
 
     const history = useHistory();
-    function handleClick(playerID: number) {
-        history.push("/showMatch/" + playerID);
+    function handleClick(MatchID: number) {
+        history.push("/showMatch/" + MatchID);
     }
 
     let bestRating = 0;
@@ -310,6 +310,7 @@ export const PlayerPage = () => {
                         wonAgainst: 0, 
                         lostAgainst: 0, 
                         currentStreak: 0, 
+                        pointsBalance: 0, 
                         id: bluePlayer.PlayerID 
                     }
                 }
@@ -317,6 +318,7 @@ export const PlayerPage = () => {
                 enemiesQuantitative[bluePlayer.PlayerName].matchBalance += didRedWon ? 1 : -1
                 enemiesQuantitative[bluePlayer.PlayerName].wonAgainst += didRedWon ? 1 : 0
                 enemiesQuantitative[bluePlayer.PlayerName].lostAgainst += didRedWon ? 0 : 1
+                enemiesQuantitative[bluePlayer.PlayerName].pointsBalance += match.RedTeam.RatingChange
 
                 let streakAmount = enemiesQuantitative[bluePlayer.PlayerName].currentStreak
                 if (didRedWon) {
@@ -337,6 +339,7 @@ export const PlayerPage = () => {
                         wonAgainst: 0, 
                         lostAgainst: 0, 
                         currentStreak: 0, 
+                        pointsBalance: 0, 
                         id: redPlayer.PlayerID 
                     }
                 }
@@ -344,6 +347,7 @@ export const PlayerPage = () => {
                 enemiesQuantitative[redPlayer.PlayerName].matchBalance += didRedWon ? -1 : 1
                 enemiesQuantitative[redPlayer.PlayerName].wonAgainst += didRedWon ? 0 : 1
                 enemiesQuantitative[redPlayer.PlayerName].lostAgainst += didRedWon ? 1 : 0
+                enemiesQuantitative[redPlayer.PlayerName].pointsBalance += match.BlueTeam.RatingChange
 
                 let streakAmount = enemiesQuantitative[redPlayer.PlayerName].currentStreak
                 if (didRedWon) {
@@ -390,7 +394,8 @@ export const PlayerPage = () => {
             enemiesQuantitative[enemy].wonAgainst,
             enemiesQuantitative[enemy].lostAgainst,
             enemiesQuantitative[enemy].currentStreak,
-            enemiesQuantitative[enemy].id]);
+            enemiesQuantitative[enemy].id,
+            enemiesQuantitative[enemy].pointsBalance]);
     }
 
     enemiesBalanceSorted.sort(function (a, b) {
@@ -541,7 +546,7 @@ export const PlayerPage = () => {
                         <div className="title"><h3>Enemies stats (won - lost against specific opponent)</h3></div>
                         <table>
                             <thead>
-                                <th>Enemy</th><th>Score</th><th>Win ratio</th><th>Streak</th>
+                                <th>Enemy</th><th>Score</th><th>Win ratio</th><th>Streak</th><th>Points gained</th>
                             </thead>
                             <tbody>
                                 {enemiesBalanceSorted.map(enemy =>
@@ -551,6 +556,7 @@ export const PlayerPage = () => {
                                         <td>{enemy[1]} ({enemy[2]} : {enemy[3]})</td>
                                         <td>{Math.round((enemy[2] / (enemy[2] + enemy[3]))*1000)/10}%</td>
                                         <td>{enemy[4]}</td>
+                                        <td>{Math.round(enemy[6]*10)/10}</td>
                                         </tr>
                                 )}
                             </tbody>
