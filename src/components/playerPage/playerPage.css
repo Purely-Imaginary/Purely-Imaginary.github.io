@@ -42,3 +42,22 @@
 .matchHistory {
     margin-top: 25px;
 }
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .data {
+        flex-direction: column;
+    }
+    .data>div {
+        width: 100%;
+        padding: 0;
+    }
+    .enemiesBalance,
+    .matchHistory {
+        font-size: smaller;
+    }
+    .table td,
+    .table th {
+        padding: 5px !important;
+    }
+}

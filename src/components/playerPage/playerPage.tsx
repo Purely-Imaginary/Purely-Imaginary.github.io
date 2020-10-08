@@ -546,7 +546,7 @@ export const PlayerPage = () => {
                         <div className="title"><h3>Enemies stats (won - lost against specific opponent)</h3></div>
                         <table>
                             <thead>
-                                <th>Enemy</th><th>Score</th><th>Win ratio</th><th>Streak</th><th>Points gained</th>
+                                <th>Enemy</th><th>Score</th><th>Win ratio</th><th>Streak</th><th>Points flow</th>
                             </thead>
                             <tbody>
                                 {enemiesBalanceSorted.map(enemy =>
