@@ -112,6 +112,7 @@ export const MatchPage = () => {
                 if (player.PlayerID === goal.PlayerID){
                     player.GoalsNumber++
                 } 
+                return goal;
             })
             return player
         })
@@ -121,6 +122,7 @@ export const MatchPage = () => {
                 if (player.PlayerID === goal.PlayerID){
                     player.GoalsNumber++
                 } 
+                return goal;
             })
             return player
         })
@@ -222,7 +224,7 @@ export const MatchPage = () => {
                     </div>
                 </div>
                 <div className="rightPanel">
-                    <a href={"https://www.haxball.com/replay?v=3#" + BackendURL + "/getFile?id=" + data.ID} target="_blank">LINK TO REPLAY</a>
+                    <a href={"https://www.haxball.com/replay?v=3#" + BackendURL + "/getFile?id=" + data.ID} target="_blank" rel="noopener noreferrer">LINK TO REPLAY</a>
                 </div>
             </div>
         </div>

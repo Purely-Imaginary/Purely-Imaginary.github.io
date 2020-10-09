@@ -71,28 +71,6 @@ export const LastMatchesTable = () => {
         setData(data);
     }, []);
 
-            
-    data.map(match => {
-        match.RedTeam.Players.map (player => {
-            player.GoalsNumber = 0
-            match.Goals.map(goal => {
-                if (player.PlayerID === goal.PlayerID){
-                    player.GoalsNumber++
-                } 
-            })
-            return player
-        })
-        match.BlueTeam.Players.map (player => {
-            player.GoalsNumber = 0
-            match.Goals.map(goal => {
-                if (player.PlayerID === goal.PlayerID){
-                    player.GoalsNumber++
-                } 
-            })
-            return player
-        })
-        return match
-    }, data)
     console.log(data)
 
     const history = useHistory();

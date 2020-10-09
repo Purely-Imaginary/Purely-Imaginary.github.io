@@ -6,7 +6,8 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta name="backend-url" content="%BackendURL%" />
+    <meta name="backend-url" content="https://fef21c7b7c5a.ngrok.io" />
+    <meta name="backend2-url" content=%REACT_APP_BACKEND_URL% />
     <meta name="description" content="Referee - finding the best opponent for YOU" />
     <meta property="og:image" content="%PUBLIC_URL%/logo512blue.png">
     <meta property="twitter:image" content="%PUBLIC_URL%/logo512blue.png">
@@ -29,6 +30,11 @@
     <title>Referee</title>
     <!-- AdSense -->
     <script data-ad-client="ca-pub-9023487879464391" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script type="text/javascript">
+        console.log("%NODE_ENV%");
+        console.log("%PUBLIC_URL%");
+        console.log("%REACT_APP_BACKEND_URL%");
+    </script>
 </head>
 
 <body>

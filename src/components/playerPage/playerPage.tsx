@@ -378,7 +378,7 @@ export const PlayerPage = () => {
         additionalMatchData[match.ID] = {playerRatingChange: playerRatingChange}
     }
     var enemiesQuantitativeSorted = [];
-    for (var enemy in enemiesQuantitative) {
+    for (let enemy in enemiesQuantitative) {
         enemiesQuantitativeSorted.push([enemy, enemiesQuantitative[enemy].count]);
     }
 
@@ -387,7 +387,7 @@ export const PlayerPage = () => {
     });;
 
     var enemiesBalanceSorted = [];
-    for (var enemy in enemiesQuantitative) {
+    for (let enemy in enemiesQuantitative) {
         enemiesBalanceSorted.push([
             enemy,
             enemiesQuantitative[enemy].matchBalance,
@@ -550,7 +550,7 @@ export const PlayerPage = () => {
                             </thead>
                             <tbody>
                                 {enemiesBalanceSorted.map(enemy =>
-                                    <tr>
+                                    <tr key={enemy[5]}>
                                         <td><PlayerLabel {...{PlayerID: enemy[5], PlayerName: enemy[0], Rating: 0}}/>
                                         </td>
                                         <td>{enemy[1]} ({enemy[2]} : {enemy[3]})</td>

@@ -8,7 +8,6 @@ interface PlayerSnapshot {
 }
 
 export const PlayerGoalsLabel = (player : PlayerSnapshot) => {
-    const playerLink = "#/showPlayer/" + player.PlayerID
     let playerGoals = ""
     for (let i = 0; i < player.GoalsNumber; i++) {
         playerGoals += "⚽"

@@ -21,7 +21,7 @@ export const PlayerLabel = (player: PlayerSnapshot) => {
             <div onClick={() => handlePlayerClick(player.PlayerID)}>
                 <a href={playerLink}>
                     <span className="playerName">{player.PlayerName}</span>
-                    {player.Rating != 0 &&
+                    {player.Rating !== 0 &&
                         <span className="playerRating"> - {Math.round(player.Rating)}</span>
                     }
                 </a>
