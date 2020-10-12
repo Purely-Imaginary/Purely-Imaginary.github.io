@@ -432,6 +432,11 @@ export const PlayerPage = () => {
                             value: (data.Player.Wins + data.Player.Losses).toString(),
                             subscript: "~" + matchesPerDay.toString() + " per day"
                         }} />
+                        <GenericPlayerPageTile {...{
+                            title: "Win ratio",
+                            value: (Math.round((data.Player.Wins / (data.Player.Wins + data.Player.Losses))*1000)/10).toString() + "%",
+                            subscript: ""
+                        }} />
                     </div>
                     <div className="dataRow">
                         <GenericPlayerPageTile {...{
