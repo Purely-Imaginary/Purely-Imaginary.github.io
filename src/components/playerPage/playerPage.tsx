@@ -476,6 +476,11 @@ export const PlayerPage = () => {
                             value: (Math.round((data.Player.GoalsShot / data.Player.GoalsScored) * 1000) / 10).toString() + "%",
                             subscript: ""
                         }} />
+                        <GenericPlayerPageTile {...{
+                            title: "Top speed",
+                            value: "Soon " + "km/h",
+                            subscript: "TBD"
+                        }} />
                     </div>
                     <div className="dataRow">
                         <GenericPlayerPageTile {...{
