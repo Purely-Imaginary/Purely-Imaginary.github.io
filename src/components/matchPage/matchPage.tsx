@@ -127,6 +127,52 @@ export const MatchPage = () => {
             return player
         })
 
+        /**
+         * kCoefficient := float32(250)
+
+	ratingDifference := red - blue
+	powerPiece := math.Pow(10, float64(ratingDifference/400))
+	winChance := float32(1 / (1 + powerPiece))
+
+	redPoints := (((float32(1-winChance) / 10) * float32(1)) + winChance)
+	bluePoints := (((float32(winChance) / 10) * float32(-1)) + winChance)
+	redRatingChange := float32(math.Abs(float64(((redPoints - winChance) * kCoefficient) / float32(players))))
+	blueRatingChange := float32(math.Abs(float64(((bluePoints - winChance) * kCoefficient) / float32(players))))
+
+	return redRatingChange, blueRatingChange
+         */
+
+    let ratingDifference = data.RedTeam.AvgTeamRating - data.BlueTeam.AvgTeamRating
+    let kCoefficient = 250
+    let powerPiece = Math.pow(10, (ratingDifference/400))
+    let winChance = (1 / (1 + powerPiece))
+
+    let redPoints = (((1-winChance) / 10) * 1) + winChance
+    let bluePoints = (((winChance) / 10) * -1) + winChance
+    
+    let blueRatingChange = Math.abs((((redPoints - winChance) * kCoefficient) / (data.RedTeam.Players.length)))
+    let redRatingChange = Math.abs((((bluePoints - winChance) * kCoefficient) / data.RedTeam.Players.length))
+
+    let simulatedScoreArray = [];
+    let redSimulatedScore = 10;
+    let blueSimulatedScore = 0;
+
+    for (let i = 0; i < 21; i++) {
+        let calc = redSimulatedScore > blueSimulatedScore ? redRatingChange * redSimulatedScore - blueSimulatedScore : blueRatingChange * blueSimulatedScore - redSimulatedScore
+        simulatedScoreArray.push({
+            'score': redSimulatedScore + ":" + blueSimulatedScore,
+            'calculation': Math.round(calc * 100)/100,
+            'matchOutcome': redSimulatedScore - blueSimulatedScore === data.RedTeam.Score - data.BlueTeam.Score,
+            'isRed': redSimulatedScore > blueSimulatedScore
+        })        
+        if (redSimulatedScore > 0 && blueSimulatedScore == 0){
+            redSimulatedScore--
+        } else {
+            blueSimulatedScore++
+        }
+    }
+
+    
     return (
         <div>
             <h2>MATCH DETAILS VIEW</h2>
@@ -141,6 +187,9 @@ export const MatchPage = () => {
                                 </div>
                             ))}
                         </div>
+                        <div className="avgRedRating avgRating">
+                            {Math.round(data.RedTeam.AvgTeamRating*10)/10}
+                        </div>
                         <div className="scoreData">
                             <div className="scores">
                                 <span className="redScore">{data.RedTeam.Score}</span>
@@ -153,6 +202,9 @@ export const MatchPage = () => {
                             <div className="ratingChange">
                                 {Math.abs(Math.round(data.RedTeam.RatingChange * 100) / 100)}
                             </div>
+                        </div>
+                        <div className="avgBlueRating avgRating">
+                            {Math.round(data.BlueTeam.AvgTeamRating*10)/10}
                         </div>
                         <div>
                         {data.BlueTeam.Players.map(player => (
@@ -224,7 +276,36 @@ export const MatchPage = () => {
                     </div>
                 </div>
                 <div className="rightPanel">
-                    <a href={"https://www.haxball.com/replay?v=3#" + BackendURL + "/getFile?id=" + data.ID} target="_blank" rel="noopener noreferrer">LINK TO REPLAY</a>
+                    <div className="replayButton">
+                        <a href={"https://www.haxball.com/replay?v=3#" + BackendURL + "/getFile?id=" + data.ID} target="_blank" rel="noopener noreferrer">WATCH REPLAY</a>
+                    </div>
+                    <div className='scoreSimulationTable'>
+                        <table className="simulationTable">
+                            <thead>
+                                <tr>
+                                    <td>Team rating diff:</td>
+                                    <td>{Math.round((Math.abs(ratingDifference))*10)/10}</td>
+                                </tr>
+                                <tr>
+                                    <td>Points per goal per player:</td>
+                                    <td><span className="lightRedColor">{Math.round(redRatingChange*100)/100}</span> /  
+                                    <span className="lightBlueColor"> {Math.round(blueRatingChange*100)/100}</span></td>
+                                </tr>
+                                <tr>
+                                    <td colSpan={2}>Possible outcomes:</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {simulatedScoreArray.map(score => 
+                                <tr className={(score.matchOutcome ? "matchOutcome" : "") + (score.isRed ? " redLight" : " blueLight")}>
+                                    <td>{score.score}</td>
+                                    <td>{score.calculation}</td>
+                                </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
             </div>
         </div>

@@ -261,9 +261,9 @@ export const PlayerPage = () => {
     for (let index = (data.Snapshots.length - 1); index > (data.Snapshots.length - 5) && index > 0; index--) {
         const match = data.Snapshots[index];
         if (match.Rating < data.Snapshots[index - 1].Rating) {
-            lastMatchesTrend += " L"
+            lastMatchesTrend = "L " + lastMatchesTrend
         } else {
-            lastMatchesTrend += " W"
+            lastMatchesTrend = "W " + lastMatchesTrend
         }
     }
 

@@ -20,11 +20,11 @@
     font-size: 0.9em;
 }
 
-.scoreData>.scores>.redScore {
+.redScore {
     color: red
 }
 
-.scoreData>.scores>.blueScore {
+.blueScore {
     color: blue
 }
 
@@ -84,4 +84,66 @@
 .matchStartTime,
 .matchEndTime {
     padding: 10px
+}
+
+.matchOutcome {
+    background-color: mediumblue;
+}
+
+.redLight>td,
+.avgRedRating,
+.lightRedColor {
+    color: lightcoral;
+}
+
+.blueLight>td,
+.avgBlueRating,
+.lightBlueColor {
+    color: lightblue;
+}
+
+.avgRating {
+    font-size: x-large;
+}
+
+.scoreSimulationTable {
+    display: flex;
+    justify-content: center;
+}
+
+.simulationTable {
+    table-layout: fixed;
+}
+
+.simulationTable>tbody>tr>td {
+    width: 50%;
+}
+
+.replayButton>a {
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: linear-gradient(#8da86b, #658d59);
+    border-radius: 200px;
+    padding: 15px;
+    font-size: 23px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    width: 237px;
+    border: 3px solid rgba(247, 255, 235, 0.7);
+    transition: 0.1s linear all;
+    background-image: linear-gradient(rgb(104, 121, 71), rgb(81, 113, 71));
+    background-color: initial;
+    color: rgb(232, 230, 227);
+    border-color: rgba(65, 108, 0, 0.7);
+    box-shadow: rgb(104, 121, 71) 0px 0px 0px 3px, rgba(0, 0, 0, 0.33) 0px 0px 6px 6px;
+    text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 0px;
+}
+
+.replayButton>a:hover {
+    color: green;
+    text-decoration: none;
 }
