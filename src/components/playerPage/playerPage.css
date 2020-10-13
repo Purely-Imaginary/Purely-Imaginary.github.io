@@ -30,7 +30,7 @@
     padding: 10px 0;
 }
 
-.leftPanel>:nth-child(2n+0) {
+.leftPlayerPanel>:nth-child(2n+0) {
     background: rgb(0, 0, 104);
 }
 

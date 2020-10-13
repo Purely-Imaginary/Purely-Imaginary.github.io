@@ -415,7 +415,7 @@ export const PlayerPage = () => {
         <div>
             <h1>{data.Player.Name}</h1>
             <div className="data">
-                <div className="leftPanel">
+                <div className="leftPlayerPanel">
                     <div className="dataRow">
                         <GenericPlayerPageTile {...{
                             title: "Player since",
@@ -551,7 +551,7 @@ export const PlayerPage = () => {
                         }} />
                     </div>
                 </div>
-                <div className="rightPanel">
+                <div className="rightPlayerPanel">
                     <div className="enemiesBalance">
                         <div className="title"><h3>Enemies stats (won - lost against specific opponent)</h3></div>
                         <table>

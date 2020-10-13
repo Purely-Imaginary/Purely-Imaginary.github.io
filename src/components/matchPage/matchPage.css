@@ -88,6 +88,7 @@
 
 .matchOutcome {
     background-color: mediumblue;
+    border-radius: 20px;
 }
 
 .redLight>td,
@@ -146,4 +147,24 @@
 .replayButton>a:hover {
     color: green;
     text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .matchDetailsPanels {
+        flex-direction: column;
+        font-size: smaller;
+    }
+    .data>div {
+        width: 100%;
+        padding: 0;
+    }
+    .table td,
+    .table th {
+        padding: 5px !important;
+    }
+    .avgRating,
+    .goalSpeed {
+        display: none !important;
+    }
 }

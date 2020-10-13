@@ -236,7 +236,7 @@ export const MatchPage = () => {
                                     <div className="redTeam">
                                     {goal.IsRed && 
                                         <div>
-                                             ({Math.round(goal.Speed * 100)/10} km/h) {goal.PlayerName} - {secondsToTime(goal.Time)}
+                                             <span className="goalSpeed">({Math.round(goal.Speed * 100)/10} km/h) </span>{goal.PlayerName} - {secondsToTime(goal.Time)}
                                         </div>
                                     }
                                     </div>
@@ -252,7 +252,7 @@ export const MatchPage = () => {
                                     <div className="blueTeam">
                                     {!goal.IsRed && 
                                         <div>
-                                            {secondsToTime(goal.Time)} - {goal.PlayerName} ({Math.round(goal.Speed * 100)/10} km/h)
+                                            {secondsToTime(goal.Time)} - {goal.PlayerName}<span className="goalSpeed"> ({Math.round(goal.Speed * 100)/10} km/h)</span>
                                         </div>
                                     }
                                     </div>
@@ -285,6 +285,11 @@ export const MatchPage = () => {
                                 <tr>
                                     <td>Team rating diff:</td>
                                     <td>{Math.round((Math.abs(ratingDifference))*10)/10}</td>
+                                </tr>
+                                <tr>
+                                    <td>Points per goal for team:</td>
+                                    <td><span className="lightRedColor">{Math.round(redRatingChange*100)/100 * data.RedTeam.Players.length}</span> /  
+                                    <span className="lightBlueColor"> {Math.round(blueRatingChange*100)/100 * data.BlueTeam.Players.length}</span></td>
                                 </tr>
                                 <tr>
                                     <td>Points per goal per player:</td>
