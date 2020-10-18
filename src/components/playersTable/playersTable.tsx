@@ -5,6 +5,9 @@ import { BackendURL } from '../../constants'
 import Table from 'react-bootstrap/Table';
 import moment from 'moment';
 
+// CR: duperela ale: foldery komponentów pisałbym z wielkiej litery, do tego plik z komponentem jak nazwiesz index.tsx to przy imporcie nie musisz wskazywać na "PlayersTable/playersTable.tsx" tylko na sam folder
+// CR: do tego style w tym folderze nazwałbym tylko styles.css
+
 interface Player {
     ID: number,
     Name: string,
@@ -17,7 +20,12 @@ interface Player {
     Rating: number,
 }
 
-export const PlayersTable = () => {
+// CR: otypowanie funkcyjnego komponentu przez React.FC - generykiem można podać jakie propsy przyjmuje
+export const PlayersTable: React.FC = () => {
+
+    // CR: ogólnie u mnie zawsze jest podzielony komponent na: logikę i wyświetlanie.
+    // w tym wypadku wszystkie obliczenia, stan, efekty, deklaracje funkcji coś robiących są w osobnym pliku hook.tsx (hook dla tego komponentu)
+    // który zwraca interface z którego korzysta komponent w index.tsx - którego jedynym celem jest wyświetlanie się na podstawie propsów i danych z hooka
     const [data, setData] = useState<Player[]>([{
         ID: 0,
         Name: "",
@@ -51,6 +59,10 @@ export const PlayersTable = () => {
     })
 
     const history = useHistory();
+
+    // CR: tu ciekawostka: funkcje deklarowane wewnątrz arrow-function są deklarowane za każdym przerenderowaniem na nowo
+    // oznacza to że jeśli przekazujesz taką funkcję do niższych komponentów to przy rerenderze tego komponentu te niżej też na pewno się przerenderują - nawet jak nie muszą
+    // rozwiązaniem jest wyrzucenie handleClick poza tą funkcję (my dodajemy na dole po prostu)
     function handleClick(playerID: number) {
         history.push("/showPlayer/" + playerID);
     }
@@ -59,7 +71,8 @@ export const PlayersTable = () => {
         <Table striped hover className="playersTable">
             <thead>
                 <tr>
-                <th>No.</th>
+                {/* CR: polecam ładować teksty w cudzysłowy, bo github mi źle wyświetlał kod bez */}
+                <th>'No.'</th>
                 <th>Name</th>
                 <th>Wins</th>
                 <th>Losses</th>
@@ -75,6 +88,7 @@ export const PlayersTable = () => {
             </thead>
             <tbody>
         
+            {/* CR: spoczko, ale całą funckję mółbyś wywalić do osobnej funcji, której celem będzie wyrenderowanie zawodnika - my przyjeliśmy terminologię renderCośTam jako wskazanie że funkcja zwraca coś do wyrenderowania - te funkcje też deklarujemy na koniec tego pliku*/}
             {data.map(player => {
                 let aggressionPercent = (Math.round((player.GoalsShot / player.GoalsScored) * 1000) / 10)  + "%"
                 let playerRatingPercent = Math.round((1-((player.Rating - minRating) / (maxRating - minRating)))*100) + "%"

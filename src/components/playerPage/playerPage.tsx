@@ -48,6 +48,9 @@ interface PlayerData {
     PlayerRatings: any[]
 }
 
+// CR: ooo panie 600 linii kody? xDDD
+// IMO wszystko trzeba podzielić - komponent, hook, utilsy do obliczania -> clear code 
+
 export const PlayerPage = () => {
     let { playerID } = useParams();
     const [data, setData] = useState<PlayerData>(
@@ -411,6 +414,8 @@ export const PlayerPage = () => {
         return b[1] - a[1];
     });;
 
+    // CR: tutaj w sumie może taka rada żeby nie robić jednego dużego komponentu tylko robić dużo małych i tylko je potem sobie połączyć
+    // jak mam Page to spodziewałbym się że w return będzie coś w stylu <LeftPlayerPanel /><RightPlayerPanel> itp. poprawia to czytelność i elastyczność na zmiany
     return (
         <div>
             <h1>{data.Player.Name}</h1>
@@ -587,15 +592,21 @@ export const PlayerPage = () => {
                                 </tr>
                             </thead>
                             <tbody>
+                                {/* CR: tak ogónie to nie jestem fanem tabelek w html - IMO strasznie słabo się je styluje, ale tutaj o czym innym chciałem napisać */}
+                                {/* przy długich listach, szczególnie jakbyś chciał robić takie gdzie doczytujesz dane na końcu to obczaj sobię bibliotekę react-virtualized */}
+                                {/* pomaga ona wyświetlać duże ilości danych na stronie, bez problemów z performancem */}
                                 {data.Player.Matches.map(match =>
                                     <tr key={match.ID} onClick={() => handleClick(match.ID)}>
                                         <td>
+                                            {/* CR: IMO dobrze jest tworzyc sobie service np. w tym wypadku TimeService, który użyje jakiegoś ogólnego interface'u i udostępni funkcje komponentom np. TimeService.timeToFormat(time, 'DD-MM-YYYY') */}
+                                            {/* I tam i tylko tam będzie importowana biblioteka moment - dlaczego: bo jak będziesz chciał zmienić liba to będzie tylko wymiana Servicu na inny, a nie zmiana wszędzie w całym projekcie */}
                                             {moment(match.Time).format('DD-MM-YYYY')}<br />
                                             {moment(match.Time).format('HH:mm')}
                                         </td>
                                         <td className="redTeamMatches">
                                             {match.RedTeam.Players.map(player =>
                                                 <div key={player.PlayerID} className='redTeam'>
+                                                    {/* CR: powinniśmy przekazywać tylko te propsy które potrzebuje komponent, nie wszystko jak leci */}
                                                     <PlayerLabel {...player} />
                                                 </div>
                                             )}

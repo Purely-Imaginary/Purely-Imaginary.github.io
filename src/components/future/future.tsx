@@ -1,6 +1,7 @@
 import React from 'react';
 
 export const FutureList = () => {
+    // CR: btw. jeśli chciałbyś liba do tłumaczeń to polecam i18n
     return (
         <div className="futureList">
             <h1>Incoming features</h1>

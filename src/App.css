@@ -13,6 +13,9 @@
     display: flex;
 }
 
+/* CR: osobiście zakochałem się w metodologi nazewnictwa klas w css która nazywa się BEM: http://getbem.com/introduction/ polecam żebyś może sobie obczaił, IMO jest super */
+/* CR: tak w ogóle to proponowałbym sass zamiast zwykłego css https://sass-lang.com , daje o większe możliwości */
+
 .mainContainer {
     margin-top: 50px;
     width: 100%;
