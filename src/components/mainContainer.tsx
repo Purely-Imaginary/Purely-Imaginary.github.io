@@ -12,7 +12,7 @@ import {
   Route
 } from "react-router-dom";
 
-
+// CR: ogólnie odchodzi się od klasowych komponentów - jeśli chcesz mieć stan lub life cycle eventy z komponentu to możesz używać hooków do tego
 export default class Menu extends React.Component {
     state = {
       count: 0
@@ -30,6 +30,7 @@ export default class Menu extends React.Component {
       });
     };
   
+    // CR: tu spoko, ładnie, czytelnie :+1:
     render () {
       return (
         <Router>
