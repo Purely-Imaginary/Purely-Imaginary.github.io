@@ -561,8 +561,8 @@ export const PlayerPage = () => {
                             <tbody>
                                 {enemiesBalanceSorted.map(enemy =>
                                     <tr key={enemy[5]}>
-                                        <td><PlayerLabel {...{PlayerID: enemy[5], PlayerName: enemy[0], Rating: 0}}/>
-                                        </td>
+                                        {/* <td><PlayerLabel {...{PlayerID: enemy[5], PlayerName: enemy[0], Rating: 0}}/>
+                                        </td> */}
                                         <td>{enemy[1]} ({enemy[2]} : {enemy[3]})</td>
                                         <td>{Math.round((enemy[2] / (enemy[2] + enemy[3]))*1000)/10}%</td>
                                         <td>{enemy[4]}</td>
@@ -596,7 +596,7 @@ export const PlayerPage = () => {
                                         <td className="redTeamMatches">
                                             {match.RedTeam.Players.map(player =>
                                                 <div key={player.PlayerID} className='redTeam'>
-                                                    <PlayerLabel {...player} />
+                                                    {/* <PlayerLabel {...player} /> */}
                                                 </div>
                                             )}
                                         </td>
@@ -608,7 +608,7 @@ export const PlayerPage = () => {
                                         <td className="blueTeamMatches">
                                             {match.BlueTeam.Players.map(player =>
                                                 <div key={player.PlayerID} className='blueTeam'>
-                                                    <PlayerLabel {...player} />
+                                                    {/* <PlayerLabel {...player} /> */}
                                                 </div>
                                             )}
                                         </td>

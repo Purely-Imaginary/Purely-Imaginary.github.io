@@ -6,61 +6,69 @@ import moment from 'moment';
 import PlayerLabel from '../playerLabel/playerLabel';
 import { useHistory } from 'react-router-dom';
 
+interface Player {
+    id: number,
+    name: string
+}
+
 interface PlayerSnapshot {
-    PlayerID: number,
-    PlayerName: string,
-    GoalsNumber: number,
-    Rating: number
+    isRed: number,
+    rating: number,
+    player: Player
 }
 
 interface Team {
-    AvgTeamRating: number,
-    RatingChange: number,
-    Score: number,
-    Players: PlayerSnapshot[]
+    avgTeamRating: number,
+    isRed: number,
+    ratingChange: number,
+    score: number,
+    playerSnapshots: PlayerSnapshot[]
 }
 
 interface Match {
-    ID: number,
-    Time: string,
-    Goals: any[],
-    BlueTeam: Team,
-    RedTeam: Team
+    id: number,
+    time: string,    
+    teamSnapshots: Team[]
 }
 
 export const LastMatchesTable = () => {
     const [data, setData] = useState<Match[]>([{
-        ID: 0,
-        Time: "2012-12-25 10:00",
-        Goals: [],
-        BlueTeam: {
-            AvgTeamRating: 0,
-            RatingChange: 0,
-            Score: 0,
-            Players: [{
-                PlayerID: 0,
-                PlayerName: "",
-                GoalsNumber: 0,
-                Rating: 0
+        id: 0,
+        time: "2012-12-25 10:00",
+        teamSnapshots: [{
+            avgTeamRating: 0,
+            isRed: 0,
+            ratingChange: 0,
+            score: 0,
+            playerSnapshots: [{
+                isRed: 0,
+                rating: 0,
+                player: {
+                    id: 0,
+                    name: ""
+                }
             }]
-        },
-        RedTeam: {
-            AvgTeamRating: 0,
-            RatingChange: 0,
-            Score: 0,
-            Players: [{
-                PlayerID: 0,
-                PlayerName: "",
-                GoalsNumber: 0,
-                Rating: 0
+        },{
+            avgTeamRating: 0,
+            isRed: 0,
+            ratingChange: 0,
+            score: 0,
+            playerSnapshots: [{
+                isRed: 0,
+                rating: 0,
+                player: {
+                    id: 0,
+                    name: ""
+                }
             }]
-        }
+            
+        }]
     }]);
 
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios(
-                BackendURL + "/getLastMatches",
+                BackendURL + "/calculatedMatch/getLastMatches",
             );
             setData(result.data);
         };
@@ -93,28 +101,28 @@ export const LastMatchesTable = () => {
             </thead>
             <tbody>
                 {data.map(match =>
-                    <tr key={match.ID} onClick={() => handleClick(match.ID)}>
-                        <td>{moment(match.Time).format('DD-MM-YYYY HH:mm')}</td>
+                    <tr key={match.id} onClick={() => handleClick(match.id)}>
+                        <td>{moment(match.time).format('DD-MM-YYYY HH:mm')}</td>
                         <td className="redTeamMatches">
-                            {match.RedTeam.Players.map(player =>
-                                <div key={player.PlayerID} className='redTeam'>
-                                    <PlayerLabel {...player}/>
+                            {match.teamSnapshots[0].playerSnapshots.map(playerSnapshot =>
+                                <div key={playerSnapshot.player.id} className='redTeam'>
+                                    <PlayerLabel {...playerSnapshot}/>
                                 </div>
                             )}
                         </td>
-                        <td className="redTeamMatches avgRedRating">{Math.round(match.RedTeam.AvgTeamRating * 10) / 10}</td>
-                        <td className="redTeamMatches scoreColumn">{match.RedTeam.Score}</td>
+                        <td className="redTeamMatches avgRedRating">{Math.round(match.teamSnapshots[0].avgTeamRating * 10) / 10}</td>
+                        <td className="redTeamMatches scoreColumn">{match.teamSnapshots[0].score}</td>
                         <td className="scoreColumn"> : </td>
-                        <td className="blueTeamMatches scoreColumn">{match.BlueTeam.Score}</td>
-                        <td className="blueTeamMatches avgBlueRating">{Math.round(match.BlueTeam.AvgTeamRating * 10) / 10}</td>
+                        <td className="blueTeamMatches scoreColumn">{match.teamSnapshots[1].score}</td>
+                        <td className="blueTeamMatches avgBlueRating">{Math.round(match.teamSnapshots[1].avgTeamRating * 10) / 10}</td>
                         <td className="blueTeamMatches">
-                            {match.BlueTeam.Players.map(player =>
-                                <div key={player.PlayerID} className='blueTeam'>
-                                    <PlayerLabel {...player}/>
+                            {match.teamSnapshots[1].playerSnapshots.map(playerSnapshot =>
+                                <div key={playerSnapshot.player.id} className='blueTeam'>
+                                    <PlayerLabel {...playerSnapshot}/>
                                 </div>
                             )}
                         </td>
-                        <td>{Math.round(match.RedTeam.RatingChange * 10) / 10}</td>
+                        <td>{Math.round(match.teamSnapshots[0].ratingChange * 10) / 10}</td>
                     </tr>
                 )}
             </tbody>

@@ -1,15 +1,20 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-interface PlayerSnapshot {
-    PlayerID: number,
-    PlayerName: string,
-    Rating: number
+
+interface Player {
+    id: number,
+    name: string
 }
 
+interface PlayerSnapshot {
+    isRed: number,
+    rating: number,
+    player: Player
+}
 
 export const PlayerLabel = (player: PlayerSnapshot) => {
-    const playerLink = "#/showPlayer/" + player.PlayerID
+    const playerLink = "#/showPlayer/" + player.player.id
 
     const history = useHistory();
     function handlePlayerClick(playerID: number) {
@@ -18,11 +23,11 @@ export const PlayerLabel = (player: PlayerSnapshot) => {
 
     return (
         <div className="playerLabel">
-            <div onClick={() => handlePlayerClick(player.PlayerID)}>
+            <div onClick={() => handlePlayerClick(player.player.id)}>
                 <a href={playerLink}>
-                    <span className="playerName">{player.PlayerName}</span>
-                    {player.Rating !== 0 &&
-                        <span className="playerRating"> - {Math.round(player.Rating)}</span>
+                    <span className="playerName">{player.player.name}</span>
+                    {player.rating !== 0 &&
+                        <span className="playerRating"> - {Math.round(player.rating)}</span>
                     }
                 </a>
             </div>

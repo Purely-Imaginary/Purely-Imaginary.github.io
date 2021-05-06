@@ -180,12 +180,12 @@ export const MatchPage = () => {
                 <div className="leftPanel">
                     <div className="scorePanel">
                         <div>
-                            {data.RedTeam.Players.map(player => (
+                            {/* {data.RedTeam.Players.map(player => (
                                 <div key={player.PlayerID} className='redTeam'>
                                     <PlayerLabel {...player}/>
                                     <PlayerGoalsLabel {...player}/>
                                 </div>
-                            ))}
+                            ))} */}
                         </div>
                         <div className="avgRedRating avgRating">
                             {Math.round(data.RedTeam.AvgTeamRating*10)/10}
@@ -207,12 +207,12 @@ export const MatchPage = () => {
                             {Math.round(data.BlueTeam.AvgTeamRating*10)/10}
                         </div>
                         <div>
-                        {data.BlueTeam.Players.map(player => (
+                        {/* {data.BlueTeam.Players.map(player => (
                                 <div key={player.PlayerID} className='blueTeam'>
                                     <PlayerLabel {...player}/>
                                     <PlayerGoalsLabel {...player}/>
                                 </div>
-                            ))}
+                            ))} */}
                         </div>
                     </div>
                     <div className="goalsChartTitle">GOALS CHART</div>
