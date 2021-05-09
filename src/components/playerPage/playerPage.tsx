@@ -399,7 +399,7 @@ export const PlayerPage = () => {
                     <div className="dataRow">
                         <GenericPlayerPageTile {...{
                             title: "Current rating",
-                            value: data.player.rating.toString(),
+                            value: data.player.rating === null ? 'unknown' : data.player.rating.toString(),
                             subscript: ""
                         }} />
                         <GenericPlayerPageTile {...{
