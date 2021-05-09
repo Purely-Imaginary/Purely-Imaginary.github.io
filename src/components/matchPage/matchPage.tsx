@@ -107,7 +107,6 @@ export const MatchPage = () => {
             blueSimulatedScore++
         }
     }
-
     
     return (
         <div>
@@ -229,8 +228,8 @@ export const MatchPage = () => {
                                 </tr>
                                 <tr>
                                     <td>Points per goal for team:</td>
-                                    <td><span className="lightRedColor">{Math.round(redRatingChange*100)/100 * data.teamSnapshots[0].playerSnapshots.length}</span> /  
-                                    <span className="lightBlueColor"> {Math.round(blueRatingChange*100)/100 * data.teamSnapshots[1].playerSnapshots.length}</span></td>
+                                    <td><span className="lightRedColor">{Math.round(redRatingChange * data.teamSnapshots[0].playerSnapshots.length * 100) / 100 }</span> /  
+                                    <span className="lightBlueColor"> {Math.round(blueRatingChange * data.teamSnapshots[1].playerSnapshots.length * 100) / 100}</span></td>
                                 </tr>
                                 <tr>
                                     <td>Points per goal per player:</td>
