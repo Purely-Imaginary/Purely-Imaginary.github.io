@@ -1,15 +1,18 @@
 import React from 'react';
 
 interface PlayerSnapshot {
-    PlayerID: number,
-    PlayerName: string,
-    GoalsNumber: number,
-    Rating: number
+    isRed: boolean,
+    player: {
+        name: string,
+        id: number
+    }
+    goalsAmount: number,
+    rating: number
 }
 
 export const PlayerGoalsLabel = (player : PlayerSnapshot) => {
     let playerGoals = ""
-    for (let i = 0; i < player.GoalsNumber; i++) {
+    for (let i = 0; i < player.goalsAmount; i++) {
         playerGoals += "⚽"
     }
     return (

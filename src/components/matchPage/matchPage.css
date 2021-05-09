@@ -168,3 +168,19 @@
         display: none !important;
     }
 }
+
+.matchLengthMultiplier {
+    font-size: x-small;
+}
+
+.matchLengthMultiplier.red {
+    color: lightcoral;
+}
+
+.matchLengthMultiplier.green {
+    color: #3fca3f;
+}
+.matchLengthMultiplier.green::before {
+    content: "+";
+}
+

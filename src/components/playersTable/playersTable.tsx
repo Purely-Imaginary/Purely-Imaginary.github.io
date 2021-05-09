@@ -4,36 +4,27 @@ import axios from 'axios';
 import { BackendURL } from '../../constants'
 import Table from 'react-bootstrap/Table';
 import moment from 'moment';
+import loader from '../../assets/img/loader.gif';
 
 interface Player {
-    ID: number,
-    Name: string,
-    Wins: number,
-    Losses: number,
-    GoalsShot: number,
-    GoalsScored: number,
-    GoalsLost: number,
-    Matches: any[],
-    Rating: number,
+    id: number,
+    name: string,
+    wins: number,
+    losses: number,
+    goalsShot: number,
+    goalsScored: number,
+    goalsLost: number,
+    lastPlayed: number,
+    rating: number,
 }
 
 export const PlayersTable = () => {
-    const [data, setData] = useState<Player[]>([{
-        ID: 0,
-        Name: "",
-        Wins: 0,
-        Losses: 0,
-        GoalsShot: 0,
-        GoalsScored: 0,
-        GoalsLost: 0,
-        Matches: [],
-        Rating: 0
-    }]);
+    const [data, setData] = useState<Player[]>();
 
     useEffect(() => {
         const fetchData = async () => {
           const result = await axios(
-            BackendURL + "/getPlayersTable",
+            BackendURL + "/playersTable",
           );
           setData(result.data);
         };
@@ -42,13 +33,6 @@ export const PlayersTable = () => {
       }, []);
 
     let counter = 0;
-    let maxRating = 0;
-    let minRating = 2000;
-    data.map(player => {
-        maxRating = Math.max(maxRating, player.Rating);
-        minRating = Math.min(minRating, player.Rating);
-        return null
-    })
 
     const history = useHistory();
     function handleClick(playerID: number) {
@@ -57,6 +41,8 @@ export const PlayersTable = () => {
 
     return (
         <Table striped hover className="playersTable">
+            {data === undefined && <img src={loader} />}
+            {data !== undefined && 
             <thead>
                 <tr>
                 <th>No.</th>
@@ -69,35 +55,31 @@ export const PlayersTable = () => {
                 <th className="goalsColumn">Goals Lost</th>
                 <th className="goalsColumn">Aggression %</th>
                 <th>Rating</th>
-                <th className="ratingPercent">Rating %</th>
                 <th className="lastMatch">Last played</th>
                 </tr>
-            </thead>
+            </thead>}
             <tbody>
-        
-            {data.map(player => {
-                let aggressionPercent = (Math.round((player.GoalsShot / player.GoalsScored) * 1000) / 10)  + "%"
-                let playerRatingPercent = Math.round((1-((player.Rating - minRating) / (maxRating - minRating)))*100) + "%"
+            {data !== undefined && data.map(player => {
+                let aggressionPercent = (Math.round((player.goalsShot / player.goalsScored) * 1000) / 10)  + "%"
 
-                let WLRatio = Math.round(player.Wins / (player.Wins + player.Losses) * 10000) /100 + "%"
-                return (player.Wins + player.Losses > 10) &&
-                Date.now() - moment(player.Matches[player.Matches.length-1].Time).unix() * 1000 < 2592000000 && // 30 days
+                let WLRatio = Math.round(player.wins / (player.wins + player.losses) * 10000) /100 + "%"
+                let timeSinceLastPlayed = Date.now() - (player.lastPlayed * 1000)
+                return (player.wins + player.losses > 10) &&
+                timeSinceLastPlayed < 2592000000 && // 30 days
                 ++counter &&
-                <tr className="playerRow" key={player.ID} onClick={() => handleClick(player.ID)}>
+                <tr className="playerRow" key={player.id} onClick={() => handleClick(player.id)}>
                     <td>{counter}</td>
-                    <td>{player.Name}</td>
-                    <td>{player.Wins}</td>
-                    <td>{player.Losses}</td>
+                    <td>{player.name}</td>
+                    <td>{player.wins}</td>
+                    <td>{player.losses}</td>
                     <td>{WLRatio}</td>
-                    <td className="goalsColumn">{player.GoalsShot}</td>
-                    <td className="goalsColumn">{player.GoalsScored}</td>
-                    <td className="goalsColumn">{player.GoalsLost}</td>
+                    <td className="goalsColumn">{player.goalsShot}</td>
+                    <td className="goalsColumn">{player.goalsScored}</td>
+                    <td className="goalsColumn">{player.goalsLost}</td>
                     <td className="goalsColumn">{aggressionPercent}</td>
-                    <td>{Math.round(player.Rating * 10)/10}</td>
-                    <td className="ratingPercent">{playerRatingPercent}</td>
+                    <td>{Math.round(player.rating * 10)/10}</td>
                     {
-                        player.Matches[0] !== undefined && 
-                        <td className="lastMatch">{moment(player.Matches[player.Matches.length-1].Time).fromNow()}</td>
+                        <td className="lastMatch">{moment(player.lastPlayed * 1000).fromNow()}</td>
                     }
                 </tr>
             })}

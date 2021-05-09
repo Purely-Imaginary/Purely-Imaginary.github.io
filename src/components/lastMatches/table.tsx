@@ -5,6 +5,7 @@ import Table from 'react-bootstrap/Table';
 import moment from 'moment';
 import PlayerLabel from '../playerLabel/playerLabel';
 import { useHistory } from 'react-router-dom';
+import loader from '../../assets/img/loader.gif';
 
 interface Player {
     id: number,
@@ -32,38 +33,7 @@ interface Match {
 }
 
 export const LastMatchesTable = () => {
-    const [data, setData] = useState<Match[]>([{
-        id: 0,
-        time: "2012-12-25 10:00",
-        teamSnapshots: [{
-            avgTeamRating: 0,
-            isRed: 0,
-            ratingChange: 0,
-            score: 0,
-            playerSnapshots: [{
-                isRed: 0,
-                rating: 0,
-                player: {
-                    id: 0,
-                    name: ""
-                }
-            }]
-        },{
-            avgTeamRating: 0,
-            isRed: 0,
-            ratingChange: 0,
-            score: 0,
-            playerSnapshots: [{
-                isRed: 0,
-                rating: 0,
-                player: {
-                    id: 0,
-                    name: ""
-                }
-            }]
-            
-        }]
-    }]);
+    const [data, setData] = useState<Match[]>();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -75,16 +45,15 @@ export const LastMatchesTable = () => {
 
         fetchData();
 
-
         setData(data);
     }, []);
 
-    console.log(data)
-
     const history = useHistory();
-    function handleClick(playerID: number) {
-        history.push("/showMatch/" + playerID);
+    function handleClick(matchID: number) {
+        history.push("/showMatch/" + matchID);
     }
+    
+    if (data === undefined) return (<img src={loader} />);
 
     return (
         <Table striped hover className="lastMatchTable">

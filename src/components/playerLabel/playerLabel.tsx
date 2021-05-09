@@ -8,7 +8,6 @@ interface Player {
 }
 
 interface PlayerSnapshot {
-    isRed: number,
     rating: number,
     player: Player
 }

@@ -41,3 +41,9 @@
         display: none;
     }
 }
+
+.upload {
+    cursor: pointer;
+    border: 1px #0c1ee6 dashed;
+    padding: 5px;
+}

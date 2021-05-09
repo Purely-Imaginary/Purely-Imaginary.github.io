@@ -4,30 +4,32 @@ import HighchartsReact from 'highcharts-react-official';
 import axios from 'axios';
 import { BackendURL } from '../../constants'
 import moment from 'moment';
+import loader from '../../assets/img/loader.gif';
 
 
 interface PlayerSnapshot {
-    MatchID: number,
-    MatchRef: any,
-    PlayerID: number,
-    PlayerName: string,
-    Rating: number
+    player: {
+        name: string,
+        rating: number
+    }
+    teamSnapshot: {
+        calculatedMatch: {
+            time: string
+        }
+    }
+    rating: number
 }
 
 
 const processData = (snapshots: PlayerSnapshot[]) => {
     let processedData: any = {}
     snapshots.forEach((value) => {
-        if (!(value.PlayerName in processedData)) {
-            processedData[value.PlayerName] = []
-            processedData[value.PlayerName].push([
-                moment(value.MatchRef.Time).valueOf()-3600000,
-                1000,
-            ])
+        if (!(value.player.name in processedData)) {
+            processedData[value.player.name] = []
         }
-        processedData[value.PlayerName].push([
-            moment(value.MatchRef.Time).valueOf(),
-            value.Rating,
+        processedData[value.player.name].push([
+            moment(value.teamSnapshot.calculatedMatch.time).valueOf(),
+            value.rating,
         ])
     })
     let returnData: any = []
@@ -47,7 +49,7 @@ export const Highchart = (props: HighchartsReact.Props) => {
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios(
-                BackendURL + "/getPlayersSnapshots",
+                BackendURL + "/player/snapshot/filtered",
             );
             let chartData = processData(result.data)
             Highcharts.chart('highchart-container', {
@@ -78,7 +80,7 @@ export const Highchart = (props: HighchartsReact.Props) => {
                             return moment(this.value).format('DD-MM-YYYY');
                         }
                     },
-                    min: 1586250000000,
+                    min: 1588726772000,
                     tickInterval: 7*24*60*60*1000
                 },
                 yAxis: {
@@ -94,7 +96,7 @@ export const Highchart = (props: HighchartsReact.Props) => {
     }, []);
         return (
             <div id='highchart-container'>
-                <h1>Loading charts...</h1>
+                <img src={loader} />
             </div>
         )
 }

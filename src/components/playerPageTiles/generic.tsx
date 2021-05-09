@@ -2,7 +2,6 @@ import React from 'react';
 
 
 export const PlayerPageTile = (data: {title:string, value:string, subscript: string}) => {
-    // debugger;
     return (
         <div className="playerPageTile">
             <div className="title">

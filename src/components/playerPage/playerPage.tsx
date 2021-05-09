@@ -6,105 +6,60 @@ import GenericPlayerPageTile from '../playerPageTiles/generic';
 import moment from 'moment';
 import PlayerLabel from '../playerLabel/playerLabel';
 import { useHistory } from 'react-router-dom';
+import loader from '../../assets/img/loader.gif';
+
+interface SimplePlayer {
+    id: number,
+    name: string
+}
 
 interface PlayerSnapshot {
-    PlayerID: number,
-    MatchID: number,
-    PlayerName: string,
-    Rating: number,
-    MatchRef: any
+    isRed: number,
+    rating: number,
+    player: SimplePlayer
+    time: string
 }
 
 interface Team {
-    AvgTeamRating: number,
-    RatingChange: number,
-    Score: number,
-    Players: PlayerSnapshot[]
+    avgTeamRating: number,
+    isRed: number,
+    ratingChange: number,
+    score: number,
+    playerSnapshots: PlayerSnapshot[]
 }
 
 interface Match {
-    ID: number,
-    Time: string,
-    BlueTeam: Team,
-    RedTeam: Team
+    id: number,
+    time: string,    
+    teamSnapshots: Team[]
 }
 
 interface Player {
-    Matches: Match[],
-    GoalsLost: number,
-    GoalsScored: number,
-    GoalsShot: number,
-    ID: number,
-    Losses: number,
-    Name: string,
-    Rating: number,
-    WinRate: number,
-    Wins: number,
+    goalsLost: number,
+    goalsScored: number,
+    goalsShot: number,
+    id: number,
+    losses: number,
+    name: string,
+    rating: number,
+    wins: number,
 }
 
 interface PlayerData {
-    Player: Player,
-    Snapshots: PlayerSnapshot[],
-    PlayerRatings: any[]
+    player: Player,
+    matchHistory: Match[],
+    snapshots: PlayerSnapshot[],
+    playerRatings: Player[]
 }
 
 export const PlayerPage = () => {
     let { playerID } = useParams();
-    const [data, setData] = useState<PlayerData>(
-        {
-            Player: {
-                GoalsLost: 0,
-                GoalsScored: 0,
-                GoalsShot: 0,
-                ID: 0,
-                Losses: 0,
-                Name: "0",
-                Rating: 0,
-                WinRate: 0,
-                Wins: 0,
-                Matches: [{
-                    ID: 0,
-                    Time: "2012-12-25 10:00",
-                    BlueTeam: {
-                        AvgTeamRating: 0,
-                        RatingChange: 0,
-                        Score: 0,
-                        Players: [{
-                            PlayerID: 0,
-                            PlayerName: "",
-                            MatchID: 0,
-                            Rating: 0,
-                            MatchRef: ""
-                        }]
-                    },
-                    RedTeam: {
-                        AvgTeamRating: 0,
-                        RatingChange: 0,
-                        Score: 0,
-                        Players: [{
-                            PlayerID: 0,
-                            PlayerName: "",
-                            MatchID: 0,
-                            Rating: 0,
-                            MatchRef: ""
-                        }]
-                    }
-                }]
-            },
-            Snapshots: [{
-                PlayerID: 0,
-                PlayerName: "",
-                MatchID: 0,
-                Rating: 0,
-                MatchRef: ""
-            }],
-            PlayerRatings: [{}]
-        });
+    const [data, setData] = useState<PlayerData>();
 
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios(
-                BackendURL + "/getPlayerData?id=" + playerID,
+                BackendURL + "/player/" + playerID,
             );
             setData(result.data);
         };
@@ -112,10 +67,13 @@ export const PlayerPage = () => {
         fetchData();
     }, []);
 
+
     const history = useHistory();
     function handleClick(MatchID: number) {
         history.push("/showMatch/" + MatchID);
     }
+
+    if (data === undefined) return (<img src={loader} />);
 
     let bestRating = 0;
     let bestRatingDate = "";
@@ -137,43 +95,43 @@ export const PlayerPage = () => {
     let streakStart = "";
     let streakValue = 0;
 
-    let prevMatch = data.Snapshots[0];
+    let prevMatch = data.snapshots[0];
 
-    for (let index = 0; index < data.Snapshots.length; index++) {
-        const element = data.Snapshots[index];
-        if (element.Rating < worstRating) {
-            worstRating = Math.round(element.Rating * 10) / 10
-            worstRatingDate = element.MatchRef.Time
+    for (let index = 0; index < data.snapshots.length; index++) {
+        const element = data.snapshots[index];
+        if (element.rating < worstRating) {
+            worstRating = Math.round(element.rating * 10) / 10
+            worstRatingDate = element.time
         }
 
-        if (element.Rating > bestRating) {
-            bestRating = Math.round(element.Rating * 10) / 10
-            bestRatingDate = element.MatchRef.Time
+        if (element.rating > bestRating) {
+            bestRating = Math.round(element.rating * 10) / 10
+            bestRatingDate = element.time
         }
 
-        if (todayChange === 0 && moment(element.MatchRef.Time, "YYYY-MM-DD hh:mm") > moment().startOf('day')) {
-            todayChange = Math.round((data.Player.Rating - element.Rating) * 10) / 10
+        if (todayChange === 0 && moment(element.time, "YYYY-MM-DD hh:mm") > moment().startOf('day')) {
+            todayChange = Math.round((data.player.rating - element.rating) * 10) / 10
         }
 
-        if (weeksChange === 0 && moment(element.MatchRef.Time, "YYYY-MM-DD hh:mm") > moment().subtract(1, 'week').startOf('day')) {
-            weeksChange = Math.round((data.Player.Rating - element.Rating) * 10) / 10
+        if (weeksChange === 0 && moment(element.time, "YYYY-MM-DD hh:mm") > moment().subtract(1, 'week').startOf('day')) {
+            weeksChange = Math.round((data.player.rating - element.rating) * 10) / 10
         }
 
-        if (monthChange === 0 && moment(element.MatchRef.Time, "YYYY-MM-DD hh:mm") > moment().subtract(1, 'month').startOf('day')) {
-            monthChange = Math.round((data.Player.Rating - element.Rating) * 10) / 10
+        if (monthChange === 0 && moment(element.time, "YYYY-MM-DD hh:mm") > moment().subtract(1, 'month').startOf('day')) {
+            monthChange = Math.round((data.player.rating - element.rating) * 10) / 10
         }
 
         if (index === 0) continue;
-        let change = element.Rating - prevMatch.Rating;
+        let change = element.rating - prevMatch.rating;
 
         if (change < biggestDrop) {
             biggestDrop = Math.round(change * 10) / 10
-            biggestDropDate = element.MatchRef.Time
+            biggestDropDate = element.time
         }
 
         if (change > biggestGain) {
             biggestGain = Math.round(change * 10) / 10
-            biggestGainDate = element.MatchRef.Time
+            biggestGainDate = element.time
         }
 
         if (change > 0) {
@@ -185,23 +143,23 @@ export const PlayerPage = () => {
                 }
             } else {
                 latestStreak = 1
-                streakStart = prevMatch.MatchRef.Time
-                streakValue = Math.round((data.Player.Rating - prevMatch.Rating) * 10) / 10
+                streakStart = prevMatch.time
+                streakValue = Math.round((data.player.rating - prevMatch.rating) * 10) / 10
             }
         } else {
             if (latestStreak < 0) {
                 latestStreak--
             } else {
                 latestStreak = -1
-                streakStart = prevMatch.MatchRef.Time
-                streakValue = Math.round((data.Player.Rating - prevMatch.Rating) * 10) / 10
+                streakStart = prevMatch.time
+                streakValue = Math.round((data.player.rating - prevMatch.rating) * 10) / 10
             }
         }
         prevMatch = element
     }
-    let element = data.Snapshots[data.Snapshots.length - 1]
+    let element = data.snapshots[data.snapshots.length - 1]
 
-    if (element.Rating < data.Player.Rating) {
+    if (element.rating < data.player.rating) {
         if (latestStreak > 0) {
             latestStreak++
             if (latestStreak > biggestWinningStreak) {
@@ -209,58 +167,58 @@ export const PlayerPage = () => {
             }
         } else {
             latestStreak = 1
-            streakStart = element.MatchRef.Time
-            streakValue = Math.round((data.Player.Rating - prevMatch.Rating) * 10) / 10
+            streakStart = element.time
+            streakValue = Math.round((data.player.rating - prevMatch.rating) * 10) / 10
         }
     } else {
         if (latestStreak < 0) {
             latestStreak--
         } else {
             latestStreak = -1
-            streakStart = element.MatchRef.Time
-            streakValue = Math.round((data.Player.Rating - prevMatch.Rating) * 10) / 10
+            streakStart = element.time
+            streakValue = Math.round((data.player.rating - prevMatch.rating) * 10) / 10
         }
     }
 
     let ratingPosition = 0
-    let upperNeighbor = { Name: "GOD", Rating: 3000 }
-    let lowerNeighbor = { Name: "MUD", Rating: 0 }
+    let upperNeighbor = { name: "GOD", rating: 3000 }
+    let lowerNeighbor = { name: "MUD", rating: 0 }
 
-    for (let index = 0; index < data.PlayerRatings.length; index++) {
-        const player = data.PlayerRatings[index];
-        if (data.Player.Name === player.Name) {
+    for (let index = 0; index < data.playerRatings.length; index++) {
+        const player = data.playerRatings[index];
+        if (data.player.name === player.name) {
             ratingPosition = index + 1;
             if (index > 0) {
                 upperNeighbor = {
-                    Name: data.PlayerRatings[index - 1].Name,
-                    Rating: data.PlayerRatings[index - 1].Rating,
+                    name: data.playerRatings[index - 1].name,
+                    rating: data.playerRatings[index - 1].rating,
                 }
             }
 
-            if (index !== data.PlayerRatings.length - 1) {
+            if (index !== data.playerRatings.length - 1) {
                 lowerNeighbor = {
-                    Name: data.PlayerRatings[index + 1].Name,
-                    Rating: data.PlayerRatings[index + 1].Rating,
+                    name: data.playerRatings[index + 1].name,
+                    rating: data.playerRatings[index + 1].rating,
                 }
             }
         }
     }
 
-    let goalsPerMatch = (Math.round((data.Player.GoalsScored / (data.Player.Wins + data.Player.Losses)) * 10) / 10 +
+    let goalsPerMatch = (Math.round((data.player.goalsScored / (data.player.wins + data.player.losses)) * 10) / 10 +
         " : " +
-        Math.round((data.Player.GoalsLost / (data.Player.Wins + data.Player.Losses)) * 10) / 10)
+        Math.round((data.player.goalsLost / (data.player.wins + data.player.losses)) * 10) / 10)
 
-    let goalsShotPerMatch = Math.round((data.Player.GoalsShot / (data.Player.Wins + data.Player.Losses) * 10)) / 10;
+    let goalsShotPerMatch = Math.round((data.player.goalsShot / (data.player.wins + data.player.losses) * 10)) / 10;
 
     let matchesPerDay = Math.round(
-        ((data.Player.Wins + data.Player.Losses) / moment().diff(moment(data.Snapshots[0].MatchRef.Time, "YYYY-MM-DD hh:mm"), 'days')) * 100) / 100
+        ((data.player.wins + data.player.losses) / moment().diff(moment(data.snapshots[0].time, "YYYY-MM-DD hh:mm"), 'days')) * 100) / 100
 
 
-    let lastMatchesTrend = data.Player.Rating > data.Snapshots[data.Snapshots.length - 1].Rating ? "W" : "L";
+    let lastMatchesTrend = data.player.rating > data.snapshots[data.snapshots.length - 1].rating ? "W" : "L";
 
-    for (let index = (data.Snapshots.length - 1); index > (data.Snapshots.length - 5) && index > 0; index--) {
-        const match = data.Snapshots[index];
-        if (match.Rating < data.Snapshots[index - 1].Rating) {
+    for (let index = (data.snapshots.length - 1); index > (data.snapshots.length - 5) && index > 0; index--) {
+        const match = data.snapshots[index];
+        if (match.rating < data.snapshots[index - 1].rating) {
             lastMatchesTrend = "L " + lastMatchesTrend
         } else {
             lastMatchesTrend = "W " + lastMatchesTrend
@@ -271,111 +229,111 @@ export const PlayerPage = () => {
     var alliesQuantitative: { [k: string]: any } = {}
     var enemiesQuantitative: { [k: string]: any } = {}
 
-    for (let index = 0; index < data.Player.Matches.length; index++) {
-        const match = data.Player.Matches[index];
+    for (let index = 0; index < data.matchHistory.length; index++) {
+        const match = data.matchHistory[index];
         let isPlayerRed = true;
-        let didRedWon = match.RedTeam.Score > match.BlueTeam.Score;
+        let didRedWon = match.teamSnapshots[0].score > match.teamSnapshots[1].score;
         let playerRatingChange = 0;
-        for (let j = 0; j < match.BlueTeam.Players.length; j++) {
-            const bluePlayer = match.BlueTeam.Players[j];
-            if (bluePlayer.PlayerName === data.Player.Name) {
+        for (let j = 0; j < match.teamSnapshots[1].playerSnapshots.length; j++) {
+            const bluePlayer = match.teamSnapshots[1].playerSnapshots[j];
+            if (bluePlayer.player.name === data.player.name) {
                 isPlayerRed = false;
                 break;
             }
         }
         if (isPlayerRed) {
-            for (let j = 0; j < match.RedTeam.Players.length; j++) {
-                const redPlayer = match.RedTeam.Players[j];
-                if (redPlayer.PlayerName === data.Player.Name) continue;
+            for (let j = 0; j < match.teamSnapshots[0].playerSnapshots.length; j++) {
+                const redPlayer = match.teamSnapshots[0].playerSnapshots[j];
+                if (redPlayer.player.name === data.player.name) continue;
 
-                if (!(redPlayer.PlayerName in alliesQuantitative)) {
-                    alliesQuantitative[redPlayer.PlayerName] = { 
+                if (!(redPlayer.player.name in alliesQuantitative)) {
+                    alliesQuantitative[redPlayer.player.name] = { 
                         count: 0, 
                         matchBalance: 0, 
                         wonAgainst: 0, 
                         lostAgainst: 0, 
                         currentStreak: 0, 
-                        id: redPlayer.PlayerID 
+                        id: redPlayer.player.id 
                     }
                 }
-                alliesQuantitative[redPlayer.PlayerName].count++;
+                alliesQuantitative[redPlayer.player.name].count++;
 
             }
-            for (let j = 0; j < match.BlueTeam.Players.length; j++) {
-                const bluePlayer = match.BlueTeam.Players[j];
-                if (!(bluePlayer.PlayerName in enemiesQuantitative)) {
-                    enemiesQuantitative[bluePlayer.PlayerName] = { 
+            for (let j = 0; j < match.teamSnapshots[1].playerSnapshots.length; j++) {
+                const bluePlayer = match.teamSnapshots[1].playerSnapshots[j];
+                if (!(bluePlayer.player.name in enemiesQuantitative)) {
+                    enemiesQuantitative[bluePlayer.player.name] = { 
                         count: 0, 
                         matchBalance: 0, 
                         wonAgainst: 0, 
                         lostAgainst: 0, 
                         currentStreak: 0, 
                         pointsBalance: 0, 
-                        id: bluePlayer.PlayerID 
+                        id: bluePlayer.player.id 
                     }
                 }
-                enemiesQuantitative[bluePlayer.PlayerName].count++
-                enemiesQuantitative[bluePlayer.PlayerName].matchBalance += didRedWon ? 1 : -1
-                enemiesQuantitative[bluePlayer.PlayerName].wonAgainst += didRedWon ? 1 : 0
-                enemiesQuantitative[bluePlayer.PlayerName].lostAgainst += didRedWon ? 0 : 1
-                enemiesQuantitative[bluePlayer.PlayerName].pointsBalance += match.RedTeam.RatingChange
+                enemiesQuantitative[bluePlayer.player.name].count++
+                enemiesQuantitative[bluePlayer.player.name].matchBalance += didRedWon ? 1 : -1
+                enemiesQuantitative[bluePlayer.player.name].wonAgainst += didRedWon ? 1 : 0
+                enemiesQuantitative[bluePlayer.player.name].lostAgainst += didRedWon ? 0 : 1
+                enemiesQuantitative[bluePlayer.player.name].pointsBalance += match.teamSnapshots[0].ratingChange
 
-                let streakAmount = enemiesQuantitative[bluePlayer.PlayerName].currentStreak
+                let streakAmount = enemiesQuantitative[bluePlayer.player.name].currentStreak
                 if (didRedWon) {
-                    enemiesQuantitative[bluePlayer.PlayerName].currentStreak = streakAmount > 0 ? streakAmount + 1 : 1
+                    enemiesQuantitative[bluePlayer.player.name].currentStreak = streakAmount > 0 ? streakAmount + 1 : 1
                 } else {
-                    enemiesQuantitative[bluePlayer.PlayerName].currentStreak = streakAmount < 0 ? streakAmount - 1 : -1
+                    enemiesQuantitative[bluePlayer.player.name].currentStreak = streakAmount < 0 ? streakAmount - 1 : -1
                 }
 
-                playerRatingChange = match.RedTeam.RatingChange
+                playerRatingChange = match.teamSnapshots[0].ratingChange
             }
         } else {
-            for (let j = 0; j < match.RedTeam.Players.length; j++) {
-                const redPlayer = match.RedTeam.Players[j];
-                if (!(redPlayer.PlayerName in enemiesQuantitative)) {
-                    enemiesQuantitative[redPlayer.PlayerName] = { 
+            for (let j = 0; j < match.teamSnapshots[0].playerSnapshots.length; j++) {
+                const redPlayer = match.teamSnapshots[0].playerSnapshots[j];
+                if (!(redPlayer.player.name in enemiesQuantitative)) {
+                    enemiesQuantitative[redPlayer.player.name] = { 
                         count: 0, 
                         matchBalance: 0, 
                         wonAgainst: 0, 
                         lostAgainst: 0, 
                         currentStreak: 0, 
                         pointsBalance: 0, 
-                        id: redPlayer.PlayerID 
+                        id: redPlayer.player.id 
                     }
                 }
-                enemiesQuantitative[redPlayer.PlayerName].count++
-                enemiesQuantitative[redPlayer.PlayerName].matchBalance += didRedWon ? -1 : 1
-                enemiesQuantitative[redPlayer.PlayerName].wonAgainst += didRedWon ? 0 : 1
-                enemiesQuantitative[redPlayer.PlayerName].lostAgainst += didRedWon ? 1 : 0
-                enemiesQuantitative[redPlayer.PlayerName].pointsBalance += match.BlueTeam.RatingChange
+                enemiesQuantitative[redPlayer.player.name].count++
+                enemiesQuantitative[redPlayer.player.name].matchBalance += didRedWon ? -1 : 1
+                enemiesQuantitative[redPlayer.player.name].wonAgainst += didRedWon ? 0 : 1
+                enemiesQuantitative[redPlayer.player.name].lostAgainst += didRedWon ? 1 : 0
+                enemiesQuantitative[redPlayer.player.name].pointsBalance += match.teamSnapshots[1].ratingChange
 
-                let streakAmount = enemiesQuantitative[redPlayer.PlayerName].currentStreak
+                let streakAmount = enemiesQuantitative[redPlayer.player.name].currentStreak
                 if (didRedWon) {
-                    enemiesQuantitative[redPlayer.PlayerName].currentStreak = streakAmount < 0 ? streakAmount - 1 : -1
+                    enemiesQuantitative[redPlayer.player.name].currentStreak = streakAmount < 0 ? streakAmount - 1 : -1
                 } else {
-                    enemiesQuantitative[redPlayer.PlayerName].currentStreak = streakAmount > 0 ? streakAmount + 1 : 1
+                    enemiesQuantitative[redPlayer.player.name].currentStreak = streakAmount > 0 ? streakAmount + 1 : 1
                 }
 
             }
-            for (let j = 0; j < match.BlueTeam.Players.length; j++) {
-                const bluePlayer = match.BlueTeam.Players[j];
-                if (bluePlayer.PlayerName === data.Player.Name) continue;
-                if (!(bluePlayer.PlayerName in alliesQuantitative)) {
-                    alliesQuantitative[bluePlayer.PlayerName] = { 
+            for (let j = 0; j < match.teamSnapshots[1].playerSnapshots.length; j++) {
+                const bluePlayer = match.teamSnapshots[1].playerSnapshots[j];
+                if (bluePlayer.player.name === data.player.name) continue;
+                if (!(bluePlayer.player.name in alliesQuantitative)) {
+                    alliesQuantitative[bluePlayer.player.name] = { 
                         count: 0, 
                         matchBalance: 0, 
                         wonAgainst: 0, 
                         lostAgainst: 0, 
                         currentStreak: 0, 
-                        id: bluePlayer.PlayerID
+                        id: bluePlayer.player.id
                     }
                 }
-                alliesQuantitative[bluePlayer.PlayerName].count++
+                alliesQuantitative[bluePlayer.player.name].count++
 
             }
-            playerRatingChange = match.BlueTeam.RatingChange
+            playerRatingChange = match.teamSnapshots[1].ratingChange
         }
-        additionalMatchData[match.ID] = {playerRatingChange: playerRatingChange}
+        additionalMatchData[match.id] = {playerRatingChange: playerRatingChange}
     }
     var enemiesQuantitativeSorted = [];
     for (let enemy in enemiesQuantitative) {
@@ -413,35 +371,35 @@ export const PlayerPage = () => {
 
     return (
         <div>
-            <h1>{data.Player.Name}</h1>
+            <h1>{data.player.name}</h1>
             <div className="data">
                 <div className="leftPlayerPanel">
                     <div className="dataRow">
                         <GenericPlayerPageTile {...{
                             title: "Player since",
-                            value: data.Snapshots[0].MatchRef.Time,
-                            subscript: moment(data.Snapshots[0].MatchRef.Time, "YYYY-MM-DD hh:mm").fromNow()
+                            value: data.snapshots[0].time,
+                            subscript: moment(data.snapshots[0].time, "YYYY-MM-DD hh:mm").fromNow()
                         }} />
                         <GenericPlayerPageTile {...{
                             title: "Matches balance",
-                            value: (data.Player.Wins + " : " + data.Player.Losses),
-                            subscript: (data.Player.Wins - data.Player.Losses).toString()
+                            value: (data.player.wins + " : " + data.player.losses),
+                            subscript: (data.player.wins - data.player.losses).toString()
                         }} />
                         <GenericPlayerPageTile {...{
                             title: "Total matches",
-                            value: (data.Player.Wins + data.Player.Losses).toString(),
+                            value: (data.player.wins + data.player.losses).toString(),
                             subscript: "~" + matchesPerDay.toString() + " per day"
                         }} />
                         <GenericPlayerPageTile {...{
                             title: "Win ratio",
-                            value: (Math.round((data.Player.Wins / (data.Player.Wins + data.Player.Losses))*1000)/10).toString() + "%",
+                            value: (Math.round((data.player.wins / (data.player.wins + data.player.losses))*1000)/10).toString() + "%",
                             subscript: ""
                         }} />
                     </div>
                     <div className="dataRow">
                         <GenericPlayerPageTile {...{
                             title: "Current rating",
-                            value: data.Player.Rating.toString(),
+                            value: data.player.rating.toString(),
                             subscript: ""
                         }} />
                         <GenericPlayerPageTile {...{
@@ -451,34 +409,34 @@ export const PlayerPage = () => {
                         }} />
                         <GenericPlayerPageTile {...{
                             title: "Upper neighbor",
-                            value: upperNeighbor.Name + " (" + Math.round(upperNeighbor.Rating * 10) / 10 + ")",
-                            subscript: (Math.round((upperNeighbor.Rating - data.Player.Rating) * 10) / 10).toString() + "pts above you"
+                            value: upperNeighbor.name + " (" + Math.round(upperNeighbor.rating * 10) / 10 + ")",
+                            subscript: (Math.round((upperNeighbor.rating - data.player.rating) * 10) / 10).toString() + "pts above you"
                         }} />
                         <GenericPlayerPageTile {...{
                             title: "Lower neighbor",
-                            value: lowerNeighbor.Name + " (" + Math.round(lowerNeighbor.Rating * 10) / 10 + ")",
-                            subscript: (Math.round((data.Player.Rating - lowerNeighbor.Rating) * 10) / 10).toString() + "pts below you"
+                            value: lowerNeighbor.name + " (" + Math.round(lowerNeighbor.rating * 10) / 10 + ")",
+                            subscript: (Math.round((data.player.rating - lowerNeighbor.rating) * 10) / 10).toString() + "pts below you"
                         }} />
                     </div>
                     <div className="dataRow">
                         <GenericPlayerPageTile {...{
                             title: "Goals",
-                            value: (data.Player.GoalsScored + " : " + data.Player.GoalsLost),
+                            value: (data.player.goalsScored + " : " + data.player.goalsLost),
                             subscript: goalsPerMatch + " avg"
                         }} />
                         <GenericPlayerPageTile {...{
                             title: "Goals Shot",
-                            value: data.Player.GoalsShot.toString(),
+                            value: data.player.goalsShot.toString(),
                             subscript: ("~" + goalsShotPerMatch.toString() + " per match")
                         }} />
                         <GenericPlayerPageTile {...{
                             title: "Shot %",
-                            value: (Math.round((data.Player.GoalsShot / data.Player.GoalsScored) * 1000) / 10).toString() + "%",
+                            value: (Math.round((data.player.goalsShot / data.player.goalsScored) * 1000) / 10).toString() + "%",
                             subscript: ""
                         }} />
                         <GenericPlayerPageTile {...{
                             title: "Top speed",
-                            value: "Soon " + "km/h",
+                            value: "Soon km/h",
                             subscript: "TBD"
                         }} />
                     </div>
@@ -561,8 +519,8 @@ export const PlayerPage = () => {
                             <tbody>
                                 {enemiesBalanceSorted.map(enemy =>
                                     <tr key={enemy[5]}>
-                                        {/* <td><PlayerLabel {...{PlayerID: enemy[5], PlayerName: enemy[0], Rating: 0}}/>
-                                        </td> */}
+                                        <td><PlayerLabel {...{player: {id: enemy[5], name:enemy[0]}, rating: 0}}/>
+                                        </td>
                                         <td>{enemy[1]} ({enemy[2]} : {enemy[3]})</td>
                                         <td>{Math.round((enemy[2] / (enemy[2] + enemy[3]))*1000)/10}%</td>
                                         <td>{enemy[4]}</td>
@@ -587,32 +545,32 @@ export const PlayerPage = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {data.Player.Matches.map(match =>
-                                    <tr key={match.ID} onClick={() => handleClick(match.ID)}>
+                                {data.matchHistory.map(match =>
+                                    <tr key={match.id} onClick={() => handleClick(match.id)}>
                                         <td>
-                                            {moment(match.Time).format('DD-MM-YYYY')}<br />
-                                            {moment(match.Time).format('HH:mm')}
+                                            {moment(match.time).format('DD-MM-YYYY')}<br />
+                                            {moment(match.time).format('HH:mm')}
                                         </td>
                                         <td className="redTeamMatches">
-                                            {match.RedTeam.Players.map(player =>
-                                                <div key={player.PlayerID} className='redTeam'>
-                                                    {/* <PlayerLabel {...player} /> */}
+                                            {match.teamSnapshots[0].playerSnapshots.map(player =>
+                                                <div key={player.player.id} className='redTeam'>
+                                                    <PlayerLabel {...player} />
                                                 </div>
                                             )}
                                         </td>
-                                        <td className="redTeamMatches avgRedRating">{Math.round(match.RedTeam.AvgTeamRating * 10) / 10}</td>
-                                        <td className="redTeamMatches scoreColumn">{match.RedTeam.Score}</td>
+                                        <td className="redTeamMatches avgRedRating">{Math.round(match.teamSnapshots[0].avgTeamRating * 10) / 10}</td>
+                                        <td className="redTeamMatches scoreColumn">{match.teamSnapshots[0].score}</td>
                                         <td className="scoreColumn"> : </td>
-                                        <td className="blueTeamMatches scoreColumn">{match.BlueTeam.Score}</td>
-                                        <td className="blueTeamMatches avgBlueRating">{Math.round(match.BlueTeam.AvgTeamRating * 10) / 10}</td>
+                                        <td className="blueTeamMatches scoreColumn">{match.teamSnapshots[1].score}</td>
+                                        <td className="blueTeamMatches avgBlueRating">{Math.round(match.teamSnapshots[1].avgTeamRating * 10) / 10}</td>
                                         <td className="blueTeamMatches">
-                                            {match.BlueTeam.Players.map(player =>
-                                                <div key={player.PlayerID} className='blueTeam'>
-                                                    {/* <PlayerLabel {...player} /> */}
+                                            {match.teamSnapshots[1].playerSnapshots.map(player =>
+                                                <div key={player.player.id} className='blueTeam'>
+                                                    <PlayerLabel {...player} />
                                                 </div>
                                             )}
                                         </td>
-                                        <td>{Math.round(additionalMatchData[match.ID].playerRatingChange * 10) / 10}</td>
+                                        <td>{Math.round(additionalMatchData[match.id].playerRatingChange * 10) / 10}</td>
                                     </tr>).reverse()}
                             </tbody>
                         </table>
