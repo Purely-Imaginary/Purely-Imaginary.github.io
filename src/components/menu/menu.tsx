@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import MenuLink from './menuLink';
 import MenuLogo from './menuLogo';
 import { BackendURL } from '../../constants';
@@ -11,28 +11,33 @@ import { useHistory } from 'react-router-dom';
 
 let fileTransferActive = false;
 
-const fileDrop = async (file: any) => {
-    file = file[0];
-    fileTransferActive = true;
-    if (-1 === file.name.indexOf('.hbr2')){
-        return
+export const Menu = () => {
+
+    const [transferActive, setTransferActive] = useState<string>(upload);
+
+    const fileDrop = async (file: any) => {
+        file = file[0];
+        setTransferActive(loader);
+        if (-1 === file.name.indexOf('.hbr2')){
+            console.log('abort transfer, wrong format');
+            setTransferActive(upload);
+            return;
+        }
+    
+        let formData = new FormData();
+        formData.append("file", file);
+        axios.post(BackendURL + "/raw/match", formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
+        .then((response) => {
+            setTransferActive(upload);
+            window.location.href = "/#/showMatch/" + response.data;
+        });
+    
     }
 
-    let formData = new FormData();
-    formData.append("file", file);
-
-    axios.post(BackendURL + "/raw/match", formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    })
-    .then((response) => {
-        fileTransferActive = false;
-        window.location.href = "/#/showMatch/" + response.data;
-    });
-
-}
-export const Menu: React.FC = () => {
     return (
         <Router>
             <div className="menu">
@@ -41,8 +46,7 @@ export const Menu: React.FC = () => {
                         <section>
                             <div className="upload" {...getRootProps()}>
                                 <input {...getInputProps()} />
-                                {!fileTransferActive && <img src={upload} />}
-                                {fileTransferActive && <img src={loader} />}
+                                <img src={transferActive} />
                             </div>
                         </section>
                     )}
