@@ -1,2 +1,2 @@
-// export const BackendURL: string = "https://25d13d20ea75.ngrok.io"
-export const BackendURL: string = "http://papercut:800"
+export const BackendURL: string = "http://hax.opac.pl"
+// export const BackendURL: string = "http://papercut:800"

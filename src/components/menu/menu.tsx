@@ -55,6 +55,7 @@ export const Menu = () => {
                 <MenuLink text="Last matches" url="/#/matches" icon="🕑" />
                 <MenuLink text="Players table" url="/#/players" icon="⚔" />
                 <MenuLink text="Charts" url="/#/charts" icon="📊" />
+                <MenuLink text="Season 1" url="/#/old" icon="⬅️" />
                 <MenuLink text="Future features" url="/#/future" icon="💡" />
                 <div className="backendURL"><span>{BackendURL}/p?u=</span></div>
             </div>

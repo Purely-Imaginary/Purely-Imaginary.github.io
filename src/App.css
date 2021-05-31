@@ -8,6 +8,7 @@
 @import "./components/matchPage/matchPage.css";
 @import "./components/playerGoalsLabel/playerGoalsLabel.css";
 @import "./components/playerPageTiles/playerPageTiles.css";
+@import "./components/pastData/pastData.css";
 .App {
     text-align: center;
     display: flex;
