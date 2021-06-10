@@ -99,6 +99,10 @@ export const PlayerPage = () => {
 
     for (let index = 0; index < data.snapshots.length; index++) {
         const element = data.snapshots[index];
+        if (element.rating === null) {
+            continue;
+        }
+
         if (element.rating < worstRating) {
             worstRating = Math.round(element.rating * 10) / 10
             worstRatingDate = element.time
@@ -117,7 +121,7 @@ export const PlayerPage = () => {
             weeksChange = Math.round((data.player.rating - element.rating) * 10) / 10
         }
 
-        if (monthChange === 0 && moment(element.time, "YYYY-MM-DD hh:mm") > moment().subtract(1, 'month').startOf('day')) {
+        if (element.rating !== null &&monthChange === 0 && moment(element.time, "YYYY-MM-DD hh:mm") > moment().subtract(1, 'month').startOf('day')) {
             monthChange = Math.round((data.player.rating - element.rating) * 10) / 10
         }
 
@@ -146,7 +150,7 @@ export const PlayerPage = () => {
                 streakStart = prevMatch.time
                 streakValue = Math.round((data.player.rating - prevMatch.rating) * 10) / 10
             }
-        } else {
+        } else if (change < 0) {
             if (latestStreak < 0) {
                 latestStreak--
             } else {
@@ -170,7 +174,7 @@ export const PlayerPage = () => {
             streakStart = element.time
             streakValue = Math.round((data.player.rating - prevMatch.rating) * 10) / 10
         }
-    } else {
+    } else if (element.rating > data.player.rating) {
         if (latestStreak < 0) {
             latestStreak--
         } else {
@@ -218,10 +222,12 @@ export const PlayerPage = () => {
 
     for (let index = (data.snapshots.length - 1); index > (data.snapshots.length - 5) && index > 0; index--) {
         const match = data.snapshots[index];
-        if (match.rating < data.snapshots[index - 1].rating) {
+        if (match.rating < data.snapshots[index - 1].rating && data.snapshots[index - 1].rating !== null) {
             lastMatchesTrend = "L " + lastMatchesTrend
-        } else {
+        } else if (match.rating > data.snapshots[index - 1].rating && data.snapshots[index - 1].rating !== null){
             lastMatchesTrend = "W " + lastMatchesTrend
+        } else {
+            lastMatchesTrend = "X " + lastMatchesTrend
         }
     }
 
