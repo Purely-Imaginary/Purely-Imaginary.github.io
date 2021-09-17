@@ -80,8 +80,6 @@ export const PastData = () => {
                         <th className="goalsColumn">Goals Lost</th>
                         <th className="goalsColumn">Aggression %</th>
                         <th>Rating</th>
-                        <th className="ratingPercent">Rating %</th>
-                        <th className="lastMatch">Last played</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -96,8 +94,6 @@ export const PastData = () => {
                         <td className="goalsColumn">1775</td>
                         <td className="goalsColumn">30.8%</td>
                         <td>1862.9</td>
-                        <td className="ratingPercent">0%</td>
-                        <td className="lastMatch">3 days ago</td>
                     </tr>
                     <tr className="playerRow">
                         <td>2</td>
@@ -110,8 +106,6 @@ export const PastData = () => {
                         <td className="goalsColumn">1117</td>
                         <td className="goalsColumn">37%</td>
                         <td>1317.1</td>
-                        <td className="ratingPercent">42%</td>
-                        <td className="lastMatch">3 days ago</td>
                     </tr>
                     <tr className="playerRow">
                         <td>3</td>
@@ -124,8 +118,6 @@ export const PastData = () => {
                         <td className="goalsColumn">1201</td>
                         <td className="goalsColumn">55.9%</td>
                         <td>1295.9</td>
-                        <td className="ratingPercent">43%</td>
-                        <td className="lastMatch">3 days ago</td>
                     </tr>
                     <tr className="playerRow">
                         <td>4</td>
@@ -138,8 +130,6 @@ export const PastData = () => {
                         <td className="goalsColumn">1605</td>
                         <td className="goalsColumn">62%</td>
                         <td>1231.6</td>
-                        <td className="ratingPercent">48%</td>
-                        <td className="lastMatch">11 days ago</td>
                     </tr>
                     <tr className="playerRow">
                         <td>5</td>
@@ -152,8 +142,6 @@ export const PastData = () => {
                         <td className="goalsColumn">1699</td>
                         <td className="goalsColumn">51.7%</td>
                         <td>963.4</td>
-                        <td className="ratingPercent">69%</td>
-                        <td className="lastMatch">3 days ago</td>
                     </tr>
                     <tr className="playerRow">
                         <td>6</td>
@@ -166,8 +154,6 @@ export const PastData = () => {
                         <td className="goalsColumn">1985</td>
                         <td className="goalsColumn">50.2%</td>
                         <td>870.4</td>
-                        <td className="ratingPercent">76%</td>
-                        <td className="lastMatch">4 days ago</td>
                     </tr>
                     <tr className="playerRow">
                         <td>7</td>
@@ -180,8 +166,6 @@ export const PastData = () => {
                         <td className="goalsColumn">837</td>
                         <td className="goalsColumn">27.4%</td>
                         <td>622</td>
-                        <td className="ratingPercent">95%</td>
-                        <td className="lastMatch">5 days ago</td>
                     </tr>
                     <tr className="playerRow">
                         <td>8</td>
@@ -194,8 +178,6 @@ export const PastData = () => {
                         <td className="goalsColumn">698</td>
                         <td className="goalsColumn">55.2%</td>
                         <td>559.2</td>
-                        <td className="ratingPercent">100%</td>
-                        <td className="lastMatch">3 days ago</td>
                     </tr>
                 </tbody>
             </table>

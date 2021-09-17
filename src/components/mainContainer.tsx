@@ -6,6 +6,7 @@ import Highchart from './charts/highchart';
 import PlayerPage from './playerPage/playerPage';
 import MatchPage from './matchPage/matchPage';
 import PastData from './pastData/pastData';
+import PastData2nd from './pastData2nd/pastData2nd';
 
 import {
   HashRouter as Router,
@@ -59,6 +60,10 @@ export default class Menu extends React.Component {
               <Route path="/old">
                 <h1>Season 1</h1>
                 <PastData />
+              </Route>
+              <Route path="/old2">
+                <h1>Season 2</h1>
+                <PastData2nd />
               </Route>
               <Route path="/">
                 <h1>Last Matches</h1>
