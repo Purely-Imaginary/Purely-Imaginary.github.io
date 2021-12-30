@@ -86,98 +86,98 @@ export const PastData3rd = () => {
     <tr className="playerRow">
         <td>1</td>
         <td>MaddoHatto</td>
-        <td>99</td>
-        <td>26</td>
-        <td>79.2%</td>
-        <td className="goalsColumn">285</td>
-        <td className="goalsColumn">835</td>
-        <td className="goalsColumn">437</td>
-        <td className="goalsColumn">34.1%</td>
-        <td>2131.1</td>
+        <td>83</td>
+        <td>30</td>
+        <td>73.45%</td>
+        <td className="goalsColumn">255</td>
+        <td className="goalsColumn">685</td>
+        <td className="goalsColumn">362</td>
+        <td className="goalsColumn">37.2%</td>
+        <td>1759.2</td>
     </tr>
     <tr className="playerRow">
         <td>2</td>
-        <td>hubigz</td>
-        <td>26</td>
-        <td>38</td>
-        <td>40.63%</td>
-        <td className="goalsColumn">142</td>
-        <td className="goalsColumn">264</td>
-        <td className="goalsColumn">332</td>
-        <td className="goalsColumn">53.8%</td>
-        <td>1428.9</td>
+        <td>Nelson Mandela</td>
+        <td>34</td>
+        <td>47</td>
+        <td>41.98%</td>
+        <td className="goalsColumn">229</td>
+        <td className="goalsColumn">367</td>
+        <td className="goalsColumn">395</td>
+        <td className="goalsColumn">62.4%</td>
+        <td>1200.9</td>
     </tr>
     <tr className="playerRow">
         <td>3</td>
-        <td>adamaru</td>
-        <td>11</td>
-        <td>15</td>
-        <td>42.31%</td>
-        <td className="goalsColumn">48</td>
-        <td className="goalsColumn">102</td>
-        <td className="goalsColumn">134</td>
-        <td className="goalsColumn">47.1%</td>
-        <td>1291.1</td>
+        <td>hubigz</td>
+        <td>27</td>
+        <td>33</td>
+        <td>45%</td>
+        <td className="goalsColumn">115</td>
+        <td className="goalsColumn">255</td>
+        <td className="goalsColumn">304</td>
+        <td className="goalsColumn">45.1%</td>
+        <td>1064</td>
     </tr>
     <tr className="playerRow">
         <td>4</td>
-        <td>Nelson Mandela</td>
-        <td>40</td>
-        <td>67</td>
-        <td>37.38%</td>
-        <td className="goalsColumn">286</td>
-        <td className="goalsColumn">506</td>
-        <td className="goalsColumn">593</td>
-        <td className="goalsColumn">56.5%</td>
-        <td>791</td>
+        <td>panda</td>
+        <td>9</td>
+        <td>8</td>
+        <td>52.94%</td>
+        <td className="goalsColumn">24</td>
+        <td className="goalsColumn">74</td>
+        <td className="goalsColumn">86</td>
+        <td className="goalsColumn">32.4%</td>
+        <td>946.7</td>
     </tr>
     <tr className="playerRow">
         <td>5</td>
-        <td>Amman</td>
-        <td>57</td>
-        <td>51</td>
-        <td>52.78%</td>
-        <td className="goalsColumn">320</td>
-        <td className="goalsColumn">551</td>
-        <td className="goalsColumn">543</td>
-        <td className="goalsColumn">58.1%</td>
-        <td>698.3</td>
+        <td>ToPP</td>
+        <td>43</td>
+        <td>43</td>
+        <td>50%</td>
+        <td className="goalsColumn">240</td>
+        <td className="goalsColumn">387</td>
+        <td className="goalsColumn">402</td>
+        <td className="goalsColumn">62%</td>
+        <td>923</td>
     </tr>
     <tr className="playerRow">
         <td>6</td>
-        <td>ToPP</td>
-        <td>36</td>
-        <td>60</td>
-        <td>37.5%</td>
-        <td className="goalsColumn">253</td>
-        <td className="goalsColumn">438</td>
-        <td className="goalsColumn">573</td>
-        <td className="goalsColumn">57.8%</td>
-        <td>602.6</td>
+        <td>rybak</td>
+        <td>6</td>
+        <td>15</td>
+        <td>28.57%</td>
+        <td className="goalsColumn">37</td>
+        <td className="goalsColumn">77</td>
+        <td className="goalsColumn">135</td>
+        <td className="goalsColumn">48.1%</td>
+        <td>882.1</td>
     </tr>
     <tr className="playerRow">
         <td>7</td>
-        <td>Panda</td>
-        <td>5</td>
-        <td>9</td>
-        <td>35.71%</td>
-        <td className="goalsColumn">12</td>
-        <td className="goalsColumn">66</td>
-        <td className="goalsColumn">100</td>
-        <td className="goalsColumn">18.2%</td>
-        <td>290.6</td>
+        <td>Amman</td>
+        <td>36</td>
+        <td>48</td>
+        <td>42.86%</td>
+        <td className="goalsColumn">144</td>
+        <td className="goalsColumn">345</td>
+        <td className="goalsColumn">433</td>
+        <td className="goalsColumn">41.7%</td>
+        <td>805.9</td>
     </tr>
     <tr className="playerRow">
         <td>8</td>
-        <td>logical-luke</td>
-        <td>5</td>
-        <td>10</td>
-        <td>33.33%</td>
-        <td className="goalsColumn">25</td>
-        <td className="goalsColumn">58</td>
-        <td className="goalsColumn">94</td>
-        <td className="goalsColumn">43.1%</td>
-        <td>-175.8</td>
+        <td>Bartik</td>
+        <td>12</td>
+        <td>16</td>
+        <td>42.86%</td>
+        <td className="goalsColumn">52</td>
+        <td className="goalsColumn">123</td>
+        <td className="goalsColumn">134</td>
+        <td className="goalsColumn">42.3%</td>
+        <td>790.8</td>
     </tr>
     </tbody>
 </table>
