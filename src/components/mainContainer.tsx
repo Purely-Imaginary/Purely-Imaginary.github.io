@@ -7,6 +7,7 @@ import PlayerPage from './playerPage/playerPage';
 import MatchPage from './matchPage/matchPage';
 import PastData from './pastData/pastData';
 import PastData2nd from './pastData2nd/pastData2nd';
+import PastData3rd from './pastData3rd/pastData3rd';
 
 import {
   HashRouter as Router,
@@ -64,6 +65,10 @@ export default class Menu extends React.Component {
               <Route path="/old2">
                 <h1>Season 2</h1>
                 <PastData2nd />
+              </Route>
+              <Route path="/old3">
+                <h1>Season 3</h1>
+                <PastData3rd />
               </Route>
               <Route path="/">
                 <h1>Last Matches</h1>
