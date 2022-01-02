@@ -80,7 +80,6 @@ export const Highchart = (props: HighchartsReact.Props) => {
                             return moment(this.value).format('DD-MM-YYYY');
                         }
                     },
-                    min: 1623030954000,
                     tickInterval: 7*24*60*60*1000
                 },
                 yAxis: {

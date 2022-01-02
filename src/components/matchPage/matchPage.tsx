@@ -88,7 +88,7 @@ export const MatchPage = () => {
     let blueRatingChange = Math.abs((((redPoints - winChance) * kCoefficient) / (data.teamSnapshots[0].playerSnapshots.length)))
     let redRatingChange = Math.abs((((bluePoints - winChance) * kCoefficient) / data.teamSnapshots[0].playerSnapshots.length))
 
-    let matchLengthMultiplier = Math.round(((600 / Math.max(data.endTime,400)) - 1) * 100);
+    let matchLengthMultiplier = Math.round(((180 / Math.max(data.endTime, 90)) - 1) * 100);
     let simulatedScoreArray = [];
     let redSimulatedScore = 10;
     let blueSimulatedScore = 0;
